@@ -11,7 +11,8 @@ http.createServer(function (req, res) {
 	}
 	
 	if(req.url != "/") {
-		res.writeHead(302, {'Location': '/'}, respond());
+		res.writeHead(302, {'Location': '/'});
+		res.write("Redirecting to <a href=\"/\">here</a>");
 	} else {
 		respond();
 	}
