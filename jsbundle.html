@@ -1,11 +1,24 @@
 <html>
-<body onload='
-	      var thicken = function(t) {
-	      		t.style.strokeWidth = 2;
-              }
-	      var unthicken = function(t) {
-	      		t.style.strokeWidth = 0.333334;
-	      }
-              
-              element = document.getElementById("LA-06");element.style.fill = "#FF0000";element.style.fillOpacity = "1";element.onmouseenter = "thicken(this)";element.onmouseenter = "unthicken(this)";
-              '>
+<head>
+<script>
+	setHover = function(t) {
+		t.onmouseenter = function(tt) {
+			tt.style.strokeWidth = 2;
+		}
+		t.onmouseleave = function(tt) {
+			tt.style.strokeWidth = 0.333334;
+		}
+	}
+	
+	setSolidR = function(t) {
+		t.style.fill = "#FF0000";
+		t.style.fillOpacity = 1;
+	}
+	
+	run = function() {
+		t = document.getElementById("LA-06");
+		setHover(t);
+		setSolidR(t);
+	}	
+</script>
+<body onload = "run();">
