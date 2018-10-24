@@ -1,4 +1,11 @@
 <html>
 <body onload='
-              element = document.getElementById("LA-06");element.style.fill = "#FF0000";element.style.fillOpacity = "1";element.onmouseover = "this.style.strokeWidth = \"2\""
+	      var thicken = function(t) {
+	      		t.style.strokeWidth = 2;
+              }
+	      var unthicken = function(t) {
+	      		t.style.strokeWidth = 0.333334;
+	      }
+              
+              element = document.getElementById("LA-06");element.style.fill = "#FF0000";element.style.fillOpacity = "1";element.onmouseenter = "thicken(this)";element.onmouseenter = "unthicken(this)";
               '>
