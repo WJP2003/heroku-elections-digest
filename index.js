@@ -10,9 +10,11 @@ http.createServer(function (req, res) {
 		res.write("Redirecting to <a href=\"/\">here</a>");
 	} else {
 		fs.readFile('house_of_reps.svg', function(err, data) {
-			res.writeHead(200, {'Content-Type': 'text/html'});
-			res.write(data);
-			res.end();
+			fs.readFile('jsbundle.html',function(err2,data2) {	
+				res.writeHead(200, {'Content-Type': 'text/html'});
+				res.write(data2 + data);
+				res.end();
+			});
 		});
 	}
 }).listen(port);
