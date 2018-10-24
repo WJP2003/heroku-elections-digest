@@ -2,11 +2,11 @@
 <head>
 <script>
 	setHover = function(t) {
-		t.onmouseenter = function(tt) {
-			tt.style.strokeWidth = 2;
+		t.onmouseenter = function() {
+			this.style.strokeWidth = 2;
 		}
-		t.onmouseleave = function(tt) {
-			tt.style.strokeWidth = 0.333334;
+		t.onmouseleave = function() {
+			this.style.strokeWidth = 0.333334;
 		}
 	}
 	
