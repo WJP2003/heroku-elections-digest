@@ -16,9 +16,9 @@
 	}
 	
 	run = function() {
-		allPaths = document.getElementsByTagName("path")
+		allPaths = document.getElementsByTagName("path");
 		for(i = 0;i < allPaths.length;i++) {
-			allPaths[i].setHover();
+			setHover(allPaths[i]);
 		}
 		document.getElementById("LA-06").setSolidR();
 		document.getElementById("LA-04").setSolidR();
