@@ -3,13 +3,16 @@
 <script>
 	setHover = function(t) {
 		t.style.strokeOpacity = 0.45
+		t.style.zIndex = 0;
 		t.onmouseenter = function() {
 			this.style.strokeWidth = 2;
 			this.style.strokeColor = 1;
+			this.style.zIndex = 1;
 		}
 		t.onmouseleave = function() {
 			this.style.strokeWidth = 0.333334;
 			this.style.strokeOpacity = 0.45;
+			this.style.zIndex = 0;
 		}
 	}
 	
