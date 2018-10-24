@@ -5,7 +5,7 @@ var port = process.env.PORT || 8080;
 
 http.createServer(function (req, res) {
 	if(req.url != "/") {
-		res.writeHead(302, {'Location': '/'});
+		res.writeHead(302, {'Location': '/','Content-Type': 'text/plain'});
 		res.write("Redirecting to <a href=\"/\">here</a>");
 	} else {
 		res.writeHead(200, {'Content-Type': 'text/plain'});
