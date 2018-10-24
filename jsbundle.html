@@ -2,11 +2,14 @@
 <head>
 <script>
 	setHover = function(t) {
+		t.style.strokeOpacity = 0.45
 		t.onmouseenter = function() {
 			this.style.strokeWidth = 2;
+			this.style.strokeColor = 1;
 		}
 		t.onmouseleave = function() {
 			this.style.strokeWidth = 0.333334;
+			this.style.strokeOpacity = 0.45;
 		}
 	}
 	
