@@ -47,6 +47,7 @@
 			this.style.strokeColor = "#BBBBBB"
 			this.style.zIndex = 1;
 			document.getElementById("hover_box").style.visibility = "visible";
+			console.log(event.srcElement.id);
 			document.getElementById("hover_box_text_district") = event.srcElement.id;
 			if(solidR.includes(event.srcElement.id)) {
 				document.getElementById("hover_box_text_rating") = "Solid Rep.";
