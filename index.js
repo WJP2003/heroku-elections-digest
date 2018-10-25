@@ -30,6 +30,7 @@ http.createServer(function (req, res) {
 						
 						for(j = 0;j < house_districts.length;j++) {
 							for(i = 1;i <= house_districts[j][1] || (house_districts[j][1] == 0 && i >= 0);i++) {
+								console.log("i: " + i);
 								if(house_districts[j][1] == 0) { i = 0; }
 								if(i < 10) { i = "0" + i } 
 								str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-" + i));
