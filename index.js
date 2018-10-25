@@ -119,13 +119,13 @@ http.createServer(function (req, res) {
 							}
 						}
 						res.writeHead(200, {'Content-Type': 'text/html'});
-						strSolidR = "'" + solidR.join("','") + "'";
-						strLikelyR = "'" + likelyR.join("','") + "'";
-						strLeanR = "'" + leanR.join("','") + "'";
-						strTossup = "'" + tossup.join("','") + "'";
-						strLeanD = "'" + leanD.join("','") + "'";
-						strLikelyD = "'" + likelyD.join("','") + "'";
-						strSolidD = "'" + solidD.join("','") + "'";
+						strSolidR = "['" + solidR.join("','") + "']" ;
+						strLikelyR = "['" + likelyR.join("','") + "']";
+						strLeanR = "['" + leanR.join("','") + "']";
+						strTossup = "['" + tossup.join("','") + "']";
+						strLeanD = "['" + leanD.join("','") + "']";
+						strLikelyD = "['" + likelyD.join("','") + "']";
+						strSolidD = "['" + solidD.join("','") + "']";
 						res.write("<html><head><script> solidR = " + strSolidR + "\n likelyR = " + strLikelyR + "\n leanR = " + strLeanR + "\n tossup = " + strTossup + "\n leanD = " + strLeanD + "\n likelyD = " + strLikelyD + "\n solidD = " + strSolidD + "\n\n </script>" + data2 + data);
 						res.end();
 					});
