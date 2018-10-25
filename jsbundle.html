@@ -44,23 +44,32 @@
 			this.style.strokeColor = "#BBBBBB"
 			this.style.zIndex = 1;
 			document.getElementById("hover_box").style.visibility = "visible";
-			text = event.srcElement.id + "\n\n";
-			if(this.style.fillColor == "#FFFF00") {
-				text += "Tossup";
+			text = event.srcElement.id + "<br>";
+			if(solidR.includes(event.srcElement.id)) {
+				text += "Solid Rep.";
 			} else {
-				if(this.style.fillOpacity == 0.8) {
-					text += "Solid ";
+				if(likelyR.includes(event.srcElement.id)) {
+					text += "Likely Rep.";
 				} else {
-					if(this.style.fillOpacity == 0.5) {
-						text += "Likely ";
+					if(leanR.includes(event.srcElement.id)) {
+						text += "Lean Rep.";
 					} else {
-						text += "Lean ";
+						if(tossup.includes(event.srcElement.id)) {
+							text += "Tossup";
+						} else {
+							if(leanD.includes(event.srcElement.id)) {
+								text += "Lean Dem."
+							} else {
+								if(likelyD.includes(event.srcElement.id)) {
+									text += "Likely Dem."
+								} else {
+									if(solidD.includes(event.srcElement.id)) {
+										text += "Solid Dem."
+									}
+								}
+							}
+						}
 					}
-				}
-				if(this.style.fill == "#FF0000") {
-					text += "Repub.";
-				} else {
-					text += "Dem.";
 				}
 			}
 			document.getElementById("hover_box_text").innerHTML = text;
