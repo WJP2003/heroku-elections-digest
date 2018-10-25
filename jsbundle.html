@@ -49,21 +49,21 @@
 				text += "Tossup";
 			} else {
 				if(this.style.fillOpacity == 0.8) {
-					t += "Solid ";
+					text += "Solid ";
 				} else {
 					if(this.style.fillOpacity == 0.5) {
-						t += "Likely ";
+						text += "Likely ";
 					} else {
-						t += "Lean ";
+						text += "Lean ";
 					}
 				}
 				if(this.style.fillColor == "#FF0000") {
-					t += "Repub.";
+					text += "Repub.";
 				} else {
-					t += "Dem.";
+					text += "Dem.";
 				}
 			}
-			
+			document.getElementById("hover_box_text).innerHTML = text;
 		}
 		t.onmouseleave = function() {
 			this.style.strokeWidth = 0.333334;
