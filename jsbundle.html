@@ -38,7 +38,7 @@
 		t.style.strokeColor = "#BBBBBB"
 		t.style.strokeOpacity = 0.45
 		t.style.zIndex = 0;
-		t.onmouseenter = function() {
+		t.onmouseenter = function(this) {
 			this.style.strokeWidth = 2;
 			this.style.strokeOpacity = 1;
 			this.style.strokeColor = "#BBBBBB"
@@ -46,7 +46,7 @@
 			document.getElementById("hover_box").style.visibility = "visible";
 			document.getElementById("hover_box_text").innerHTML = this.id;
 		}
-		t.onmouseleave = function() {
+		t.onmouseleave = function(this) {
 			this.style.strokeWidth = 0.333334;
 			this.style.strokeOpacity = 0.45;
 			this.style.strokeColor = "#BBBBBB"
