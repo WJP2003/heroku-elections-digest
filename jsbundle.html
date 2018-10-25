@@ -44,7 +44,7 @@
 			this.style.strokeColor = "#BBBBBB"
 			this.style.zIndex = 1;
 			document.getElementById("hover_box").style.visibility = "visible";
-			text = event.srcElement.id + "\n";
+			text = event.srcElement.id + "\n\n";
 			if(this.style.fillColor == "#FFFF00") {
 				text += "Tossup";
 			} else {
@@ -57,7 +57,7 @@
 						text += "Lean ";
 					}
 				}
-				if(this.style.fillColor == "#FF0000") {
+				if(this.style.fill == "#FF0000") {
 					text += "Repub.";
 				} else {
 					text += "Dem.";
