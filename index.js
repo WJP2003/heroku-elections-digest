@@ -80,7 +80,8 @@ http.createServer(function (req, res) {
 						solidD = [];
 						
 						for(i = 1;i <= 55;i++) {
-							str2 = data3.slice(0,data3.indexOf("CA-" + i));
+							if(i < 10) { i = "0" + i } 
+							str2 = data3.slice(0,data3.lastIndexOf("CA-" + i));
 							str3 = str2.slice(0,str2.lastIndexOf("</p>"));
 							str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
 							str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
