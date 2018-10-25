@@ -30,7 +30,7 @@ http.createServer(function (req, res) {
 						
 						for(j = 0;j < house_districts.length;j++) {
 							if(house_districts[j][1] == 0) {
-								str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-AL"));
+								str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-00"));
 								str3 = str2.slice(0,str2.lastIndexOf("</p>"));
 								str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
 								str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
