@@ -37,6 +37,7 @@ http.createServer(function (req, res) {
 								str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
 								str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
 								console.log(house_districts[j][0] + "-" + i + ": " + str5);
+								if(house_districts[j][1] == 0) { i = "AL"; }
 								if(str5 == "Solid Republican") {
 									solidR.push(house_districts[j][0] + "-" + i);
 								} else {
