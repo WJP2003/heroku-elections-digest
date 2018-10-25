@@ -12,7 +12,7 @@ http.createServer(function (req, res) {
 		fs.readFile('house_of_reps.svg', function(err, data) {
 			fs.readFile('jsbundle.html',function(err2,data2) {	
 				res.writeHead(200, {'Content-Type': 'text/html'});
-				res.write(data2 + data);
+				res.write("<html><head>" + data2 + data);
 				res.end();
 			});
 		});
