@@ -65,7 +65,7 @@ http.createServer(function (req, res) {
 													}
 												}
 											}
-										}										}
+										}
 									}
 								}
 								if(house_districts[j][1] == 0) { i = -1; }
