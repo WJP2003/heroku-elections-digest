@@ -84,6 +84,7 @@ http.createServer(function (req, res) {
 							str3 = str2.slice(0,str2.lastIndexOf("</p>"));
 							str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
 							str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
+							console.log("CA-" + i + ": " + str5);
 							if(str5 == "Solid Republican") {
 								solidR.push("CA-" + i);
 							} else {
