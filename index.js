@@ -69,7 +69,6 @@ http.createServer(function (req, res) {
 									}
 								}
 								if(house_districts[j][1] == 0) { i = -1; }
-
 							}
 						}
 						res.writeHead(200, {'Content-Type': 'text/html'});
