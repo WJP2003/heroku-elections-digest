@@ -13,7 +13,7 @@ http.createServer(function (req, res) {
 		res.write("Redirecting to <a href=\"/\">here</a>");
 	} else {
 		fs.readFile('house_of_reps.svg', function(err, data) {
-			fs.readFile('jsbundle.html',function(err2,data2) {
+			fs.readFile('jsbundle.js',function(err2,data2) {
 				https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
 					data3 = '';
 					resp.on('data',function(chunk) {
