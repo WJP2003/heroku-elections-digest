@@ -29,12 +29,14 @@ http.createServer(function (req, res) {
 						solidD = [];
 						
 						for(j = 0;j < house_districts.length;j++) {
-							if(house_districts[j][1] == 0) {
-								str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-00"));
+							for(i = 1;i <= house_districts[j][1] || (house_districts[j][1] == 0 && i != 0);i++) {
+								if(house_districts[j][1] == 0) { i = 0; }
+								if(i < 10) { i = "0" + i } 
+								str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-" + i));
 								str3 = str2.slice(0,str2.lastIndexOf("</p>"));
 								str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
 								str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
-								console.log(house_districts[j][0] + "-AL: " + str5);
+								console.log(house_districts[j][0] + "-" + i + ": " + str5);
 								if(str5 == "Solid Republican") {
 									solidR.push(house_districts[j][0] + "-" + i);
 								} else {
@@ -63,49 +65,11 @@ http.createServer(function (req, res) {
 													}
 												}
 											}
-										}
+										}										}
 									}
 								}
-							} else {
-								for(i = 1;i <= house_districts[j][1];i++) {
-									if(i < 10) { i = "0" + i } 
-									str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-" + i));
-									str3 = str2.slice(0,str2.lastIndexOf("</p>"));
-									str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
-									str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
-									console.log(house_districts[j][0] + "-" + i + ": " + str5);
-									if(str5 == "Solid Republican") {
-										solidR.push(house_districts[j][0] + "-" + i);
-									} else {
-										if(str5 == "Likely Republican") {
-											likelyR.push(house_districts[j][0] + "-" + i);
-										} else {
-											if(str5 == "Lean Republican") {
-												leanR.push(house_districts[j][0] + "-" + i);
-											} else {
-												if(str5 == "Toss-Up Republican") {
-													tossup.push(house_districts[j][0] + "-" + i);
-												} else {
-													if(str5 == "Toss-Up Democratic") {
-														tossup.push(house_districts[j][0] + "-" + i);
-													} else {
-														if(str5 == "Lean Democratic") {
-															leanD.push(house_districts[j][0] + "-" + i);
-														} else {
-															if(str5 == "Likely Democratic") {
-																likelyD.push(house_districts[j][0] + "-" + i);
-															} else {
-																if(str5 == "Solid Democratic") {
-																	solidD.push(house_districts[j][0] + "-" + i);
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
+								if(house_districts[j][1] == 0) { i = -1; }
+
 							}
 						}
 						res.writeHead(200, {'Content-Type': 'text/html'});
