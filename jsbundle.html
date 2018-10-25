@@ -44,7 +44,26 @@
 			this.style.strokeColor = "#BBBBBB"
 			this.style.zIndex = 1;
 			document.getElementById("hover_box").style.visibility = "visible";
-			document.getElementById("hover_box_text").innerHTML = event.srcElement.id;
+			text = event.srcElement.id + "\n";
+			if(this.style.fillColor == "#FFFF00") {
+				text += "Tossup";
+			} else {
+				if(this.style.fillOpacity == 0.8) {
+					t += "Solid ";
+				} else {
+					if(this.style.fillOpacity == 0.5) {
+						t += "Likely ";
+					} else {
+						t += "Lean ";
+					}
+				}
+				if(this.style.fillColor == "#FF0000") {
+					t += "Repub.";
+				} else {
+					t += "Dem.";
+				}
+			}
+			
 		}
 		t.onmouseleave = function() {
 			this.style.strokeWidth = 0.333334;
@@ -52,7 +71,6 @@
 			this.style.strokeColor = "#BBBBBB"
 			this.style.zIndex = 0;
 			document.getElementById("hover_box").style.visibility = "hidden";
-			document.getElementById("hover_box_text").innerHTML = event.srcElement.id;
 		}
 	}
 
