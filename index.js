@@ -9,7 +9,7 @@ var districts = {
 	'AK': 0,
 	'AZ': 9,
 	'AR': 4,
-	'CA': 55,
+	'CA': 53,
 	'CO': 7,
 	'CN': 5,
 	'DE': 0,
@@ -79,7 +79,7 @@ http.createServer(function (req, res) {
 						likelyD = [];
 						solidD = [];
 						
-						for(i = 1;i <= 55;i++) {
+						for(i = 1;i <= 53;i++) {
 							if(i < 10) { i = "0" + i } 
 							str2 = data3.slice(0,data3.lastIndexOf("CA-" + i));
 							str3 = str2.slice(0,str2.lastIndexOf("</p>"));
@@ -119,7 +119,14 @@ http.createServer(function (req, res) {
 							}
 						}
 						res.writeHead(200, {'Content-Type': 'text/html'});
-						res.write("<html><head>" + solidR + "\n" + likelyR + "\n" + leanR + "\n" + tossup + "\n" + leanD + "\n" + likelyD + "\n" + solidD + "\n" + data2 + data);
+						strSolidR = "'" + solidR.join("','") + "'";
+						strLikelyR = "'" + likelyR.join("','") + "'";
+						strLeanR = "'" + leanR.join("','") + "'";
+						strTossup = "'" + tossup.join("','") + "'";
+						strLeanD = "'" + leanD.join("','") + "'";
+						strLikelyD = "'" + likelyD.join("','") + "'";
+						strSolidD = "'" + solidD.join("','") + "'";
+						res.write("<html><head><script> solidR = " + strSolidR + "\n likelyR = " + strLikelyR + "\n leanR = " + strLeanR + "\n tossup = " + strTossup + "\n leanD = " + strLeanD + "\n likelyD = " + strLikelyD + "\n solidD = " + strSolidD + "\n\n </script>" + data2 + data);
 						res.end();
 					});
 				});
