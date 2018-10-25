@@ -44,7 +44,7 @@
 			this.style.strokeColor = "#BBBBBB"
 			this.style.zIndex = 1;
 			document.getElementById("hover_box").style.visibility = "visible";
-			document.getElementById("hover_box_text").innerHTML = this.attr("id");
+			document.getElementById("hover_box_text").innerHTML = event.srcElement.id;
 		}
 		t.onmouseleave = function() {
 			this.style.strokeWidth = 0.333334;
@@ -52,7 +52,7 @@
 			this.style.strokeColor = "#BBBBBB"
 			this.style.zIndex = 0;
 			document.getElementById("hover_box").style.visibility = "hidden";
-			document.getElementById("hover_box_text").innerHTML = this.attr("id");
+			document.getElementById("hover_box_text").innerHTML = event.srcElement.id;
 		}
 	}
 
