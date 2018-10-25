@@ -51,7 +51,9 @@
 	run = function() {
 		allPaths = document.getElementsByTagName("path");
 		for(i = 0;i < allPaths.length;i++) {
-			setHover(allPaths[i]);
+			if(allPaths[i].id != "Dividing_line") {
+				setHover(allPaths[i]);
+			}
 		}
 		setSolidR(document.getElementById("LA-06"));
 		setSolidR(document.getElementById("LA-04"));
