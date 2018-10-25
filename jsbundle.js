@@ -48,27 +48,27 @@
 			this.style.zIndex = 1;
 			document.getElementById("hover_box").style.visibility = "visible";
 			console.log(event.srcElement.id);
-			document.getElementById("hover_box_text_district") = event.srcElement.id;
+			document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
 			if(solidR.includes(event.srcElement.id)) {
-				document.getElementById("hover_box_text_rating") = "Solid Rep.";
+				document.getElementById("hover_box_text_rating").innerHTML = "Solid Rep.";
 			} else {
 				if(likelyR.includes(event.srcElement.id)) {
-					document.getElementById("hover_box_text_rating") = "Likely Rep.";
+					document.getElementById("hover_box_text_rating").innerHTML = "Likely Rep.";
 				} else {
 					if(leanR.includes(event.srcElement.id)) {
-						document.getElementById("hover_box_text_rating") = "Lean Rep.";
+						document.getElementById("hover_box_text_rating").innerHTML = "Lean Rep.";
 					} else {
 						if(tossup.includes(event.srcElement.id)) {
-							document.getElementById("hover_box_text_rating") = "Tossup";
+							document.getElementById("hover_box_text_rating").innerHTML = "Tossup";
 						} else {
 							if(leanD.includes(event.srcElement.id)) {
-								document.getElementById("hover_box_text_rating") = "Lean Dem."
+								document.getElementById("hover_box_text_rating").innerHTML = "Lean Dem."
 							} else {
 								if(likelyD.includes(event.srcElement.id)) {
-									document.getElementById("hover_box_text_rating") = "Likely Dem."
+									document.getElementById("hover_box_text_rating").innerHTML = "Likely Dem."
 								} else {
 									if(solidD.includes(event.srcElement.id)) {
-										document.getElementById("hover_box_text_rating") = "Solid Dem."
+										document.getElementById("hover_box_text_rating").innerHTML = "Solid Dem."
 									}
 								}
 							}
