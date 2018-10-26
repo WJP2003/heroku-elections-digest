@@ -116,7 +116,6 @@
 	}
 	
 	runHouseOfReps = function() {
-		docInFrame = document.getElementById('frame_house_of_reps_map').contentWindow.document
 		allPaths = document.getElementsByTagName("path");
 		for(i = 0;i < allPaths.length;i++) {
 			if(allPaths[i].id != "Dividing_line") {
@@ -184,6 +183,6 @@
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
 	</table>
-	<iframe height="0px" width="0px" style="visibility:hidden;" id="frame_house_of_reps_map" onload="runHouseOfReps();" src="/house_of_reps.svg"></iframe>
+	<link href="/house_of_reps.svg" type="text/html"></link>
 </body>
 </html>
