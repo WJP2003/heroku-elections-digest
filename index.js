@@ -23,8 +23,8 @@ http.createServer(function (req, res) {
 				} else {
 					res.writeHead(500, {'Content-Type': 'text/html'});
 					res.write("<html><body style='font-family:Verdana;font-size:5vw;'>500<br>Internal Server Error<br>" + err + "</body></html>");
-				});
-			}
+				}
+			});
 		}
 	} else {
 		fs.readFile('jsbundle.js',function(err2,data2) {
