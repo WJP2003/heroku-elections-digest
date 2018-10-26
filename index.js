@@ -9,7 +9,7 @@ var house_districts = [['AL', 7],['AK', 0],['AZ', 9],['AR', 4],['CA', 53],['CO',
 
 http.createServer(function (req, res) {
 	if(req.url != "/") {
-		if(req.url == '/index.html') {
+		if(req.url.sub(0,5) == '/index') {
 			res.writeHead(302, {'Location': '/','Content-Type': 'text/html'});
 			res.write("<html><body style='font-family:Verdana;font-size:5vw;'>302<br>Redirecting to <a href=\"/\">here</a></body></html>");
 		} else {
