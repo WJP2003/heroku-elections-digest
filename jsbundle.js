@@ -178,6 +178,6 @@
 </script>
 </head>
 <body onload = "run();">
-<object data="/house_of_reps.svg"></object>
+<object width="50vw" data="/house_of_reps.svg"></object>
 </body>
 </html>
