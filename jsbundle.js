@@ -173,13 +173,13 @@
 			setSolidD(document.getElementById(solidD[i]));
 		}
 		
-		document.getElementById("power_graph_solid_rep")  = solidR.length;
-		document.getElementById("power_graph_likely_rep") = likelyR.length;
-		document.getElementById("power_graph_lean_rep")   = leanR.length;
-		document.getElementById("power_graph_tossup_rep") = tossup.length;
-		document.getElementById("power_graph_lean_dem")   = leanD.length;
-		document.getElementById("power_graph_likely_dem") = likelyD.length;
-		document.getElementById("power_graph_solid_dem")  = solidD.length;
+		document.getElementById("power_graph_solid_rep").innerHTML  = solidR.length;
+		document.getElementById("power_graph_likely_rep").innerHTML = likelyR.length;
+		document.getElementById("power_graph_lean_rep").innerHTML   = leanR.length;
+		document.getElementById("power_graph_tossup_rep").innerHTML = tossup.length;
+		document.getElementById("power_graph_lean_dem").innerHTML   = leanD.length;
+		document.getElementById("power_graph_likely_dem").innerHTML = likelyD.length;
+		document.getElementById("power_graph_solid_dem").innerHTML  = solidD.length;
 	}
 </script>
 <body onload = "run();">
