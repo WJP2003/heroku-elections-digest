@@ -1,25 +1,9 @@
 <html>
 <head>
+
 <div id="header" style="font-family:Verdana; font-size:50pt; font-weight: bold;">
 	House of Representatives Elections
 </div>
-
-<table id="power_graph" style="font-family:Verdana; font-size:25pt;border-spacing: 3px;border-collapse: separate;">
-	<tr>
-	<td style="color:#FF0000;opacity:80%"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
-	<td><span style="color:#FFFFFF">Filler</span></td>
-	<td style="color:#0000FF;opacity:80%"><span id="power_graph_solid_dem" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</td>
-	</tr><tr>
-	<td style="color:#FF0000;opacity:50%"><span id="power_graph_likely_rep" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</td>
-	<td style="color:#CFB53B;opacity:100%"><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
-	<td style="color:#0000FF;opacity:50%"><span id="power_graph_likely_dem" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</td>
-	</tr><tr>
-	<td style="color:#FF0000;opacity:30%"><span id="power_graph_lean_rep" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</td>
-	<td><span style="color:#FFFFFF">Filler</span></td>
-	<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
-</table>
-
-<br>
 
 <div id="hover_box" style="visibility: hidden; position: fixed; pointer-events: none;">
 	<svg width="120" height="70">
@@ -131,7 +115,7 @@
 		t.style.fillOpacity = 0.8;
 	}
 	
-	run_house_of_reps = function() {
+	runHouseOfReps = function() {
 		allPaths = document.getElementsByTagName("path");
 		for(i = 0;i < allPaths.length;i++) {
 			if(allPaths[i].id != "Dividing_line") {
@@ -175,9 +159,30 @@
 		document.getElementById("power_graph_likely_dem").innerHTML = likelyD.length;
 		document.getElementById("power_graph_solid_dem").innerHTML  = solidD.length;
 	}
+
+	houseOfRepsMapSetup = function() {
+		document.getElementById("house_of_reps_map").innerHTML = window.frames[0].document.body.getElementsByTagName("svg");
+		document.getElementById("frame_house_of_reps_map").src = "javascript:void(0);";
+	}
+
 </script>
 </head>
 <body>
-<iframe id="house_of_reps_map" onload="run_house_of_reps();" src="/house_of_reps.svg"></object>
+	<table id="power_graph" style="font-family:Verdana; font-size:25pt;border-spacing: 3px;border-collapse: separate;">
+		<tr>
+			<td style="color:#FF0000;opacity:80%"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
+			<td><span style="color:#FFFFFF">Filler</span></td>
+			<td style="color:#0000FF;opacity:80%"><span id="power_graph_solid_dem" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</td>
+		</tr><tr>
+			<td style="color:#FF0000;opacity:50%"><span id="power_graph_likely_rep" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</td>
+			<td style="color:#CFB53B;opacity:100%"><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
+			<td style="color:#0000FF;opacity:50%"><span id="power_graph_likely_dem" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</td>
+		</tr><tr>
+			<td style="color:#FF0000;opacity:30%"><span id="power_graph_lean_rep" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</td>
+			<td><span style="color:#FFFFFF">Filler</span></td>
+			<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
+	</table>
+	<iframe id="frame_house_of_reps_map" onload="houseOfRepsMapSetup();" src="/house_of_reps.svg"></iframe>
+	<div id="house_of_reps_map" onload="runHouseOfReps();"></div>
 </body>
 </html>
