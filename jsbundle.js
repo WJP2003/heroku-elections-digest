@@ -183,6 +183,6 @@
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
 	</table>
-	<link href="/house_of_reps.svg" type="text/html"></link>
+	<link rel="import" href="/house_of_reps.svg" type="text/html"></link>
 </body>
 </html>
