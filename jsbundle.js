@@ -19,8 +19,8 @@
 
 <br>
 
-<div id="hover_box" style="left: 965px; top: 272px; visibility: hidden; position: fixed; pointer-events: none;">
-	<svg width="100" height="75">
+<div id="hover_box" style="visibility: hidden; position: fixed; pointer-events: none;">
+	<svg width="120" height="65">
 		<g>
 			<rect width="100" height="75" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)"></rect>
 			<text id="hover_box_text" x="50%" y="20%" text-anchor="middle" stroke-opacity="90%" stroke-width="1px" style="font-family:Verdana;">
