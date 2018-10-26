@@ -37,7 +37,7 @@
 	window.onmousemove = function(e) {
 		x = e.clientX,
 		y = e.clientY;
-		elem = element.getElementById("hover_box")
+		elem = document.getElementById("hover_box")
 		elem.style.top = (y + 20) + 'px';
 		elem.style.left = (x + 20) + 'px';
 	};
