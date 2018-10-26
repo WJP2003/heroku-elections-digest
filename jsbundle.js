@@ -1,3 +1,5 @@
+<html>
+<head>
 <div id="header" style="font-family:Verdana; font-size:50pt; font-weight: bold;">
 	House of Representatives Elections
 </div>
@@ -174,4 +176,8 @@
 		document.getElementById("power_graph_solid_dem").innerHTML  = solidD.length;
 	}
 </script>
+</head>
 <body onload = "run();">
+<object data="/house_of_reps.svg"></object>
+</body>
+</html>
