@@ -1,10 +1,23 @@
+<div id="header" style="font-family:Verdana; size:50pt; font-weight: bold;">
+	House of Representatives Elections
+</div>
+
+<div id="power_graph" style="font-family:Verdana; size:25pt;">
+	<span><div id="power_graph_solid_rep">0</div>&nbsp;Solid Rep.</span><br>
+	<span><div id="power_graph_likely_rep">0</div>&nbsp;Likely Rep.</span><br>
+	<span><div id="power_graph_lean_rep">0</div>&nbsp;Lean Rep.</span><br>
+	<span><div id="power_graph_tossup">0</div>&nbsp;Tossup</span><br>
+	<span><div id="power_graph_lean_dem">0</div>&nbsp;Lean Dem.</span><br>
+	<span><div id="power_graph_likely_dem">0</div>&nbsp;Likely Dem.</span><br>
+	<span><div id="power_graph_solid_dem">0</div>&nbsp;Solid Dem.</span><br>
+</div>
 
 <div id="hover_box" style="left: 965px; top: 272px; visibility: hidden; position: fixed; pointer-events: none;">
 	<svg width="100" height="75">
 		<g>
 			<rect width="100" height="75" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)"></rect>
-			<text id="hover_box_text" x="50%" y="20%" text-anchor="middle" stroke-opacity="90%" stroke-width="1px" style="font-family:Sans-serif">
-				<tspan x="50%" dy="1.2em" id="hover_box_text_district">
+			<text id="hover_box_text" x="50%" y="20%" text-anchor="middle" stroke-opacity="90%" stroke-width="1px" style="font-family:Verdana;">
+				<tspan x="50%" dy="1.2em" id="hover_box_text_district" style="font-weight:bold;">
 					OH-12
 				</tspan><tspan x="50%" text-anchor="middle" dy="1.2em" id="hover_box_text_rating">
 					Solid Rep.</tspan>
@@ -159,10 +172,14 @@
 			console.log("Set as Solid D: " + solidD[i]);
 			setSolidD(document.getElementById(solidD[i]));
 		}
-		setSolidR(document.getElementById("LA-06"));
-		setSolidR(document.getElementById("LA-04"));
-		setSolidR(document.getElementById("WY-AL"));
+		
+		document.getElementById("power_graph_solid_rep")  = solidR.length;
+		document.getElementById("power_graph_likely_rep") = likelyR.length;
+		document.getElementById("power_graph_lean_rep")   = leanR.length;
+		document.getElementById("power_graph_tossup_rep") = tossup.length;
+		document.getElementById("power_graph_lean_dem")   = leanD.length;
+		document.getElementById("power_graph_likely_dem") = likelyD.length;
+		document.getElementById("power_graph_solid_dem")  = solidD.length;
 	}
-	
 </script>
 <body onload = "run();">
