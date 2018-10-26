@@ -14,16 +14,16 @@ http.createServer(function (req, res) {
 			res.write("<html><body style='font-family:Verdana;font-size:5vw;'>302<br>Redirecting to <a href=\"/\">here</a></body></html>");
 		} else {
 			path = req.substring(1,req.length);
-			fs.access(path,fs.constants.R_OK,function(err)) {
+			fs.access(path,fs.constants.R_OK,function(err) {
 				if(!err) {
 					fs.readFile(path,function(err2,data) {
 						res.writeHead(200, {'Content-Type': 'text/html'});
 						res.write(data);
-					}
+					});
 				} else {
 					res.writeHead(500, {'Content-Type': 'text/html'});
 					res.write("<html><body style='font-family:Verdana;font-size:5vw;'>500<br>Internal Server Error<br>" + err + "</body></html>");
-				}
+				});
 			}
 		}
 	} else {
