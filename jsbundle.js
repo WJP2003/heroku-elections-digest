@@ -3,13 +3,13 @@
 </div>
 
 <div id="power_graph" style="font-family:Verdana; font-size:25pt;">
-	<span><div id="power_graph_solid_rep">0</div>&nbsp;Solid Rep.</span><br>
-	<span><div id="power_graph_likely_rep">0</div>&nbsp;Likely Rep.</span><br>
-	<span><div id="power_graph_lean_rep">0</div>&nbsp;Lean Rep.</span><br>
-	<span><div id="power_graph_tossup">0</div>&nbsp;Tossup</span><br>
-	<span><div id="power_graph_lean_dem">0</div>&nbsp;Lean Dem.</span><br>
-	<span><div id="power_graph_likely_dem">0</div>&nbsp;Likely Dem.</span><br>
-	<span><div id="power_graph_solid_dem">0</div>&nbsp;Solid Dem.</span><br>
+	<span><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</span><br>
+	<span><span id="power_graph_likely_rep" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</span><br>
+	<span><span id="power_graph_lean_rep" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</span><br>
+	<span><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</span><br>
+	<span><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</span><br>
+	<span><span id="power_graph_likely_dem" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</span><br>
+	<span><span id="power_graph_solid_dem" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</span><br>
 </div>
 
 <div id="hover_box" style="left: 965px; top: 272px; visibility: hidden; position: fixed; pointer-events: none;">
