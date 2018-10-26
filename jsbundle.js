@@ -2,15 +2,22 @@
 	House of Representatives Elections
 </div>
 
-<div id="power_graph" style="font-family:Verdana; font-size:25pt;">
-	<span style="color:#FF0000;opacity:80%"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</span><br>
-	<span style="color:#FF0000;opacity:50%"><span id="power_graph_likely_rep" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</span><br>
-	<span style="color:#FF0000;opacity:30%"><span id="power_graph_lean_rep" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</span><br>
-	<span style="color:#CFB53B;opacity:100%"><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</span><br>
-	<span style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</span><br>
-	<span style="color:#0000FF;opacity:50%"><span id="power_graph_likely_dem" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</span><br>
-	<span style="color:#0000FF;opacity:80%"><span id="power_graph_solid_dem" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</span><br>
-</div>
+<table id="power_graph" style="font-family:Verdana; font-size:25pt;">
+	<tr>
+	<td style="color:#FF0000;opacity:80%"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
+	<td><span style="color:#FFFFFF">Filler</span></td>
+	<td style="color:#0000FF;opacity:80%"><span id="power_graph_solid_dem" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</td>
+	</tr><tr>
+	<td style="color:#FF0000;opacity:50%"><span id="power_graph_likely_rep" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</td>
+	<td style="color:#CFB53B;opacity:100%"><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
+	<td style="color:#0000FF;opacity:50%"><span id="power_graph_likely_dem" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</td>
+	</tr><tr>
+	<td style="color:#FF0000;opacity:30%"><span id="power_graph_lean_rep" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</td>
+	<td><span style="color:#FFFFFF">Filler</span></td>
+	<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
+</table>
+
+<br>
 
 <div id="hover_box" style="left: 965px; top: 272px; visibility: hidden; position: fixed; pointer-events: none;">
 	<svg width="100" height="75">
