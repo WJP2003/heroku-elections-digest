@@ -9,8 +9,23 @@ var house_districts = [['AL', 7],['AK', 0],['AZ', 9],['AR', 4],['CA', 53],['CO',
 
 http.createServer(function (req, res) {
 	if(req.url != "/") {
-		res.writeHead(302, {'Location': '/','Content-Type': 'text/plain'});
-		res.write("Redirecting to <a href=\"/\">here</a>");
+		if(req.url == '/index.html') {
+			res.writeHead(302, {'Location': '/','Content-Type': 'text/html'});
+			res.write("<html><body style='font-family:Verdana;font-size:5vw;'>302<br>Redirecting to <a href=\"/\">here</a></body></html>");
+		} else {
+			path = req.substring(1,req.length);
+			fs.access(path,fs.constants.R_OK,function(err)) {
+				if(!err) {
+					fs.readFile(path,function(err2,data) {
+						res.writeHead(200, {'Content-Type': 'text/html'});
+						res.write(data);
+					}
+				} else {
+					res.writeHead(500, {'Content-Type': 'text/html'});
+					res.write("<html><body style='font-family:Verdana;font-size:5vw;'>500<br>Internal Server Error<br>" + err + "</body></html>");
+				}
+			}
+		}
 	} else {
 		fs.readFile('jsbundle.js',function(err2,data2) {
 			https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
