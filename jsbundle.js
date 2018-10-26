@@ -177,7 +177,7 @@
 	}
 </script>
 </head>
-<body onload = "run();">
-<object width="50vw" data="/house_of_reps.svg"></object>
+<body>
+<object onload="run();" width="50vw" data="/house_of_reps.svg"></object>
 </body>
 </html>
