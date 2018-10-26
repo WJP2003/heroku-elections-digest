@@ -131,7 +131,7 @@
 		t.style.fillOpacity = 0.8;
 	}
 	
-	run = function() {
+	run_house_of_reps = function() {
 		allPaths = document.getElementsByTagName("path");
 		for(i = 0;i < allPaths.length;i++) {
 			if(allPaths[i].id != "Dividing_line") {
@@ -178,6 +178,6 @@
 </script>
 </head>
 <body>
-<object onload="run();" width="50vw" data="/house_of_reps.svg"></object>
+<iframe onload="run_house_of_reps();" src="/house_of_reps.svg"></object>
 </body>
 </html>
