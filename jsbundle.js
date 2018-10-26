@@ -178,6 +178,6 @@
 </script>
 </head>
 <body>
-<iframe onload="run_house_of_reps();" src="/house_of_reps.svg"></object>
+<iframe id="house_of_reps_map" onload="run_house_of_reps();" src="/house_of_reps.svg"></object>
 </body>
 </html>
