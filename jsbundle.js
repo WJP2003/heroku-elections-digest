@@ -162,7 +162,7 @@
 
 	houseOfRepsMapSetup = function() {
 		document.getElementById("house_of_reps_map").innerHTML = window.frames[0].document.body.getElementsByTagName("svg")[0];
-		document.getElementById("frame_house_of_reps_map").src = "javascript:void(0);";
+		document.getElementById("frame_house_of_reps_map").parentNode.removeChild(document.getElementById("frame_house_of_reps_map"));
 	}
 
 </script>
