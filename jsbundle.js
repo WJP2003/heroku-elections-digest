@@ -2,7 +2,7 @@
 	House of Representatives Elections
 </div>
 
-<table id="power_graph" style="font-family:Verdana; font-size:25pt;">
+<table id="power_graph" style="font-family:Verdana; font-size:25pt;border-spacing: 3px;border-collapse: separate;">
 	<tr>
 	<td style="color:#FF0000;opacity:80%"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
 	<td><span style="color:#FFFFFF">Filler</span></td>
