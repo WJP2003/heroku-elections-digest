@@ -12,56 +12,54 @@ http.createServer(function (req, res) {
 		res.writeHead(302, {'Location': '/','Content-Type': 'text/plain'});
 		res.write("Redirecting to <a href=\"/\">here</a>");
 	} else {
-		fs.readFile('house_of_reps.svg', function(err, data) {
-			fs.readFile('jsbundle.js',function(err2,data2) {
-				https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
-					data3 = '';
-					resp.on('data',function(chunk) {
-						data3 += chunk;
-					});
-					resp.on('end',function() {
-						solidR = [];
-						likelyR = [];
-						leanR = [];
-						tossup = [];
-						leanD = [];
-						likelyD = [];
-						solidD = [];
-						
-						for(j = 0;j < house_districts.length;j++) {
-							for(i = 1;i <= house_districts[j][1] || house_districts[j][1] == 0;i++) {
-								if(house_districts[j][1] == 0) { i = 0; }
-								if(i < 10) { i = "0" + i } 
-								str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-" + i));
-								str3 = str2.slice(0,str2.lastIndexOf("</p>"));
-								str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
-								str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
-								console.log(house_districts[j][0] + "-" + i + ": " + str5);
-								if(house_districts[j][1] == 0) { i = "AL"; }
-								if(str5 == "Solid Republican") {
-									solidR.push(house_districts[j][0] + "-" + i);
+		fs.readFile('jsbundle.js',function(err2,data2) {
+			https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
+				data3 = '';
+				resp.on('data',function(chunk) {
+					data3 += chunk;
+				});
+				resp.on('end',function() {
+					solidR = [];
+					likelyR = [];
+					leanR = [];
+					tossup = [];
+					leanD = [];
+					likelyD = [];
+					solidD = [];
+					
+					for(j = 0;j < house_districts.length;j++) {
+						for(i = 1;i <= house_districts[j][1] || house_districts[j][1] == 0;i++) {
+							if(house_districts[j][1] == 0) { i = 0; }
+							if(i < 10) { i = "0" + i } 
+							str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-" + i));
+							str3 = str2.slice(0,str2.lastIndexOf("</p>"));
+							str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
+							str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
+							console.log(house_districts[j][0] + "-" + i + ": " + str5);
+							if(house_districts[j][1] == 0) { i = "AL"; }
+							if(str5 == "Solid Republican") {
+								solidR.push(house_districts[j][0] + "-" + i);
+							} else {
+								if(str5 == "Likely Republican") {
+									likelyR.push(house_districts[j][0] + "-" + i);
 								} else {
-									if(str5 == "Likely Republican") {
-										likelyR.push(house_districts[j][0] + "-" + i);
+									if(str5 == "Lean Republican") {
+										leanR.push(house_districts[j][0] + "-" + i);
 									} else {
-										if(str5 == "Lean Republican") {
-											leanR.push(house_districts[j][0] + "-" + i);
+										if(str5 == "Toss-Up Republican") {
+											tossup.push(house_districts[j][0] + "-" + i);
 										} else {
-											if(str5 == "Toss-Up Republican") {
+											if(str5 == "Toss-Up Democratic") {
 												tossup.push(house_districts[j][0] + "-" + i);
 											} else {
-												if(str5 == "Toss-Up Democratic") {
-													tossup.push(house_districts[j][0] + "-" + i);
+												if(str5 == "Lean Democratic") {
+													leanD.push(house_districts[j][0] + "-" + i);
 												} else {
-													if(str5 == "Lean Democratic") {
-														leanD.push(house_districts[j][0] + "-" + i);
+													if(str5 == "Likely Democratic") {
+														likelyD.push(house_districts[j][0] + "-" + i);
 													} else {
-														if(str5 == "Likely Democratic") {
-															likelyD.push(house_districts[j][0] + "-" + i);
-														} else {
-															if(str5 == "Solid Democratic") {
-																solidD.push(house_districts[j][0] + "-" + i);
-															}
+														if(str5 == "Solid Democratic") {
+															solidD.push(house_districts[j][0] + "-" + i);
 														}
 													}
 												}
@@ -69,20 +67,20 @@ http.createServer(function (req, res) {
 										}
 									}
 								}
-								if(house_districts[j][1] == 0) { break; }
 							}
+							if(house_districts[j][1] == 0) { break; }
 						}
-						res.writeHead(200, {'Content-Type': 'text/html'});
-						strSolidR = "['" + solidR.join("','") + "']" ;
-						strLikelyR = "['" + likelyR.join("','") + "']";
-						strLeanR = "['" + leanR.join("','") + "']";
-						strTossup = "['" + tossup.join("','") + "']";
-						strLeanD = "['" + leanD.join("','") + "']";
-						strLikelyD = "['" + likelyD.join("','") + "']";
-						strSolidD = "['" + solidD.join("','") + "']";
-						res.write("<html><head><script> solidR = " + strSolidR + "\n likelyR = " + strLikelyR + "\n leanR = " + strLeanR + "\n tossup = " + strTossup + "\n leanD = " + strLeanD + "\n likelyD = " + strLikelyD + "\n solidD = " + strSolidD + "\n\n </script>" + data2 + data);
-						res.end();
-					});
+					}
+					res.writeHead(200, {'Content-Type': 'text/html'});
+					strSolidR = "['" + solidR.join("','") + "']" ;
+					strLikelyR = "['" + likelyR.join("','") + "']";
+					strLeanR = "['" + leanR.join("','") + "']";
+					strTossup = "['" + tossup.join("','") + "']";
+					strLeanD = "['" + leanD.join("','") + "']";
+					strLikelyD = "['" + likelyD.join("','") + "']";
+					strSolidD = "['" + solidD.join("','") + "']";
+					res.write("<html><head><script> solidR = " + strSolidR + "\n likelyR = " + strLikelyR + "\n leanR = " + strLeanR + "\n tossup = " + strTossup + "\n leanD = " + strLeanD + "\n likelyD = " + strLikelyD + "\n solidD = " + strSolidD + "\n\n </script>" + data2);
+					res.end();
 				});
 			});
 		});
