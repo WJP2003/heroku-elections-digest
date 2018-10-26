@@ -161,7 +161,7 @@
 	}
 
 	houseOfRepsMapSetup = function() {
-		document.getElementById("house_of_reps_map").innerHTML = window.frames[0].document.body.getElementsByTagName("svg");
+		document.getElementById("house_of_reps_map").innerHTML = window.frames[0].document.body.getElementsByTagName("svg")[0];
 		document.getElementById("frame_house_of_reps_map").src = "javascript:void(0);";
 	}
 
@@ -182,7 +182,7 @@
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
 	</table>
-	<iframe id="frame_house_of_reps_map" onload="houseOfRepsMapSetup();" src="/house_of_reps.svg"></iframe>
+	<iframe height="0px" width="0px" style="visibility:hidden;" id="frame_house_of_reps_map" onload="houseOfRepsMapSetup();" src="/house_of_reps.svg"></iframe>
 	<div id="house_of_reps_map" onload="runHouseOfReps();"></div>
 </body>
 </html>
