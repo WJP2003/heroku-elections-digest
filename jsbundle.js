@@ -1,8 +1,8 @@
-<div id="header" style="font-family:Verdana; size:50pt; font-weight: bold;">
+<div id="header" style="font-family:Verdana; font-size:50pt; font-weight: bold;">
 	House of Representatives Elections
 </div>
 
-<div id="power_graph" style="font-family:Verdana; size:25pt;">
+<div id="power_graph" style="font-family:Verdana; font-size:25pt;">
 	<span><div id="power_graph_solid_rep">0</div>&nbsp;Solid Rep.</span><br>
 	<span><div id="power_graph_likely_rep">0</div>&nbsp;Likely Rep.</span><br>
 	<span><div id="power_graph_lean_rep">0</div>&nbsp;Lean Rep.</span><br>
