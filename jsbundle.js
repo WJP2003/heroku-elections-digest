@@ -3,7 +3,7 @@
 	<svg width="100" height="75">
 		<g>
 			<rect width="100" height="75" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)"></rect>
-			<text id="hover_box_text" x="50%" y="50%" text-anchor="middle" stroke="#FF0000" stroke-opacity="90%" stroke-width="1px" style="font-family:Sans-serif">
+			<text id="hover_box_text" x="50%" y="50%" text-anchor="middle" stroke-opacity="90%" stroke-width="1px" style="font-family:Sans-serif">
 				<tspan x="50%" dy="1.2em" id="hover_box_text_district">
 					OH-12
 				</tspan><tspan x="50%" text-anchor="middle" dy="1.2em" id="hover_box_text_rating">
@@ -51,24 +51,31 @@
 			document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
 			if(solidR.includes(event.srcElement.id)) {
 				document.getElementById("hover_box_text_rating").innerHTML = "Solid Rep.";
+				document.getElementById("hover_box_text_rating").style.stroke = "#FF0000";
 			} else {
 				if(likelyR.includes(event.srcElement.id)) {
 					document.getElementById("hover_box_text_rating").innerHTML = "Likely Rep.";
+					document.getElementById("hover_box_text_rating").style.stroke = "#FF0000";
 				} else {
 					if(leanR.includes(event.srcElement.id)) {
 						document.getElementById("hover_box_text_rating").innerHTML = "Lean Rep.";
+						document.getElementById("hover_box_text_rating").style.stroke = "#FF0000";
 					} else {
 						if(tossup.includes(event.srcElement.id)) {
 							document.getElementById("hover_box_text_rating").innerHTML = "Tossup";
+							document.getElementById("hover_box_text_rating").style.stroke = "#FFFF00";
 						} else {
 							if(leanD.includes(event.srcElement.id)) {
 								document.getElementById("hover_box_text_rating").innerHTML = "Lean Dem."
+								document.getElementById("hover_box_text_rating").style.stroke = "#0000FF";
 							} else {
 								if(likelyD.includes(event.srcElement.id)) {
 									document.getElementById("hover_box_text_rating").innerHTML = "Likely Dem."
+									document.getElementById("hover_box_text_rating").style.stroke = "#0000FF";
 								} else {
 									if(solidD.includes(event.srcElement.id)) {
 										document.getElementById("hover_box_text_rating").innerHTML = "Solid Dem."
+										document.getElementById("hover_box_text_rating").style.stroke = "#0000FF";
 									}
 								}
 							}
