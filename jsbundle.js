@@ -176,6 +176,7 @@
 						if (this.status == 200) {elmnt.innerHTML = this.responseText;}
 						if (this.status == 404) {elmnt.setAttribute("imported","notfound");}
 						elmnt.setAttribute("imported","true");
+						eval(elmnt.getAttribute("onload"));
 						includeHTML();
 					}
 				} 
