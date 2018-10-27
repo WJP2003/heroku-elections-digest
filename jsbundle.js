@@ -166,6 +166,7 @@
 		z = document.getElementsByTagName("import");
 		for(i = 0; i < z.length; i++) {
 			elmnt = z[i];
+			elmnt.innerHTML = "<code>Loading...</code>"
 			// search for elements with a certain atrribute:
 			file = elmnt.getAttribute("href");
 			if(file && !(elmnt.getAttribute("imported") == "true")) {
@@ -174,7 +175,7 @@
 				xhttp.onreadystatechange = function() {
 					if (this.readyState == 4) {
 						if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-						if (this.status == 404) {elmnt.innerHTML = "Not found";}
+						if (this.status == 404) {elmnt.innerHTML = "<code>Not found</code>";}
 						elmnt.setAttribute("imported","true");
 						includeHTML();
 					}
