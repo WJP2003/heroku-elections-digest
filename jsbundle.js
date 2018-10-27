@@ -159,18 +159,38 @@
 		document.getElementById("power_graph_likely_dem").innerHTML = likelyD.length;
 		document.getElementById("power_graph_solid_dem").innerHTML  = solidD.length;
 	}
-	
-	importTag = function() {
-		allImports = document.getElementsByTagName("import");
-		for(i = 0;i < allImports.length;i++) {
-			allImports[i].innerHTML = "<span>Imported Data</span>";
-			allImports[i].getAttribute["href"];
+
+	includeHTML = function() {
+		var z, i, elmnt, file, xhttp;
+		// loop through a collection of all HTML elements:
+		z = document.getElementsByTagName("import");
+		for(i = 0; i < z.length; i++) {
+			elmnt = z[i];
+			// search for elements with a certain atrribute:
+			file = elmnt.getAttribute("href");
+			if(file && !(elmnt.getAttribute("imported") == "true")) {
+				// make an HTTP request using the attribute value as the file name:
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4) {
+						if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+						if (this.status == 404) {elmnt.innerHTML = "Not found";}
+						elmnt.setAttribute("imported","true");
+						includeHTML();
+					}
+				} 
+				xhttp.open("GET", file, true);
+				xhttp.send();
+				// exit the function:
+				return;
+			}
 		}
 	}
 
+
 </script>
 </head>
-<body>
+<body onload="includeHTML();">
 	<table id="power_graph" style="font-family:Verdana; font-size:25pt;border-spacing: 3px;border-collapse: separate;">
 		<tr>
 			<td style="color:#FF0000;opacity:80%"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
