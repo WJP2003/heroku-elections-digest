@@ -158,6 +158,13 @@
 		document.getElementById("power_graph_lean_dem").innerHTML   = leanD.length;
 		document.getElementById("power_graph_likely_dem").innerHTML = likelyD.length;
 		document.getElementById("power_graph_solid_dem").innerHTML  = solidD.length;
+	
+	importTag = function() {
+		allImports = document.getElementsByTagName("import");
+		for(i = 0;i < allImports.length;i++) {
+			allImports[i].innerHTML = "<span>Imported Data</span>";
+			allImports[i].getAttribute["href"];
+		}
 	}
 
 </script>
@@ -183,6 +190,6 @@
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
 	</table>
-	<!-- <link rel="import" href="/house_of_reps.svg" type="text/html"></link> -->
+	<import href="/house_of_reps.svg"></import>
 </body>
 </html>
