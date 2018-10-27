@@ -211,6 +211,6 @@
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
 	</table>
-	<import href="/house_of_reps.svg"></import>
+	<import href="/house_of_reps.svg" onload="runHouseOfReps();"></import>
 </body>
 </html>
