@@ -54,7 +54,7 @@
 					} else {
 						if(tossup.includes(event.srcElement.id)) {
 							document.getElementById("hover_box_text_rating").innerHTML = "Tossup";
-							document.getElementById("hover_box_text_rating").style.stroke = "#CFB53B";
+							document.getElementById("hover_box_text_rating").style.stroke = "#FFFD00";
 						} else {
 							if(leanD.includes(event.srcElement.id)) {
 								document.getElementById("hover_box_text_rating").innerHTML = "Lean Dem."
@@ -99,7 +99,7 @@
 		t.style.fillOpacity = 0.3;
 	}
 	setTossup = function(t) {
-		t.style.fill = "#CFB53B";
+		t.style.fill = "#FFFD00";
 		t.style.fillOpacity = 1;
 	}
 	setLeanD = function(t) {
@@ -202,7 +202,7 @@
 		</tr><tr>
 			<td style="color:#FF0000;opacity:50%"><span id="power_graph_likely_rep" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td style="color:#CFB53B;opacity:100%"><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
+			<td style="color:#FFFD00;opacity:100%"><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td style="color:#0000FF;opacity:50%"><span id="power_graph_likely_dem" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</td>
 		</tr><tr>
