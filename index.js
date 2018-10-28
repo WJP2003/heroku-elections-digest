@@ -36,7 +36,7 @@ http.createServer(function (req, res) {
 			});
 		}
 	} else {
-		fs.readFile('jsbundle.js',function(err2,data2) {
+		fs.readFile('jsbundle.html',function(err2,data2) {
 			https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
 				data3 = '';
 				resp.on('data',function(chunk) {
