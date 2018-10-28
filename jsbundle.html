@@ -129,27 +129,27 @@
 		}
 		for(i = 0;i < likelyR.length;i++) {
 			console.log("Set as Likely R: " + likelyR[i]);
-			document.getElementById(likelyR[i]) = "Likely Rep";
+			document.getElementById(likelyR[i]).className = "Likely Rep";
 		}
 		for(i = 0;i < leanR.length;i++) {
 			console.log("Set as Lean R: " + leanR[i]);
-			document.getElementById(leanR[i]) = "Lean Rep";
+			document.getElementById(leanR[i]).className = "Lean Rep";
 		}
 		for(i = 0;i < tossup.length;i++) {
 			console.log("Set as Tossup: " + tossup[i]);
-			document.getElementById(tossup[i]) = "Tossup";
+			document.getElementById(tossup[i]).className = "Tossup";
 		}
 		for(i = 0;i < leanD.length;i++) {
 			console.log("Set as Lean D: " + leanD[i]);
-			document.getElementById(leanD[i]) = "Lean Dem";
+			document.getElementById(leanD[i]).className = "Lean Dem";
 		}
 		for(i = 0;i < likelyD.length;i++) {
 			console.log("Set as Likely D: " + likelyD[i]);
-			document.getElementById(likelyD[i]) = "Likely Dem";
+			document.getElementById(likelyD[i]).className = "Likely Dem";
 		}
 		for(i = 0;i < solidD.length;i++) {
 			console.log("Set as Solid D: " + solidD[i]);
-			document.getElementById(solidD[i]) = "Solid Dem";
+			document.getElementById(solidD[i]).className = "Solid Dem";
 		}
 		
 		document.getElementById("power_graph_solid_rep").innerHTML  = solidR.length;
