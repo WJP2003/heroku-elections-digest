@@ -13,11 +13,43 @@
 				<tspan x="50%" dy="1.2em" id="hover_box_text_district" style="font-weight:bold;">
 					OH-12
 				</tspan><tspan x="50%" text-anchor="middle" dy="1.2em" id="hover_box_text_rating">
-					Solid Rep.</tspan>
+					Solid Rep.
+				</tspan>
 			</text>
 		</g>
 	</svg>
 </div>
+
+<style>
+	.Solid {
+		opacity: 0.8;
+	}
+	.Likely {
+		opacity: 0.5;
+	}
+	.Lean {
+		opacity: 0.3;
+	}
+	path.Rep {
+		fill: #FF0000;
+	}
+	#hover_box_text_rating.Rep {
+		stroke: #FF0000;
+	}
+	path.Dem {
+		fill: #0000FF;
+	}
+	#hover_box_text_rating.Dem {
+		stroke: #FF0000;
+	}
+	path.Tossup {
+		fill: #FFFD00;
+		opacity: 0.8;
+	}
+	#hover_box_text_rating.Tossup {
+		stroke: #FFFD00;
+	}
+</style>
 
 <script>
 	window.onmousemove = function(e) {
@@ -38,35 +70,35 @@
 			this.style.strokeColor = "#BBBBBB"
 			this.style.zIndex = 1;
 			document.getElementById("hover_box").style.visibility = "visible";
-			console.log(event.srcElement.id);
 			document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
+			tb = document.getElementById("hover_box_text_rating");
 			if(solidR.includes(event.srcElement.id)) {
-				document.getElementById("hover_box_text_rating").innerHTML = "Solid Rep.";
-				document.getElementById("hover_box_text_rating").style.stroke = "#FF0000";
+				tb.innerHTML = "Solid Rep.";
+				tb.className = "Solid Rep";
 			} else {
 				if(likelyR.includes(event.srcElement.id)) {
-					document.getElementById("hover_box_text_rating").innerHTML = "Likely Rep.";
-					document.getElementById("hover_box_text_rating").style.stroke = "#FF0000";
+					tb.innerHTML = "Likely Rep.";
+					tb.className = "Likely Rep";
 				} else {
 					if(leanR.includes(event.srcElement.id)) {
-						document.getElementById("hover_box_text_rating").innerHTML = "Lean Rep.";
-						document.getElementById("hover_box_text_rating").style.stroke = "#FF0000";
+						tb.innerHTML = "Lean Rep.";
+						tb.className = "Lean Rep";
 					} else {
 						if(tossup.includes(event.srcElement.id)) {
-							document.getElementById("hover_box_text_rating").innerHTML = "Tossup";
-							document.getElementById("hover_box_text_rating").style.stroke = "#FFFD00";
+							tb.innerHTML = "Tossup";
+							tb.className = "Tossup";
 						} else {
 							if(leanD.includes(event.srcElement.id)) {
-								document.getElementById("hover_box_text_rating").innerHTML = "Lean Dem."
-								document.getElementById("hover_box_text_rating").style.stroke = "#0000FF";
+								tb.innerHTML = "Lean Dem.";
+								tb.className = "Lean Dem";
 							} else {
 								if(likelyD.includes(event.srcElement.id)) {
-									document.getElementById("hover_box_text_rating").innerHTML = "Likely Dem."
-									document.getElementById("hover_box_text_rating").style.stroke = "#0000FF";
+									tb.innerHTML = "Likely Dem.";
+									tb.className = "Likely Dem";
 								} else {
 									if(solidD.includes(event.srcElement.id)) {
-										document.getElementById("hover_box_text_rating").innerHTML = "Solid Dem."
-										document.getElementById("hover_box_text_rating").style.stroke = "#0000FF";
+										tb.innerHTML = "Solid Dem.";
+										tb.className = "Solid Dem";
 									}
 								}
 							}
@@ -83,37 +115,6 @@
 			document.getElementById("hover_box").style.visibility = "hidden";
 		}
 	}
-
-	
-	setSolidR = function(t) {
-		t.style.fill = "#FF0000";
-		t.style.fillOpacity = 0.8;
-		
-	}
-	setLikelyR = function(t) {
-		t.style.fill = "#FF0000";
-		t.style.fillOpacity = 0.5;
-	}
-	setLeanR = function(t) {
-		t.style.fill = "#FF0000";
-		t.style.fillOpacity = 0.3;
-	}
-	setTossup = function(t) {
-		t.style.fill = "#FFFD00";
-		t.style.fillOpacity = 1;
-	}
-	setLeanD = function(t) {
-		t.style.fill = "#0000FF";
-		t.style.fillOpacity = 0.3;
-	}
-	setLikelyD = function(t) {
-		t.style.fill = "#0000FF";
-		t.style.fillOpacity = 0.5;
-	}
-	setSolidD = function(t) {
-		t.style.fill = "#0000FF";
-		t.style.fillOpacity = 0.8;
-	}
 	
 	runHouseOfReps = function() {
 		allPaths = document.getElementsByTagName("path");
@@ -124,31 +125,31 @@
 		}
 		for(i = 0;i < solidR.length;i++) {
 			console.log("Set as Solid R: " + solidR[i]);
-			setSolidR(document.getElementById(solidR[i]));
+			document.getElementById(solidR[i]).className = "Solid Rep";
 		}
 		for(i = 0;i < likelyR.length;i++) {
 			console.log("Set as Likely R: " + likelyR[i]);
-			setLikelyR(document.getElementById(likelyR[i]));
+			document.getElementById(likelyR[i]) = "Likely Rep";
 		}
 		for(i = 0;i < leanR.length;i++) {
 			console.log("Set as Lean R: " + leanR[i]);
-			setLeanR(document.getElementById(leanR[i]));
+			document.getElementById(leanR[i]) = "Lean Rep";
 		}
 		for(i = 0;i < tossup.length;i++) {
 			console.log("Set as Tossup: " + tossup[i]);
-			setTossup(document.getElementById(tossup[i]));
+			document.getElementById(tossup[i]) = "Tossup";
 		}
 		for(i = 0;i < leanD.length;i++) {
 			console.log("Set as Lean D: " + leanD[i]);
-			setLeanD(document.getElementById(leanD[i]));
+			document.getElementById(leanD[i]) = "Lean Dem";
 		}
 		for(i = 0;i < likelyD.length;i++) {
 			console.log("Set as Likely D: " + likelyD[i]);
-			setLikelyD(document.getElementById(likelyD[i]));
+			document.getElementById(likelyD[i]) = "Likely Dem";
 		}
 		for(i = 0;i < solidD.length;i++) {
 			console.log("Set as Solid D: " + solidD[i]);
-			setSolidD(document.getElementById(solidD[i]));
+			document.getElementById(solidD[i]) = "Solid Dem";
 		}
 		
 		document.getElementById("power_graph_solid_rep").innerHTML  = solidR.length;
