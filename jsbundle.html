@@ -21,6 +21,22 @@
 </div>
 
 <style>
+	path {
+		font-size: 34.375px;
+		font-style: normal;
+		font-weight: 400;
+		opacity: 1;
+		fill-opacity: 1;
+		fill-rule: evenodd;
+		stroke: rgb(0, 0, 0);
+		stroke-width: 0.333334;
+		stroke-linecap: square;
+		stroke-linejoin: bevel; 
+		stroke-miterlimit: 4;
+		stroke-dasharray: none;
+		stroke-opacity: 0.45;
+		z-index: 0;
+	}
 	.Solid {
 		opacity: 0.8;
 	}
@@ -121,6 +137,7 @@
 		for(i = 0;i < allPaths.length;i++) {
 			if(allPaths[i].id != "Dividing_line") {
 				setHover(allPaths[i]);
+				allPaths[i].style = "";
 			}
 		}
 		for(i = 0;i < solidR.length;i++) {
