@@ -133,7 +133,7 @@ http.createServer(function (req, res) {
 			});
 		}
 	} else {
-		fs.access(path,fs.constants.R_OK,function(err) {
+		fs.access('index.html',fs.constants.R_OK,function(err) {
 			if(!err) {
 				fs.readFile('index.html',function(err2,data2) {
 					if(!err2) {
