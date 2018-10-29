@@ -16,7 +16,7 @@ path {
 	z-index: 0;
 }
 
-path.Selected {
+path[selected] {
 	stroke-width: 2;
 }
 
