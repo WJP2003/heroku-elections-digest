@@ -1,5 +1,3 @@
-//<script>
-
 window.onmousemove = function(e) {
 	x = e.clientX,
 	y = e.clientY;
@@ -130,5 +128,3 @@ includeHTML = function() {
 }
 
 includeHTML();
-
-//</script>
