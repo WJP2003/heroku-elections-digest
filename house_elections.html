@@ -1,130 +1,132 @@
 <html>
+	<head>
 
-<div id="header" style="font-family:Verdana; font-size:50pt; font-weight: bold;">
-	House of Representatives Elections
-</div>
+	<div id="header" style="font-family:Verdana; font-size:50pt; font-weight: bold;">
+		House of Representatives Elections
+	</div>
 
-<div id="hover_box" style="visibility: hidden; position: fixed; pointer-events: none;">
-	<svg width="120" height="70">
-		<g>
-			<rect width="120" height="70" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)"></rect>
-			<text id="hover_box_text" x="50%" y="20%" text-anchor="middle" stroke-opacity="90%" stroke-width="1px" style="font-family:Verdana;">
-				<tspan x="50%" dy="1.2em" id="hover_box_text_district" style="font-weight:bold;">
-					OH-12
-				</tspan><tspan x="50%" text-anchor="middle" dy="1.2em" id="hover_box_text_rating">
-					Solid Rep.
-				</tspan>
-			</text>
-		</g>
-	</svg>
-</div>
+	<div id="hover_box" style="visibility: hidden; position: fixed; pointer-events: none;">
+		<svg width="120" height="70">
+			<g>
+				<rect width="120" height="70" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)"></rect>
+				<text id="hover_box_text" x="50%" y="20%" text-anchor="middle" stroke-opacity="90%" stroke-width="1px" style="font-family:Verdana;">
+					<tspan x="50%" dy="1.2em" id="hover_box_text_district" style="font-weight:bold;">
+						OH-12
+					</tspan><tspan x="50%" text-anchor="middle" dy="1.2em" id="hover_box_text_rating">
+						Solid Rep.
+					</tspan>
+				</text>
+			</g>
+		</svg>
+	</div>
 
-<style>
-	path {
-		font-size: 34.375px;
-		font-style: normal;
-		font-weight: 400;
-		opacity: 1;
-		fill-opacity: 1;
-		fill-rule: evenodd;
-		stroke: rgb(0, 0, 0);
-		stroke-width: 0.333334;
-		stroke-linecap: square;
-		stroke-linejoin: bevel; 
-		stroke-miterlimit: 4;
-		stroke-dasharray: none;
-		stroke-opacity: 0.45;
-		z-index: 0;
-	}
-	.Solid {
-		opacity: 0.8;
-	}
-	.Likely {
-		opacity: 0.5;
-	}
-	.Lean {
-		opacity: 0.3;
-	}
-	path.Rep {
-		fill: #FF0000;
-	}
-	#hover_box_text_rating.Rep {
-		stroke: #FF0000;
-	}
-	#power_graph .Rep {
-		color: #FF0000;
-	}
-	path.Dem {
-		fill: #0000FF;
-	}
-	#hover_box_text_rating.Dem {
-		stroke: #0000FF;
-	}
-	#power_graph .Dem {
-		color: #0000FF;
-	}
-	path.Tossup {
-		fill: #7F00FF;
-		opacity: 0.8;
-	}
-	#hover_box_text_rating.Tossup {
-		stroke: #7F00FF;
-		opacity: 0.8;
-	}
-	#power_graph .Tossup {
-		color: #7F00FF;
-		opacity: 0.8;
-	}
-</style>
+	<style>
+		path {
+			font-size: 34.375px;
+			font-style: normal;
+			font-weight: 400;
+			opacity: 1;
+			fill-opacity: 1;
+			fill-rule: evenodd;
+			stroke: rgb(0, 0, 0);
+			stroke-width: 0.333334;
+			stroke-linecap: square;
+			stroke-linejoin: bevel; 
+			stroke-miterlimit: 4;
+			stroke-dasharray: none;
+			stroke-opacity: 0.45;
+			z-index: 0;
+		}
+		.Solid {
+			opacity: 0.8;
+		}
+		.Likely {
+			opacity: 0.5;
+		}
+		.Lean {
+			opacity: 0.3;
+		}
+		path.Rep {
+			fill: #FF0000;
+		}
+		#hover_box_text_rating.Rep {
+			stroke: #FF0000;
+		}
+		#power_graph .Rep {
+			color: #FF0000;
+		}
+		path.Dem {
+			fill: #0000FF;
+		}
+		#hover_box_text_rating.Dem {
+			stroke: #0000FF;
+		}
+		#power_graph .Dem {
+			color: #0000FF;
+		}
+		path.Tossup {
+			fill: #7F00FF;
+			opacity: 0.8;
+		}
+		#hover_box_text_rating.Tossup {
+			stroke: #7F00FF;
+			opacity: 0.8;
+		}
+		#power_graph .Tossup {
+			color: #7F00FF;
+			opacity: 0.8;
+		}
+	</style>
 
-<script>
-	window.onmousemove = function(e) {
-		x = e.clientX,
-		y = e.clientY;
-		elem = document.getElementById("hover_box")
-		elem.style.top = (y + 20) + 'px';
-		elem.style.left = (x + 20) + 'px';
-	};
-			
-	setHover = function(t) {
-		t.style.strokeColor = "#BBBBBB"
-		t.style.strokeOpacity = 0.45
-		t.style.zIndex = 0;
-		t.onmouseenter = function() {
-			this.style.strokeWidth = 2;
-			this.style.strokeOpacity = 1;
-			this.style.strokeColor = "#BBBBBB"
-			this.style.zIndex = 1;
-			document.getElementById("hover_box").style.visibility = "visible";
-			document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
-			tb = document.getElementById("hover_box_text_rating");
-			if(solidR.includes(event.srcElement.id)) {
-				tb.innerHTML = "Solid Rep.";
-				tb.setAttribute("class","Solid Rep");
-			} else {
-				if(likelyR.includes(event.srcElement.id)) {
-					tb.innerHTML = "Likely Rep.";
-					tb.setAttribute("class","Likely Rep");
+	<script>
+		window.onmousemove = function(e) {
+			x = e.clientX,
+			y = e.clientY;
+			elem = document.getElementById("hover_box")
+			elem.style.top = (y + 20) + 'px';
+			elem.style.left = (x + 20) + 'px';
+		};
+				
+		setHover = function(t) {
+			t.style.strokeColor = "#BBBBBB"
+			t.style.strokeOpacity = 0.45
+			t.style.zIndex = 0;
+			t.onmouseenter = function() {
+				this.style.strokeWidth = 2;
+				this.style.strokeOpacity = 1;
+				this.style.strokeColor = "#BBBBBB"
+				this.style.zIndex = 1;
+				document.getElementById("hover_box").style.visibility = "visible";
+				document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
+				tb = document.getElementById("hover_box_text_rating");
+				if(solidR.includes(event.srcElement.id)) {
+					tb.innerHTML = "Solid Rep.";
+					tb.setAttribute("class","Solid Rep");
 				} else {
-					if(leanR.includes(event.srcElement.id)) {
-						tb.innerHTML = "Lean Rep.";
-						tb.setAttribute("class","Lean Rep");
+					if(likelyR.includes(event.srcElement.id)) {
+						tb.innerHTML = "Likely Rep.";
+						tb.setAttribute("class","Likely Rep");
 					} else {
-						if(tossup.includes(event.srcElement.id)) {
-							tb.innerHTML = "Tossup";
-							tb.setAttribute("class","Tossup");
+						if(leanR.includes(event.srcElement.id)) {
+							tb.innerHTML = "Lean Rep.";
+							tb.setAttribute("class","Lean Rep");
 						} else {
-							if(leanD.includes(event.srcElement.id)) {
-								tb.innerHTML = "Lean Dem.";
-								tb.setAttribute("class","Lean Dem");
+							if(tossup.includes(event.srcElement.id)) {
+								tb.innerHTML = "Tossup";
+								tb.setAttribute("class","Tossup");
 							} else {
-								if(likelyD.includes(event.srcElement.id)) {
-									tb.innerHTML = "Likely Dem.";
-									tb.setAttribute("class","Likely Dem");
+								if(leanD.includes(event.srcElement.id)) {
+									tb.innerHTML = "Lean Dem.";
+									tb.setAttribute("class","Lean Dem");
 								} else {
-									if(solidD.includes(event.srcElement.id)) {
-										tb.innerHTML = "Solid Dem.";
-										tb.setAttribute("class","Solid Dem");
+									if(likelyD.includes(event.srcElement.id)) {
+										tb.innerHTML = "Likely Dem.";
+										tb.setAttribute("class","Likely Dem");
+									} else {
+										if(solidD.includes(event.srcElement.id)) {
+											tb.innerHTML = "Solid Dem.";
+											tb.setAttribute("class","Solid Dem");
+										}
 									}
 								}
 							}
@@ -132,20 +134,19 @@
 					}
 				}
 			}
+			t.onmouseleave = function() {
+				this.style.strokeWidth = 0.333334;
+				this.style.strokeOpacity = 0.45;
+				this.style.strokeColor = "#BBBBBB"
+				this.style.zIndex = 0;
+				document.getElementById("hover_box").style.visibility = "hidden";
+			}
 		}
-		t.onmouseleave = function() {
-			this.style.strokeWidth = 0.333334;
-			this.style.strokeOpacity = 0.45;
-			this.style.strokeColor = "#BBBBBB"
-			this.style.zIndex = 0;
-			document.getElementById("hover_box").style.visibility = "hidden";
-		}
-	}
 	
-	runHouseOfReps = function() {
-		allPaths = document.getElementsByTagName("path");
-		for(i = 0;i < allPaths.length;i++) {
-			if(allPaths[i].id != "Dividing_line" && allPaths[i].id != "State_Lines") {
+		runHouseOfReps = function() {
+			allPaths = document.getElementsByTagName("path");
+			for(i = 0;i < allPaths.length;i++) {
+				if(allPaths[i].id != "Dividing_line" && allPaths[i].id != "State_Lines") {
 				setHover(allPaths[i]);
 				allPaths[i].style = "";
 			}
@@ -186,40 +187,39 @@
 		document.getElementById("power_graph_lean_dem").innerHTML   = leanD.length;
 		document.getElementById("power_graph_likely_dem").innerHTML = likelyD.length;
 		document.getElementById("power_graph_solid_dem").innerHTML  = solidD.length;
-	}
 
-	includeHTML = function() {
-		var z, i, elmnt, file, xhttp;
-		// loop through a collection of all HTML elements:
-		z = document.getElementsByTagName("import");
-		for(i = 0; i < z.length; i++) {
-			elmnt = z[i];
-			// search for elements with a certain atrribute:
-			file = elmnt.getAttribute("href");
-			if(file && !(elmnt.getAttribute("imported") == "true")) {
-				// make an HTTP request using the attribute value as the file name:
-				xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function() {
-					if (this.readyState == 4) {
-						if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-						if (this.status == 404) {elmnt.setAttribute("imported","notfound");}
-						elmnt.setAttribute("imported","true");
-						eval(elmnt.getAttribute("onload"));
-						includeHTML();
-					}
-				} 
-				xhttp.open("GET", file, true);
-				xhttp.send();
-				// exit the function:
-				return;
+		includeHTML = function() {
+			var z, i, elmnt, file, xhttp;
+			// loop through a collection of all HTML elements:
+			z = document.getElementsByTagName("import");
+			for(i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				// search for elements with a certain atrribute:
+				file = elmnt.getAttribute("href");
+				if(file && !(elmnt.getAttribute("imported") == "true")) {
+					// make an HTTP request using the attribute value as the file name:
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4) {
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.setAttribute("imported","notfound");}
+							elmnt.setAttribute("imported","true");
+							eval(elmnt.getAttribute("onload"));
+							includeHTML();
+						}
+					} 
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					// exit the function:
+					return;
+				}
 			}
 		}
-	}
 
-
-</script>
-
-<body onload="includeHTML();">
+	</script>
+</head>
+	
+<body style="display:none;" onload="includeHTML();">
 	<table id="power_graph" style="font-family:Verdana; font-size:25pt;border-spacing: 3px;border-collapse: separate;">
 		<tr>
 			<td class="Solid Rep"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
@@ -240,7 +240,7 @@
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td class="Lean Dem"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
 	</table>
-	<import href="/house_of_reps.svg" onload="runHouseOfReps();"></import>
+	<import href="/house_of_reps.svg" onload="runHouseOfReps();getElementsByTagName('body')[0].style='';"></import>
 	<div style="font-weight:bold;font-size:8;">Cook Political Report, automatically updated. <a href="https://www.cookpolitical.com/ratings/house-race-ratings">https://www.cookpolitical.com/ratings/house-race-ratings</a></div>
 </body>
 </html>
