@@ -6,14 +6,18 @@ path {
 	opacity: 1;
 	fill-opacity: 1;
 	fill-rule: evenodd;
-	stroke: rgb(0, 0, 0);
+	stroke: #000000;
 	stroke-width: 0.333334;
 	stroke-linecap: square;
 	stroke-linejoin: bevel; 
 	stroke-miterlimit: 4;
 	stroke-dasharray: none;
-	stroke-opacity: 0.45;
+	stroke-opacity: 1;
 	z-index: 0;
+}
+
+path.Selected {
+	stroke-width: 2;
 }
 
 .Solid {
