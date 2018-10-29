@@ -1,7 +1,8 @@
 //<style>
 
-path:hover {
+path[selected] {
 	stroke-width: 2;
+	stroke: #000000;
 }
 
 .Solid {
