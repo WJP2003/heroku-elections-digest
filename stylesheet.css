@@ -13,6 +13,10 @@ text .Solid {
 	opacity: 0.8;
 }
 
+.power_graph .Solid {
+	opacity: 0.8;
+}
+
 path .Likely {
 	fill-opacity: 0.5;
 }
@@ -21,11 +25,19 @@ text .Likely {
 	opacity: 0.5;
 }
 
+.power_graph .Likely {
+	opacity: 0.5;
+}
+
 path .Lean {
 	fill-opacity: 0.3;
 }
 
 text .Lean {
+	opacity: 0.3;
+}
+
+.power_graph .Lean {
 	opacity: 0.3;
 }
 
