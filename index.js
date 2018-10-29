@@ -19,9 +19,11 @@ http.createServer(function (req, res) {
 				if(!err) {
 					fs.readFile(path,function(err2,data) {
 						if(!err) {
-							res.writeHead(200, {'Content-Type': 'text/html'});
-							res.write(data);
-							res.end();
+							res.writeHead(200, {'Content-Type': 'text/html'}, function() {
+								res.write(data,function() {
+									res.end();
+								});
+							});
 						} else {
 							res.writeHead(500, {'Content-Type': 'text/html'});
 							res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>500<br>Internal Server Error<br><br>" + err + "</body></html>");
