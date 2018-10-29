@@ -1,6 +1,6 @@
 //<style>
 
-path[selected] {
+path:hover {
 	stroke-width: 2;
 	stroke: #000000;
 }
