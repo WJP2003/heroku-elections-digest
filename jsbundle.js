@@ -9,14 +9,8 @@ window.onmousemove = function(e) {
 };
 
 setHover = function(t) {
-	t.style.strokeColor = "#BBBBBB"
-	t.style.strokeOpacity = 0.45
-	t.style.zIndex = 0;
 	t.onmouseenter = function() {
-		this.style.strokeWidth = 2;
-		this.style.strokeOpacity = 1;
-		this.style.strokeColor = "#BBBBBB"
-		this.style.zIndex = 1;
+		this.setAttribute("selected","");
 		document.getElementById("hover_box").style.visibility = "visible";
 		document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
 		tb = document.getElementById("hover_box_text_rating");
@@ -56,10 +50,7 @@ setHover = function(t) {
 		}
 	}
 	t.onmouseleave = function() {
-		this.style.strokeWidth = 0.333334;
-		this.style.strokeOpacity = 0.45;
-		this.style.strokeColor = "#BBBBBB"
-		this.style.zIndex = 0;
+		this.removeAttribute("selected");
 		document.getElementById("hover_box").style.visibility = "hidden";
 	}
 }
