@@ -106,6 +106,7 @@ runHouseOfReps = function() {
 	document.getElementById("power_graph_lean_dem").innerHTML   = leanD.length;
 	document.getElementById("power_graph_likely_dem").innerHTML = likelyD.length;
 	document.getElementById("power_graph_solid_dem").innerHTML  = solidD.length;
+}
 
 includeHTML = function() {
 	var z, i, elmnt, file, xhttp;
