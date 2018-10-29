@@ -78,6 +78,7 @@ house_races_download = function() {
 			fs.access("house_districts.js",fs.constants.W_OK,function(err) {
 				if(!err) {
 					fs.writeFile("house_districts.js",
+						     "//<script> \n" +
 						     "(function() { \n" +
 						     "solidR = " + strSolidR + ",\n" +
 						     "likelyR = " + strLikelyR + ",\n" +
@@ -86,7 +87,8 @@ house_races_download = function() {
 						     "leadD = " + strLeanD + ",\n" +
 						     "likelyD = " + strLikelyD + ",\n" +
 						     "solidD = " + strSolidD + "\n" +
-						     "})();",
+						     "})(); \n" +
+						     "//</script> \n",
 						     function(errrr) {
 						if(errrr) {
 							console.log("Error writing to pvi file: " + errrr);
