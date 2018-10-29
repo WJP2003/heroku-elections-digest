@@ -1,69 +1,69 @@
 //<style>
 
-path[selected] {
+path [selected] {
 	stroke-width: 2;
 	stroke: #000000;
 }
 
-path.Solid {
+path .Solid {
 	fill-opacity: 0.8;
 }
 
-#hover_box_text_rating.Solid {
+text .Solid {
 	opacity: 0.8;
 }
 
-path.Likely {
+path .Likely {
 	fill-opacity: 0.5;
 }
 
-text.Likely {
+text .Likely {
 	opacity: 0.5;
 }
 
-path.Lean {
+path .Lean {
 	fill-opacity: 0.3;
 }
 
-text.Lean {
+text .Lean {
 	opacity: 0.3;
 }
 
-path.Rep {
+path .Rep {
 	fill: #FF0000;
 }
 
-text.Rep {
+text .Rep {
 	stroke: #FF0000;
 }
 
-.power_graph.Rep {
+.power_graph .Rep {
 	color: #FF0000;
 }
 
-path.Dem {
+path .Dem {
 	fill: #0000FF;
 }
 
-text.Dem {
+text .Dem {
 	stroke: #0000FF;
 }
 
-.power_graph.Dem {
+.power_graph .Dem {
 	color: #0000FF;
 }
 
-path.Tossup {
+path .Tossup {
 	fill: #7F00FF;
 	opacity: 0.8;
 }
 
-text.Tossup {
+text .Tossup {
 	stroke: #7F00FF;
 	opacity: 0.8;
 }
 
-.power_graph.Tossup {
+.power_graph .Tossup {
 	color: #7F00FF;
 	opacity: 0.8;
 }
