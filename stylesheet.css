@@ -5,15 +5,27 @@ path[selected] {
 	stroke: #000000;
 }
 
-.Solid {
+path.Solid {
+	fill-opacity: 0.8;
+}
+
+#hover_box_text_rating.Solid {
 	opacity: 0.8;
 }
 
-.Likely {
+path.Likely {
+	fill-opacity: 0.5;
+}
+
+text.Likely {
 	opacity: 0.5;
 }
 
-.Lean {
+path.Lean {
+	fill-opacity: 0.3;
+}
+
+text.Lean {
 	opacity: 0.3;
 }
 
@@ -21,11 +33,11 @@ path.Rep {
 	fill: #FF0000;
 }
 
-#hover_box_text_rating.Rep {
+text.Rep {
 	stroke: #FF0000;
 }
 
-#power_graph .Rep {
+.power_graph.Rep {
 	color: #FF0000;
 }
 
@@ -33,11 +45,11 @@ path.Dem {
 	fill: #0000FF;
 }
 
-#hover_box_text_rating.Dem {
+text.Dem {
 	stroke: #0000FF;
 }
 
-#power_graph .Dem {
+.power_graph.Dem {
 	color: #0000FF;
 }
 
@@ -46,12 +58,12 @@ path.Tossup {
 	opacity: 0.8;
 }
 
-#hover_box_text_rating.Tossup {
+text.Tossup {
 	stroke: #7F00FF;
 	opacity: 0.8;
 }
 
-#power_graph .Tossup {
+.power_graph.Tossup {
 	color: #7F00FF;
 	opacity: 0.8;
 }
