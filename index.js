@@ -92,7 +92,7 @@ setInterval(function() {
 				} else {
 					console.log("Could not open pvi file: " + err);
 				}
-			}
+			});
 		});
 	});
 },300000);
