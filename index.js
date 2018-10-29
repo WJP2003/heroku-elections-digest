@@ -84,7 +84,7 @@ house_races_download = function() {
 						     "likelyR = " + strLikelyR + ",\n" +
 						     "leanR = " + strLeanR + ",\n" +
 						     "tossup = " + strTossup + ",\n" +
-						     "leadD = " + strLeanD + ",\n" +
+						     "leanD = " + strLeanD + ",\n" +
 						     "likelyD = " + strLikelyD + ",\n" +
 						     "solidD = " + strSolidD + "\n" +
 						     "})(); \n" +
