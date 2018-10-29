@@ -148,6 +148,11 @@ http.createServer(function (req, res) {
 						});
 					}
 				});
+			} else {
+				res.writeHead(404, {'Content-Type': 'text/html'});
+				res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>404<br>Not Found<br><br>" + err + "</body></html>", function() {
+					res.end();
+				});
 			}
 		});
 	}
