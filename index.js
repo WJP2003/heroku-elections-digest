@@ -79,13 +79,13 @@ house_races_download = function() {
 				if(!err) {
 					fs.writeFile("house_districts.js",
 						     "(function() { \n" +
-						     strSolidR + ",\n" +
-						     strLikelyR + ",\n" +
-						     strLeanR + ",\n" +
-						     strTossup + ",\n" +
-						     strLeanD + ",\n" +
-						     strLikelyD + ",\n" +
-						     strSolidD + "\n" +
+						     "solidR = " + strSolidR + ",\n" +
+						     "likelyR = " + strLikelyR + ",\n" +
+						     "leanR = " + strLeanR + ",\n" +
+						     "tossup = " + strTossup + ",\n" +
+						     "leadD = " + strLeanD + ",\n" +
+						     "likelyD = " + strLikelyD + ",\n" +
+						     "solidD = " + strSolidD + "\n" +
 						     "})();",
 						     function(errrr) {
 						if(errrr) {
