@@ -51,11 +51,17 @@
 	#hover_box_text_rating.Rep {
 		stroke: #FF0000;
 	}
+	#power_graph .Rep {
+		color: #7F00FF;
+	}
 	path.Dem {
 		fill: #0000FF;
 	}
 	#hover_box_text_rating.Dem {
 		stroke: #0000FF;
+	}
+	#power_graph .Dem {
+		color: #7F00FF;
 	}
 	path.Tossup {
 		fill: #7F00FF;
@@ -63,6 +69,9 @@
 	}
 	#hover_box_text_rating.Tossup {
 		stroke: #7F00FF;
+	}
+	#power_graph .Tossup {
+		color: #7F00FF;
 	}
 </style>
 
@@ -211,23 +220,23 @@
 <body onload="includeHTML();">
 	<table id="power_graph" style="font-family:Verdana; font-size:25pt;border-spacing: 3px;border-collapse: separate;">
 		<tr>
-			<td style="color:#FF0000;opacity:80%"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
+			<td class="Solid Rep"><span id="power_graph_solid_rep" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td style="color:#0000FF;opacity:80%"><span id="power_graph_solid_dem" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</td>
+			<td class="Solid Dem"><span id="power_graph_solid_dem" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</td>
 		</tr><tr>
-			<td style="color:#FF0000;opacity:50%"><span id="power_graph_likely_rep" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</td>
+			<td class="Likely Rep"><span id="power_graph_likely_rep" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td style="color:#FFFD00;opacity:100%"><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
+			<td class="Tossup"><span id="power_graph_tossup" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td style="color:#0000FF;opacity:50%"><span id="power_graph_likely_dem" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</td>
+			<td class="Likely Dem"><span id="power_graph_likely_dem" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</td>
 		</tr><tr>
-			<td style="color:#FF0000;opacity:30%"><span id="power_graph_lean_rep" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</td>
+			<td class="Lean Rep"><span id="power_graph_lean_rep" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
 			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td style="color:#0000FF;opacity:30%"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
+			<td class="Lean Dem"><span id="power_graph_lean_dem" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
 	</table>
 	<import href="/house_of_reps.svg" onload="runHouseOfReps();"></import>
 </body>
