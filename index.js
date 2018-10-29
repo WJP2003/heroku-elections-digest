@@ -78,13 +78,16 @@ setInterval(function() {
 			fs.access("house_districts.js",fs.constants.W_OK,function(err) {
 				if(!err) {
 					fs.writeFile("house_districts.js",
+						     "(function() { \n" +
 						     strSolidR + "\n" +
 						     strLikelyR + "\n" +
 						     strLeanR + "\n" +
 						     strTossup + "\n" +
 						     strLeanD + "\n" +
 						     strLikelyD + "\n" +
-						     strSolidD + "\n", function(errrr) {
+						     strSolidD + "\n" +
+						     "})();",
+						     function(errrr) {
 						if(errrr) {
 							console.log("Error writing to pvi file: " + errrr);
 						}
