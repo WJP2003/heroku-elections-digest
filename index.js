@@ -10,10 +10,9 @@ var house_districts = [['AL', 7],['AK', 0],['AZ', 9],['AR', 4],['CA', 53],['CO',
 http.createServer(function (req, res) {
 	if(req.url != '/') {
 		if(req.url.substring(0,6) == '/index') {
-			res.writeHead(302, {'Location': '/','Content-Type': 'text/html'}, function() {
-				res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>302<br>Redirecting to <a href=\"/\">here</a></body></html>", function() {
-					res.end();
-				});
+			res.writeHead(302, {'Location': '/','Content-Type': 'text/html'});
+			res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>302<br>Redirecting to <a href=\"/\">here</a></body></html>", function() {
+				res.end();
 			});
 		} else {
 			path = req.url.substring(1,req.length);
@@ -21,24 +20,21 @@ http.createServer(function (req, res) {
 				if(!err) {
 					fs.readFile(path,function(err2,data) {
 						if(!err) {
-							res.writeHead(200, {'Content-Type': 'text/html'}, function() {
-								res.write(data,function() {
-									res.end();
-								});
+							res.writeHead(200, {'Content-Type': 'text/html'});
+							res.write(data,function() {
+								res.end();
 							});
 						} else {
-							res.writeHead(500, {'Content-Type': 'text/html'}, function() {
-								res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>500<br>Internal Server Error<br><br>" + err + "</body></html>", function() {
-									res.end();
-								});
+							res.writeHead(500, {'Content-Type': 'text/html'});
+							res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>500<br>Internal Server Error<br><br>" + err + "</body></html>", function() {
+								res.end();
 							});
 						}
 					});
 				} else {
-					res.writeHead(404, {'Content-Type': 'text/html'}, function() {
-						res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>404<br>Not Found<br><br>" + err + "</body></html>", function() {
-							res.end();
-						});
+					res.writeHead(404, {'Content-Type': 'text/html'});
+					res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>404<br>Not Found<br><br>" + err + "</body></html>", function() {
+						res.end();
 					});
 				}
 			});
@@ -103,17 +99,16 @@ http.createServer(function (req, res) {
 							if(house_districts[j][1] == 0) { break; }
 						}
 					}
-					res.writeHead(200, {'Content-Type': 'text/html'}, function() {
-						strSolidR = "['" + solidR.join("','") + "']" ;
-						strLikelyR = "['" + likelyR.join("','") + "']";
-						strLeanR = "['" + leanR.join("','") + "']";
-						strTossup = "['" + tossup.join("','") + "']";
-						strLeanD = "['" + leanD.join("','") + "']";
-						strLikelyD = "['" + likelyD.join("','") + "']";
-						strSolidD = "['" + solidD.join("','") + "']";
-						res.write("<html><head><script> solidR = " + strSolidR + "\n likelyR = " + strLikelyR + "\n leanR = " + strLeanR + "\n tossup = " + strTossup + "\n leanD = " + strLeanD + "\n likelyD = " + strLikelyD + "\n solidD = " + strSolidD + "\n\n </script>" + data2, function() {
-							res.end();
-						});
+					res.writeHead(200, {'Content-Type': 'text/html'});
+					strSolidR = "['" + solidR.join("','") + "']" ;
+					strLikelyR = "['" + likelyR.join("','") + "']";
+					strLeanR = "['" + leanR.join("','") + "']";
+					strTossup = "['" + tossup.join("','") + "']";
+					strLeanD = "['" + leanD.join("','") + "']";
+					strLikelyD = "['" + likelyD.join("','") + "']";
+					strSolidD = "['" + solidD.join("','") + "']";
+					res.write("<html><head><script> solidR = " + strSolidR + "\n likelyR = " + strLikelyR + "\n leanR = " + strLeanR + "\n tossup = " + strTossup + "\n leanD = " + strLeanD + "\n likelyD = " + strLikelyD + "\n solidD = " + strSolidD + "\n\n </script>" + data2, function() {
+						res.end();
 					});
 				});
 			});
