@@ -92,13 +92,13 @@ runHouseOfReps = function() {
 		document.getElementById(solidD[i]).setAttribute("class","Solid Dem");
 	}
 	
-	document.getElementById("power_graph_solid_rep").innerHTML  = solidR.length;
-	document.getElementById("power_graph_likely_rep").innerHTML = likelyR.length;
-	document.getElementById("power_graph_lean_rep").innerHTML   = leanR.length;
-	document.getElementById("power_graph_tossup").innerHTML = tossup.length;
-	document.getElementById("power_graph_lean_dem").innerHTML   = leanD.length;
-	document.getElementById("power_graph_likely_dem").innerHTML = likelyD.length;
-	document.getElementById("power_graph_solid_dem").innerHTML  = solidD.length;
+	document.getElementById("power_graph_solid_rep_house").innerHTML  = solidR.length;
+	document.getElementById("power_graph_likely_rep_house").innerHTML = likelyR.length;
+	document.getElementById("power_graph_lean_rep_house").innerHTML   = leanR.length;
+	document.getElementById("power_graph_tossup_house").innerHTML = tossup.length;
+	document.getElementById("power_graph_lean_dem_house").innerHTML   = leanD.length;
+	document.getElementById("power_graph_likely_dem_house").innerHTML = likelyD.length;
+	document.getElementById("power_graph_solid_dem_house").innerHTML  = solidD.length;
 }
 
 includeHTML = function() {
