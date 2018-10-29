@@ -88,7 +88,7 @@ setInterval(function() {
 						if(errrr) {
 							console.log("Error writing to pvi file: " + errrr);
 						}
-					}
+					});
 				} else {
 					console.log("Could not open pvi file: " + err);
 				}
