@@ -129,4 +129,6 @@ includeHTML = function() {
 	}
 }
 
+includeHTML();
+
 //</script>
