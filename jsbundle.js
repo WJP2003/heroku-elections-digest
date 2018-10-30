@@ -8,7 +8,6 @@ window.onmousemove = function(e) {
 
 setHover = function(t) {
 	t.onmouseenter = function() {
-		this.setAttribute("selected","");
 		document.getElementById("hover_box").style.visibility = "visible";
 		document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
 		tb = document.getElementById("hover_box_text_rating");
@@ -46,10 +45,6 @@ setHover = function(t) {
 				}
 			}
 		}
-	}
-	t.onmouseleave = function() {
-		this.removeAttribute("selected");
-		document.getElementById("hover_box").style.visibility = "hidden";
 	}
 }
 
