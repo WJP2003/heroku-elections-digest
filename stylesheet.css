@@ -42,7 +42,7 @@ tspan.Lean {
 }
 
 .power_graph .Lean {
-	fill-opacity: 0.3;
+	opacity: 0.3;
 }
 
 path.Rep {
