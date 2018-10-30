@@ -4,7 +4,7 @@ window.onmousemove = function(e) {
 	elem = document.getElementById("hover_box")
 	elem.style.top = (y + 20) + 'px';
 	elem.style.left = (x + 20) + 'px';
-};
+}
 
 setHover = function(t) {
 	t.onmouseenter = function() {
@@ -126,5 +126,3 @@ includeHTML = function() {
 		}
 	}
 }
-
-includeHTML();
