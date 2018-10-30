@@ -118,7 +118,7 @@ http.createServer(function (req, res) {
 				if(!err) {
 					fs.readFile(path,function(err2,data) {
 						if(!err2) {
-							res.writeHead(200, {'Content-Type': ('text/' + req.url.slice(req.url.lastIndexOf('.'),-1))});
+							res.writeHead(200, {'Content-Type': ('text/' + req.url.slice(req.url.lastIndexOf('.')+1,req.url.length))});
 							res.write(data,function() {
 								res.end();
 							});
