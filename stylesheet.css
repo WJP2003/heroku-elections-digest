@@ -7,7 +7,7 @@ path.Solid {
 	fill-opacity: 0.8;
 }
 
-text.Solid {
+tspan.Solid {
 	opacity: 0.8;
 }
 
@@ -19,7 +19,7 @@ path.Likely {
 	fill-opacity: 0.5;
 }
 
-text.Likely {
+tspan.Likely {
 	opacity: 0.5;
 }
 
@@ -31,7 +31,7 @@ path.Lean {
 	fill-opacity: 0.3;
 }
 
-text.Lean {
+tspan.Lean {
 	opacity: 0.3;
 }
 
@@ -43,7 +43,7 @@ path.Rep {
 	fill: #FF0000;
 }
 
-text.Rep {
+tspan.Rep {
 	stroke: #FF0000;
 }
 
@@ -55,7 +55,7 @@ path.Dem {
 	fill: #0000FF;
 }
 
-text.Dem {
+tspan.Dem {
 	stroke: #0000FF;
 }
 
@@ -68,7 +68,7 @@ path.Tossup {
 	opacity: 0.8;
 }
 
-text.Tossup {
+tspan.Tossup {
 	stroke: #7F00FF;
 	opacity: 0.8;
 }
