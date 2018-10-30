@@ -3,12 +3,18 @@ path:hover {
 	stroke: #000000;
 }
 
+tspan {
+	stroke: #000000;
+	stroke-opacity: 1;
+	stroke-width: 0.3333334px;
+}
+
 path.Solid {
 	fill-opacity: 0.8;
 }
 
 tspan.Solid {
-	opacity: 0.8;
+	fill-opacity: 0.8;
 }
 
 .power_graph .Solid {
@@ -20,7 +26,7 @@ path.Likely {
 }
 
 tspan.Likely {
-	opacity: 0.5;
+	fill-opacity: 0.5;
 }
 
 .power_graph .Likely {
@@ -32,11 +38,11 @@ path.Lean {
 }
 
 tspan.Lean {
-	opacity: 0.3;
+	fill-opacity: 0.3;
 }
 
 .power_graph .Lean {
-	opacity: 0.3;
+	fill-opacity: 0.3;
 }
 
 path.Rep {
@@ -44,7 +50,7 @@ path.Rep {
 }
 
 tspan.Rep {
-	stroke: #FF0000;
+	fill: #FF0000;
 }
 
 .power_graph .Rep {
@@ -56,7 +62,7 @@ path.Dem {
 }
 
 tspan.Dem {
-	stroke: #0000FF;
+	fill: #0000FF;
 }
 
 .power_graph .Dem {
@@ -69,8 +75,8 @@ path.Tossup {
 }
 
 tspan.Tossup {
-	stroke: #7F00FF;
-	opacity: 0.8;
+	fill: #7F00FF;
+	stroke-opacity: 0.8;
 }
 
 .power_graph .Tossup {
