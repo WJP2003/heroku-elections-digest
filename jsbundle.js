@@ -46,6 +46,9 @@ setHover = function(t) {
 			}
 		}
 	}
+	t.onmouseleave = function() {
+		document.getElementById("hover_box").style.visibility = "none";
+	}
 }
 
 runHouseOfReps = function() {
