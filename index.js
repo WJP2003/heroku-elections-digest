@@ -151,15 +151,13 @@ racesDownload = function() {
 					
 					for(j = 0;j < house_districts.length;j++) {
 						console.log("parsing senate");
-						str3 = '';
+						str2 = '';
 						for(i = 1;i <= 2;i++) {
-							str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
-							if(str3 == str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length)) {
-								strtemp = str2.slice(str2.split('<div class="ratings-detail-page-table-7-column">'))
-								str3 = strtemp[strtemp.length-1];
-							} else {
-								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
+							if(str2 == data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"))) {
+								str2 = data4.split(">" + house_districts[j][0] + "-");
+								str2 = str2[str2.length - 1];
 							}
+							str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
 							str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.length);
 							str5 = '';
 							if(str4.split('<ul class="ratings-detail-page-table-7-column-ul">').length-1 >= 2) {
@@ -169,7 +167,7 @@ racesDownload = function() {
 							}
 							str6 = str5.slice(str5.lastIndexOf("\">")+2,str5.length);
 							
-							console.log('str3: ' + str3);
+							console.log('str2: ' + str2);
 							console.log('str6: ' + str6);
 							
 							if(str6 == "SOLID R") {
