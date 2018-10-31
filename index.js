@@ -177,6 +177,9 @@ racesDownload = function() {
 						}
 					});
 					
+					for(i = 1;i < senateSplit.length;i++) {
+						console.log("\n\n"+"senateSplit["+i+"]: "+senateSplit[i]);
+					}
 					
 					strSenateSolidR = "['" + senateSplit[7].join("','") + "," + senateSplit[14].join("','") + "']" ;
 					strSenateLikelyR = "['" + senateSplit[6].join("','") + "," + senateSplit[13].join("','") + "']";
