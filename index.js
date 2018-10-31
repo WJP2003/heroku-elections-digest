@@ -44,34 +44,20 @@ races_download = function() {
 							
 							if(str5 == "Solid Republican") {
 								solidR.push(house_districts[j][0] + "-" + i);
-							} else {
-								if(str5 == "Likely Republican") {
-									likelyR.push(house_districts[j][0] + "-" + i);
-								} else {
-									if(str5 == "Lean Republican") {
-										leanR.push(house_districts[j][0] + "-" + i);
-									} else {
-										if(str5 == "Toss-Up Republican") {
-												tossup.push(house_districts[j][0] + "-" + i);
-										} else {
-											if(str5 == "Toss-Up Democratic") {
-												tossup.push(house_districts[j][0] + "-" + i);
-											} else {
-												if(str5 == "Lean Democratic") {
-													leanD.push(house_districts[j][0] + "-" + i);
-												} else {
-													if(str5 == "Likely Democratic") {
-														likelyD.push(house_districts[j][0] + "-" + i);
-													} else {
-														if(str5 == "Solid Democratic") {
-															solidD.push(house_districts[j][0] + "-" + i);
-														}
-													}
-												}
-											}
-										}
-									}
-								}
+							} else if(str5 == "Likely Republican") {
+								likelyR.push(house_districts[j][0] + "-" + i);
+							} else if(str5 == "Lean Republican") {
+								leanR.push(house_districts[j][0] + "-" + i);
+							} else if(str5 == "Toss-Up Republican") {
+								tossup.push(house_districts[j][0] + "-" + i);
+							} else if(str5 == "Toss-Up Democratic") {
+								tossup.push(house_districts[j][0] + "-" + i);
+							} else if(str5 == "Lean Democratic") {
+								leanD.push(house_districts[j][0] + "-" + i);
+							} else if(str5 == "Likely Democratic") {
+								likelyD.push(house_districts[j][0] + "-" + i);
+							} else if(str5 == "Solid Democratic") {
+								solidD.push(house_districts[j][0] + "-" + i);
 							}
 							if(house_districts[j][1] == 0) { break; } // for at-large districts, e.g. MT-AL
 						}
@@ -92,30 +78,18 @@ races_download = function() {
 							
 							if(str6 == "SOLID R") {
 								solidR.push(house_districts[j][0] + "-" + i);
-							} else {
-								if(str6 == "LIKELY R") {
-									likelyR.push(house_districts[j][0] + "-" + i);
-								} else {
-									if(str6 == "LEAN R") {
-										leanR.push(house_districts[j][0] + "-" + i);
-									} else {
-										if(str6 == "TOSS UP") {
-											tossup.push(house_districts[j][0] + "-" + i);
-										} else {
-											if(str6 == "LEAN D") {
-												leanD.push(house_districts[j][0] + "-" + i);
-											} else {
-												if(str6 == "LIKELY D") {
-													likelyD.push(house_districts[j][0] + "-" + i);
-												} else {
-													if(str6 == "SOLID D") {
-														solidD.push(house_districts[j][0] + "-" + i);
-													}
-												}
-											}												}
-										}
-									}
-								}
+							} else if(str6 == "LIKELY R") {
+								likelyR.push(house_districts[j][0] + "-" + i);
+							} else if(str6 == "LEAN R") {
+								leanR.push(house_districts[j][0] + "-" + i);
+							} else if(str6 == "TOSS UP") {
+								tossup.push(house_districts[j][0] + "-" + i);
+							} else if(str6 == "LEAN D") {
+								leanD.push(house_districts[j][0] + "-" + i);
+							} else if(str6 == "LIKELY D") {
+								likelyD.push(house_districts[j][0] + "-" + i);
+							} else if(str6 == "SOLID D") {
+								solidD.push(house_districts[j][0] + "-" + i);
 							}
 						}
 					}
