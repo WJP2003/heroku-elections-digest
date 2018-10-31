@@ -191,7 +191,8 @@ racesDownload = function() {
 							} else {
 								console.log("no");
 							}
-							console.log("\n");
+							console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+");
 						}
 					}
 										
