@@ -151,16 +151,20 @@ racesDownload = function() {
 					for(j = 0;j < house_districts.length;j++) {
 						//console.log("parsing senate");
 						for(i = 1;i <= 2;i++) {
-							str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
-							str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">',str2.length));
-							str4 = ''
-							if(str3.split('<ul class="ratings-detail-page-table-7-column-ul">') == 1) {
-								str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.indexOf('</p>'));
+							if(data4.lastIndexOf(">" + house_districts[j][0] + "-") != -1) {
+								str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
+								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">',str2.length));
+								str4 = ''
+								if(str3.split('<ul class="ratings-detail-page-table-7-column-ul">') == 1) {
+									str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.indexOf('</p>'));
+								} else {
+									str4 = str3.slice(str3.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.lastIndexOf('</p>'));
+								}
+
+								console.log(house_districts[j][0] + "-" + i + " - " + str4);
 							} else {
-								str4 = str3.slice(str3.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.lastIndexOf('</p>'));
+								console.log(house_districts[j][0] + "-" + i + " - N/A");
 							}
-							
-							console.log(house_districts[j][0] + "-" + i + " - " + str4);
 						}
 					}
 					
