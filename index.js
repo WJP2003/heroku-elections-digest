@@ -139,9 +139,7 @@ racesDownload = function() {
 							}
 						}
 					}
-					
-					data3 = '';
-				
+									
 					senateSolidR = [];
 					senateLikelyR = [];
 					senateLeanR = [];
@@ -181,9 +179,7 @@ racesDownload = function() {
 							}
 						}
 					}
-					
-					data4 = '';
-					
+										
 					strHouseSolidR = "['" + houseSolidR.join("','") + "']" ;
 					strHouseLikelyR = "['" + houseLikelyR.join("','") + "']";
 					strHouseLeanR = "['" + houseLeanR.join("','") + "']";
@@ -206,6 +202,7 @@ racesDownload = function() {
 									"houseSolidD = " + strHouseSolidD + "\n" +
 									"})(); \n",
 									function(errrr) {
+										data3 = '';
 										if(errrr) {
 											console.log("Error writing to pvi file: " + errrr);
 										}
@@ -238,6 +235,7 @@ racesDownload = function() {
 									"senateSolidD = " + strSenateSolidD + "\n" +
 									"})(); \n",
 									function(errrr) {
+										data4 = '';
 										if(errrr) {
 											console.log("Error writing to pvi file: " + errrr);
 										}
