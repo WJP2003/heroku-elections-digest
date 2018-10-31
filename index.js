@@ -7,9 +7,6 @@ var port = process.env.PORT || 8080;
 
 var house_districts = [['AL', 7],['AK', 0],['AZ', 9],['AR', 4],['CA', 53],['CO', 7],['CT', 5],['DE', 0],['FL',27],['GA',14],['HI',2],['ID',2],['IL',18],['IN',9],['IA',4],['KS',4],['KY',6],['LA',6],['ME',2],['MD',8],['MA',9],['MI',14],['MN',8],['MS',4],['MO',8],['MT',0],['NE',3],['NV',4],['NH',2],['NJ',12],['NM',3],['NY',27],['NC',13],['ND',0],['OH',16],['OK',5],['OR',5],['PA',18],['RI',2],['SC',7],['SD',0],['TN',9],['TX',36],['UT',4],['VT',0],['VA',11],['WA',10],['WV',3],['WI',8],['WY',0]]
 
-racesDownload();
-setInterval(racesDownload,300000);
-
 http.createServer(function (req, res) {
 	console.log("createServer()");
 	if(req.url != '/') {
@@ -208,3 +205,8 @@ racesDownload = function() {
 		});
 	});
 }
+
+
+racesDownload();
+setInterval(racesDownload,300000);
+
