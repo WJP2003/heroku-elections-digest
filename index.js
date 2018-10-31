@@ -43,21 +43,21 @@ races_download = function() {
 							str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
 							
 							if(str5 == "Solid Republican") {
-								solidR.push(house_districts[j][0] + "-" + i);
+								houseSolidR.push(house_districts[j][0] + "-" + i);
 							} else if(str5 == "Likely Republican") {
-								likelyR.push(house_districts[j][0] + "-" + i);
+								houseLikelyR.push(house_districts[j][0] + "-" + i);
 							} else if(str5 == "Lean Republican") {
-								leanR.push(house_districts[j][0] + "-" + i);
+								houseLeanR.push(house_districts[j][0] + "-" + i);
 							} else if(str5 == "Toss-Up Republican") {
-								tossup.push(house_districts[j][0] + "-" + i);
+								houseTossup.push(house_districts[j][0] + "-" + i);
 							} else if(str5 == "Toss-Up Democratic") {
-								tossup.push(house_districts[j][0] + "-" + i);
+								houseTossup.push(house_districts[j][0] + "-" + i);
 							} else if(str5 == "Lean Democratic") {
-								leanD.push(house_districts[j][0] + "-" + i);
+								houseLeanD.push(house_districts[j][0] + "-" + i);
 							} else if(str5 == "Likely Democratic") {
-								likelyD.push(house_districts[j][0] + "-" + i);
+								houseLikelyD.push(house_districts[j][0] + "-" + i);
 							} else if(str5 == "Solid Democratic") {
-								solidD.push(house_districts[j][0] + "-" + i);
+								houseSolidD.push(house_districts[j][0] + "-" + i);
 							}
 							if(house_districts[j][1] == 0) { break; } // for at-large districts, e.g. MT-AL
 						}
