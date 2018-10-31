@@ -187,13 +187,13 @@ racesDownload = function() {
 						}
 					});
 					
-					strSenateSolidR = "['" + senateSplit[7].join("','") + "," + senateSplit[14].join("','") + "']" ;
-					strSenateLikelyR = "['" + senateSplit[6].join("','") + "," + senateSplit[13].join("','") + "']";
-					strSenateLeanR = "['" + senateSplit[5].join("','") + "," + senateSplit[12].join("','") + "']";
-					strSenateTossup = "['" + senateSplit[4].join("','") + "," + senateSplit[11].join("','") + "']";
-					strSenateLeanD = "['" + senateSplit[3].join("','") + "," + senateSplit[10].join("','") + "']";
-					strSenateLikelyD = "['" + senateSplit[2].join("','") + "," + senateSplit[9].join("','") + "']";
-					strSenateSolidD = "['" + senateSplit[1].join("','") + "," + senateSplit[8].join("','") + "']";
+					strSenateSolidR = "['" + senateSolidR.join("','") + "']" ;
+					strSenateLikelyR = "['" + senateLikelyR.join("','") + "']";
+					strSenateLeanR = "['" + senateLeanR.join("','") + "']";
+					strSenateTossup = "['" + senateTossup.join("','") + "']";
+					strSenateLeanD = "['" + senateLeanD.join("','") + "']";
+					strSenateLikelyD = "['" + senateLikelyD.join("','") + "']";
+					strSenateSolidD = "['" + senateSolidD.join("','") + "']";
 
 					fs.access("senate_ratings.js",fs.constants.W_OK,function(err) {
 						if(!err) {
