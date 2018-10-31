@@ -131,8 +131,8 @@ races_download = function() {
 	});
 }
 
-house_races_download();
-setInterval(house_races_download,300000);
+races_download();
+setInterval(races_download,300000);
 
 http.createServer(function (req, res) {
 	if(req.url != '/') {
