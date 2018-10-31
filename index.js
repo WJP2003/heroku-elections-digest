@@ -73,10 +73,12 @@ http.createServer(function (req, res) {
 		});
 	}
 }).listen(port);
- /*
+
+
 racesDownload = function() {
 	console.log("races_download()");
 	https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
+		console.log("house ratings downloaded");
 		data3 = '';
 	
 		resp.on('data',function(chunk) {
@@ -85,6 +87,7 @@ racesDownload = function() {
 		
 		resp.on('end',function() {
 			https.get('https://www.cookpolitical.com/ratings/senate-race-ratings', function(resp2) {
+				console.log("senate ratings downloaded");
 				data4 = '';
 				
 				resp2.on('data',function(chunk) {
@@ -131,6 +134,8 @@ racesDownload = function() {
 							}
 						}
 					}
+					
+					data3 = '';
 				
 					senateSolidR = [];
 					senateLikelyR = [];
@@ -171,6 +176,8 @@ racesDownload = function() {
 						}
 					}
 					
+					data4 = '';
+					
 					strHouseSolidR = "['" + houseSolidR.join("','") + "']" ;
 					strHouseLikelyR = "['" + houseLikelyR.join("','") + "']";
 					strHouseLeanR = "['" + houseLeanR.join("','") + "']";
@@ -200,6 +207,38 @@ racesDownload = function() {
 							console.log("Could not open pvi file: " + err);
 						}
 					});
+					
+					
+					strSenateSolidR = "['" + senateSolidR.join("','") + "']" ;
+					strSenateLikelyR = "['" + senateLikelyR.join("','") + "']";
+					strSenateLeanR = "['" + senateLeanR.join("','") + "']";
+					strSenateTossup = "['" + senateTossup.join("','") + "']";
+					strSenateLeanD = "['" + senateLeanD.join("','") + "']";
+					strSenateLikelyD = "['" + senateLikelyD.join("','") + "']";
+					strSenateSolidD = "['" + senateSolidD.join("','") + "']";
+
+					fs.access("senate_ratings.js",fs.constants.W_OK,function(err) {
+						if(!err) {
+							fs.writeFile("house_districts.js",
+									"(function() { \n" +
+									"senateSolidR = " + strSenateSolidR + ",\n" +
+									"senateLikelyR = " + strSenateLikelyR + ",\n" +
+									"senateLeanR = " + strSenateLeanR + ",\n" +
+									"senateTossup = " + strSenateTossup + ",\n" +
+									"senateLeanD = " + strSenateLeanD + ",\n" +
+									"senateLikelyD = " + strSenateLikelyD + ",\n" +
+									"senateSolidD = " + strSenateSolidD + "\n" +
+									"})(); \n",
+									function(errrr) {
+										if(errrr) {
+											console.log("Error writing to pvi file: " + errrr);
+										}
+							});
+						} else {
+							console.log("Could not open pvi file: " + err);
+						}
+					});
+
 				});
 			});
 		});
@@ -209,5 +248,3 @@ racesDownload = function() {
 
 racesDownload();
 setInterval(racesDownload,300000);
-
-*/
