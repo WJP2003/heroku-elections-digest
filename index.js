@@ -139,7 +139,15 @@ racesDownload = function() {
 							}
 						}
 					}
-									
+					
+					senateSolidR = [];
+					senateLikelyR = [];
+					senateLeanR = [];
+					senateTossup = [];
+					senateLeanD = [];
+					senateLikelyD = [];
+					senateSolidD = [];
+					
 					for(j = 0;j < house_districts.length;j++) {
 						//console.log("parsing senate");
 						for(i = 1;i <= 2;i++) {
@@ -151,7 +159,7 @@ racesDownload = function() {
 							} else {
 								str4 = str3.slice(str3.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.lastIndexOf('</p>'));
 							}
-							console.log(str4);
+							console.log(house_districts[j][0] + "-" + i + " - " + str4);
 						}
 					}
 					
