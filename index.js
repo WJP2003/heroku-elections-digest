@@ -142,7 +142,7 @@ racesDownload = function() {
 									
 					senateSplit = data4.split('<ul class="ratings-detail-page-table-7-column-ul">');
 					for(i = 1;i < senateSplit.length-1;i++) {
-						senateSplit[i] = senateSplit[i].replace('\n','').replace(/<[\/]?a.*?>/,'').split(/<\/a>\n</li>\n<li class="[^"]+">\n<a href="[^"]+">/);
+						senateSplit[i] = senateSplit[i].replace('\n','').replace(/<[\/]?a.*?>/,'').split(/<\/a>\n<\/li>\n<li class="[^"]+">\n<a href="[^"]+">/);
 					}
 					
 					strHouseSolidR = "['" + houseSolidR.join("','") + "']" ;
