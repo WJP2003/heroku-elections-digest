@@ -112,6 +112,8 @@ racesDownload = function() {
 						console.log("parsing house");
 						for(i = 1;i <= house_districts[j][1] || house_districts[j][1] == 0;i++) {
 							if(house_districts[j][1] == 0) { i = 0; }
+							
+							ii = i;
 							if(i < 10) { i = "0" + i } 
 							
 							str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-" + i));
@@ -139,7 +141,7 @@ racesDownload = function() {
 								houseSolidD.push(house_districts[j][0] + "-" + i);
 							}
 							
-							if(i == "AL") { i = 0 } // for at-largers
+							i = ii;
 						}
 					}
 									
