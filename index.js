@@ -113,6 +113,7 @@ racesDownload = function() {
 						for(i = 1;i <= house_districts[j][1] || house_districts[j][1] == 0;i++) {
 							if(house_districts[j][1] == 0) { i = 0; }
 							if(i < 10) { i = "0" + i } 
+							
 							str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-" + i));
 							str3 = str2.slice(0,str2.lastIndexOf("</p>"));
 							str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
@@ -137,6 +138,8 @@ racesDownload = function() {
 							} else if(str5 == "Solid Democratic") {
 								houseSolidD.push(house_districts[j][0] + "-" + i);
 							}
+							
+							if(i == "AL") { i = 0 } // for at-largers
 						}
 					}
 									
