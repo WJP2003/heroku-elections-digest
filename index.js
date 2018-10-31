@@ -160,7 +160,7 @@ racesDownload = function() {
 								} else {
 									str4 = str3.slice(str3.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.lastIndexOf('</p>'));
 								}
-
+								str5 = str4.replace('<p class="ratings-detail-page-table-7-column-cell-title">','');
 								console.log(house_districts[j][0] + "-" + i + " - " + str4);
 							} else {
 								console.log(house_districts[j][0] + "-" + i + " - N/A");
