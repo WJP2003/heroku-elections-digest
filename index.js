@@ -98,7 +98,6 @@ racesDownload = function() {
 				
 				resp2.on('end',function() {
 					console.log("senate ratings downloaded");
-
 								
 					houseSolidR = [];
 					houseLikelyR = [];
@@ -159,6 +158,7 @@ racesDownload = function() {
 							} else {
 								str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
 							}
+							console.log("\n\nstr2: " + str2);
 							str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
 							str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.length);
 							str5 = '';
@@ -168,10 +168,7 @@ racesDownload = function() {
 								str5 = str4.slice(0,str4.indexOf('</p>'));
 							}
 							str6 = str5.slice(str5.lastIndexOf("\">")+2,str5.length);
-							
-							console.log('str2: ' + str2);
-							console.log('str6: ' + str6);
-							
+														
 							if(str6 == "SOLID R") {
 								senateSolidR.push(house_districts[j][0] + "-" + i);
 							} else if(str6 == "LIKELY R") {
