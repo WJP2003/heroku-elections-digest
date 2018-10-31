@@ -154,9 +154,7 @@ racesDownload = function() {
 						str3 = '';
 						for(i = 1;i <= 2;i++) {
 							str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
-							if(str3 == str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length)) {
-								str3 = ;
-							} else {
+							if(str3 != str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length)) {
 								strtemp = str2.slice(str2.split('<div class="ratings-detail-page-table-7-column">'))
 								str3 = strtemp[strtemp.length-1];
 							}
