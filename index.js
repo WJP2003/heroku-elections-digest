@@ -162,7 +162,7 @@ racesDownload = function() {
 								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
 								str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.length);
 								str5 = '';
-								console.log(str4.substring(0,15));
+								console.log(str4.substring(str4.length-30,str4.length));
 								if(str4.split('<ul class="ratings-detail-page-table-7-column-ul">').length-1 >= 2) {
 									str5 = str4.slice(str4.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str4.lastIndexOf('</p>'));
 								} else {
