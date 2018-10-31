@@ -61,31 +61,31 @@ runColoration = function() {
 	}
 	for(i = 0;i < houseSolidR.length;i++) {
 		console.log("Set as Solid R: " + houseSolidR[i]);
-		document.getElementById(solidR[i]).setAttribute("class","Solid Rep");
+		document.getElementById(houseSolidR[i]).setAttribute("class","Solid Rep");
 	}
 	for(i = 0;i < houseLikelyR.length;i++) {
 		console.log("Set as Likely R: " + houseLikelyR[i]);
-		document.getElementById(likelyR[i]).setAttribute("class","Likely Rep");
+		document.getElementById(houseLikelyR[i]).setAttribute("class","Likely Rep");
 	}
 	for(i = 0;i < houseLeanR.length;i++) {
 		console.log("Set as Lean R: " + houseLeanR[i]);
-		document.getElementById(leanR[i]).setAttribute("class","Lean Rep");
+		document.getElementById(houseLeanR[i]).setAttribute("class","Lean Rep");
 	}
 	for(i = 0;i < houseTossup.length;i++) {
 		console.log("Set as Tossup: " + houseTossup[i]);
-		document.getElementById(tossup[i]).setAttribute("class","Tossup");
+		document.getElementById(houseTossup[i]).setAttribute("class","Tossup");
 	}
 	for(i = 0;i < houseLeanD.length;i++) {
 		console.log("Set as Lean D: " + houseLeanD[i]);
-		document.getElementById(leanD[i]).setAttribute("class","Lean Dem");
+		document.getElementById(houseLeanD[i]).setAttribute("class","Lean Dem");
 	}
 	for(i = 0;i < houseLikelyD.length;i++) {
 		console.log("Set as Likely D: " + houseLikelyD[i]);
-		document.getElementById(likelyD[i]).setAttribute("class","Likely Dem");
+		document.getElementById(houseLikelyD[i]).setAttribute("class","Likely Dem");
 	}
 	for(i = 0;i < houseSolidD.length;i++) {
 		console.log("Set as Solid D: " + houseSolidD[i]);
-		document.getElementById(solidD[i]).setAttribute("class","Solid Dem");
+		document.getElementById(houseSolidD[i]).setAttribute("class","Solid Dem");
 	}
 	
 	document.getElementById("power_graph_solid_rep_house").innerHTML  = houseSolidR.length;
