@@ -100,7 +100,7 @@ races_download = function() {
 										leanR.push(house_districts[j][0] + "-" + i);
 									} else {
 										if(str6 == "TOSS UP") {
-												tossup.push(house_districts[j][0] + "-" + i);
+											tossup.push(house_districts[j][0] + "-" + i);
 										} else {
 											if(str6 == "LEAN D") {
 												leanD.push(house_districts[j][0] + "-" + i);
@@ -117,8 +117,6 @@ races_download = function() {
 									}
 								}
 							}
-						}
-					}
 					
 					strSolidR = "['" + solidR.join("','") + "']" ;
 					strLikelyR = "['" + likelyR.join("','") + "']";
