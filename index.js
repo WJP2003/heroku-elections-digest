@@ -151,7 +151,7 @@ racesDownload = function() {
 					for(j = 0;j < house_districts.length;j++) {
 						str2 = '';
 						for(i = 1;i <= 2;i++) {
-							console.log(house_districts[j][0] + "-" + i);
+							console.log(house_districts[j][0] + "-" + i + " length of split thing: " + data4.split(">" + house_districts[j][0] + "-").length);
 							if(str2 == data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"))) {
 								str2 = data4.split(">" + house_districts[j][0] + "-");
 								str2 = str2[str2.length-2];
