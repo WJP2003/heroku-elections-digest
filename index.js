@@ -78,7 +78,7 @@ http.createServer(function (req, res) {
 racesDownload = function() {
 	console.log("races_download()");
 	https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
-		console.log("house ratings downloading");
+		//console.log("house ratings downloading");
 		data3 = '';
 	
 		resp.on('data',function(chunk) {
@@ -86,10 +86,10 @@ racesDownload = function() {
 		});
 		
 		resp.on('end',function() {
-			console.log("house ratings downloaded");
+			//console.log("house ratings downloaded");
 			
 			https.get('https://www.cookpolitical.com/ratings/senate-race-ratings', function(resp2) {
-				console.log("senate ratings downloading");
+				//console.log("senate ratings downloading");
 				data4 = '';
 				
 				resp2.on('data',function(chunk) {
@@ -97,7 +97,7 @@ racesDownload = function() {
 				});
 				
 				resp2.on('end',function() {
-					console.log("senate ratings downloaded");
+					//console.log("senate ratings downloaded");
 								
 					houseSolidR = [];
 					houseLikelyR = [];
@@ -108,7 +108,7 @@ racesDownload = function() {
 					houseSolidD = [];
 								
 					for(j = 0;j < house_districts.length;j++) {
-						console.log("parsing house");
+						//console.log("parsing house");
 						for(i = 1;i <= house_districts[j][1];i++) {
 							ii = i
 							
@@ -151,6 +151,7 @@ racesDownload = function() {
 					for(j = 0;j < house_districts.length;j++) {
 						str2 = '';
 						for(i = 1;i <= 2;i++) {
+							console.log(">" + house_districts[j][0] + "-" + (i-1));
 							str2 = data4.split(">" + house_districts[j][0] + "-")[i-1];
 							if(str2 != undefined) {
 								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
