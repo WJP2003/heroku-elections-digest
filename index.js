@@ -225,7 +225,7 @@ racesDownload = function() {
 					fs.access("senate_ratings.js",fs.constants.W_OK,function(err) {
 						if(!err) {
 							console.log("writing senate to file");
-							fs.writeFile("house_districts.js",
+							fs.writeFile("senate_ratings.js",
 									"(function() { \n" +
 									"senateSolidR = " + strSenateSolidR + ",\n" +
 									"senateLikelyR = " + strSenateLikelyR + ",\n" +
