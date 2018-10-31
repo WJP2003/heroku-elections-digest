@@ -7,6 +7,76 @@ var port = process.env.PORT || 8080;
 
 var house_districts = [['AL', 7],['AK', 0],['AZ', 9],['AR', 4],['CA', 53],['CO', 7],['CT', 5],['DE', 0],['FL',27],['GA',14],['HI',2],['ID',2],['IL',18],['IN',9],['IA',4],['KS',4],['KY',6],['LA',6],['ME',2],['MD',8],['MA',9],['MI',14],['MN',8],['MS',4],['MO',8],['MT',0],['NE',3],['NV',4],['NH',2],['NJ',12],['NM',3],['NY',27],['NC',13],['ND',0],['OH',16],['OK',5],['OR',5],['PA',18],['RI',2],['SC',7],['SD',0],['TN',9],['TX',36],['UT',4],['VT',0],['VA',11],['WA',10],['WV',3],['WI',8],['WY',0]]
 
+racesDownload();
+setInterval(racesDownload,300000);
+
+http.createServer(function (req, res) {
+	console.log("createServer()");
+	if(req.url != '/') {
+		console.log("req.url != '/'");
+		if(req.url.substring(0,6) == '/index') {
+			console.log("req.url.substring(0,6) == 'index'");
+			res.writeHead(302, {'Location': '/','Content-Type': 'text/html'});
+			res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>302<br>Redirecting to <a href=\"/\">here</a></body></html>", function() {
+				res.end();
+			});
+		} else {
+			console.log("req.url == '/'");
+			path = req.url.substring(1,req.length);
+			fs.access(path,fs.constants.R_OK,function(err) {
+				if(!err) {
+					console.log("!err");
+					fs.readFile(path,function(err2,data) {
+						console.log("fs.readFile");
+						if(!err2) {
+							console.log("!err2");
+							res.writeHead(200, {'Content-Type': ('text/' + req.url.slice(req.url.lastIndexOf('.')+1,req.url.length))});
+							res.write(data,function() {
+								res.end();
+							});
+						} else {
+							console.log("err2");
+							res.writeHead(500, {'Content-Type': 'text/html'});
+							res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>500<br>Internal Server Error<br><br>" + err + "</body></html>", function() {
+								res.end();
+							});
+						}
+					});
+				} else {
+					console.log("err");
+					res.writeHead(404, {'Content-Type': 'text/html'});
+					res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>404<br>Not Found<br><br>" + err + "</body></html>", function() {
+						res.end();
+					});
+				}
+			});
+		}
+	} else {
+		fs.access('index.html',fs.constants.R_OK,function(err) {
+			if(!err) {
+				fs.readFile('index.html',function(err2,data2) {
+					if(!err2) {
+						res.writeHead(200, {'Content-Type': 'text/html'});
+						res.write(data2,function() {
+							res.end();
+						});
+					} else {
+						res.writeHead(500, {'Content-Type': 'text/html'});
+						res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>500<br>Internal Server Error<br><br>" + err2 + "</body></html>", function() {
+							res.end();
+						});
+					}
+				});
+			} else {
+				res.writeHead(404, {'Content-Type': 'text/html'});
+				res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>404<br>Not Found<br><br>" + err + "</body></html>", function() {
+					res.end();
+				});
+			}
+		});
+	}
+}).listen(port);
+
 racesDownload = function() {
 	console.log("races_download()");
 	https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
@@ -138,73 +208,3 @@ racesDownload = function() {
 		});
 	});
 }
-
-racesDownload();
-setInterval(racesDownload,300000);
-
-http.createServer(function (req, res) {
-	console.log("createServer()");
-	if(req.url != '/') {
-		console.log("req.url != '/'");
-		if(req.url.substring(0,6) == '/index') {
-			console.log("req.url.substring(0,6) == 'index'");
-			res.writeHead(302, {'Location': '/','Content-Type': 'text/html'});
-			res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>302<br>Redirecting to <a href=\"/\">here</a></body></html>", function() {
-				res.end();
-			});
-		} else {
-			console.log("req.url == '/'");
-			path = req.url.substring(1,req.length);
-			fs.access(path,fs.constants.R_OK,function(err) {
-				if(!err) {
-					console.log("!err");
-					fs.readFile(path,function(err2,data) {
-						console.log("fs.readFile");
-						if(!err2) {
-							console.log("!err2");
-							res.writeHead(200, {'Content-Type': ('text/' + req.url.slice(req.url.lastIndexOf('.')+1,req.url.length))});
-							res.write(data,function() {
-								res.end();
-							});
-						} else {
-							console.log("err2");
-							res.writeHead(500, {'Content-Type': 'text/html'});
-							res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>500<br>Internal Server Error<br><br>" + err + "</body></html>", function() {
-								res.end();
-							});
-						}
-					});
-				} else {
-					console.log("err");
-					res.writeHead(404, {'Content-Type': 'text/html'});
-					res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>404<br>Not Found<br><br>" + err + "</body></html>", function() {
-						res.end();
-					});
-				}
-			});
-		}
-	} else {
-		fs.access('index.html',fs.constants.R_OK,function(err) {
-			if(!err) {
-				fs.readFile('index.html',function(err2,data2) {
-					if(!err2) {
-						res.writeHead(200, {'Content-Type': 'text/html'});
-						res.write(data2,function() {
-							res.end();
-						});
-					} else {
-						res.writeHead(500, {'Content-Type': 'text/html'});
-						res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>500<br>Internal Server Error<br><br>" + err2 + "</body></html>", function() {
-							res.end();
-						});
-					}
-				});
-			} else {
-				res.writeHead(404, {'Content-Type': 'text/html'});
-				res.write("<html><body style='font-family:Verdana;font-size:5vw;font-weight:bold;'>404<br>Not Found<br><br>" + err + "</body></html>", function() {
-					res.end();
-				});
-			}
-		});
-	}
-}).listen(port);
