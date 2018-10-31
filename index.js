@@ -78,7 +78,7 @@ http.createServer(function (req, res) {
 racesDownload = function() {
 	console.log("races_download()");
 	https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
-		console.log("house ratings downloaded");
+		console.log("house ratings downloading");
 		data3 = '';
 	
 		resp.on('data',function(chunk) {
@@ -86,8 +86,10 @@ racesDownload = function() {
 		});
 		
 		resp.on('end',function() {
+			console.log("house ratings downloaded");
+			
 			https.get('https://www.cookpolitical.com/ratings/senate-race-ratings', function(resp2) {
-				console.log("senate ratings downloaded");
+				console.log("senate ratings downloading");
 				data4 = '';
 				
 				resp2.on('data',function(chunk) {
@@ -95,6 +97,8 @@ racesDownload = function() {
 				});
 				
 				resp2.on('end',function() {
+					console.log("senate ratings downloaded");
+
 								
 					houseSolidR = [];
 					houseLikelyR = [];
@@ -105,6 +109,7 @@ racesDownload = function() {
 					houseSolidD = [];
 								
 					for(j = 0;j < house_districts.length;j++) {
+						console.log("parsing house");
 						for(i = 1;i <= house_districts[j][1] || house_districts[j][1] == 0;i++) {
 							if(house_districts[j][1] == 0) { i = 0; }
 							if(i < 10) { i = "0" + i } 
@@ -146,6 +151,7 @@ racesDownload = function() {
 					senateSolidD = [];
 					
 					for(j = 0;j < house_districts.length;j++) {
+						console.log("parsing senate");
 						for(i = 1;i <= 2;i++) {
 							str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
 							str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
@@ -188,6 +194,7 @@ racesDownload = function() {
 	
 					fs.access("house_districts.js",fs.constants.W_OK,function(err) {
 						if(!err) {
+							console.log("writing house to file");
 							fs.writeFile("house_districts.js",
 									"(function() { \n" +
 									"houseSolidR = " + strHouseSolidR + ",\n" +
@@ -219,6 +226,7 @@ racesDownload = function() {
 
 					fs.access("senate_ratings.js",fs.constants.W_OK,function(err) {
 						if(!err) {
+							console.log("writing senate to file");
 							fs.writeFile("house_districts.js",
 									"(function() { \n" +
 									"senateSolidR = " + strSenateSolidR + ",\n" +
