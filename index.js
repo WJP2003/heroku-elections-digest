@@ -164,6 +164,14 @@ racesDownload = function() {
 						}
 					}
 					
+					strHouseSolidR = "['" + houseSolidR.join("','") + "']" ;
+					strHouseLikelyR = "['" + houseLikelyR.join("','") + "']";
+					strHouseLeanR = "['" + houseLeanR.join("','") + "']";
+					strHouseTossup = "['" + houseTossup.join("','") + "']";
+					strHouseLeanD = "['" + houseLeanD.join("','") + "']";
+					strHouseLikelyD = "['" + houseLikelyD.join("','") + "']";
+					strHouseSolidD = "['" + houseSolidD.join("','") + "']";
+					
 					fs.access("house_districts.js",fs.constants.W_OK,function(err) {
 						if(!err) {
 							console.log("writing house to file");
