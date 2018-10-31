@@ -149,7 +149,6 @@ racesDownload = function() {
 					senateSolidD = [];
 					
 					for(j = 0;j < house_districts.length;j++) {
-						console.log("parsing senate");
 						str2 = '';
 						for(i = 1;i <= 2;i++) {
 							console.log(house_districts[j][0] + "-" + i);
@@ -160,10 +159,10 @@ racesDownload = function() {
 								str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
 							}
 							if(str2) {
-								console.log(str2.substring(0,15));
 								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
 								str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.length);
 								str5 = '';
+								console.log(str4.substring(0,15));
 								if(str4.split('<ul class="ratings-detail-page-table-7-column-ul">').length-1 >= 2) {
 									str5 = str4.slice(str4.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str4.lastIndexOf('</p>'));
 								} else {
