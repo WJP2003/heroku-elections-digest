@@ -140,53 +140,11 @@ racesDownload = function() {
 						}
 					}
 									
-					senateSolidR = [];
-					senateLikelyR = [];
-					senateLeanR = [];
-					senateTossup = [];
-					senateLeanD = [];
-					senateLikelyD = [];
-					senateSolidD = [];
-					
-					for(j = 0;j < house_districts.length;j++) {
-						str2 = '';
-						for(i = 1;i <= 2;i++) {
-							console.log(">" + house_districts[j][0] + "-" + i);
-							str2 = data4.split(">" + house_districts[j][0] + "-")[i-1];
-							if(str2 != data4 && str2 != undefined) {
-								console.log("yes");
-								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column-body">'),str2.length);
-								str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.length);
-
-								str5 = '';
-								if(str4.split('<ul class="ratings-detail-page-table-7-column-ul">').length-1 >= 2) {
-									str5 = str4.slice(str4.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str4.lastIndexOf('</p>'));
-								} else {
-									str5 = str4.slice(0,str4.indexOf('</p>'));
-								}
-								str6 = str5.slice(str5.lastIndexOf("\">")+2,str5.length);
-
-								if(str6 == "SOLID R") {
-									senateSolidR.push(house_districts[j][0] + "-" + i);
-								} else if(str6 == "LIKELY R") {
-										senateLikelyR.push(house_districts[j][0] + "-" + i);
-								} else if(str6 == "LEAN R") {
-									senateLeanR.push(house_districts[j][0] + "-" + i);
-								} else if(str6 == "TOSS UP") {
-									senateTossup.push(house_districts[j][0] + "-" + i);
-								} else if(str6 == "LEAN D") {
-									senateLeanD.push(house_districts[j][0] + "-" + i);
-								} else if(str6 == "LIKELY D") {
-									senateLikelyD.push(house_districts[j][0] + "-" + i);
-								} else if(str6 == "SOLID D") {
-									senateSolidD.push(house_districts[j][0] + "-" + i);
-								}
-							} else {
-								console.log("no");
-							}
-						}
+					senateSplit = data4.split('<ul class="ratings-detail-page-table-7-column-ul">');
+					for(i = 1;i < senateSplit.length-1;i++) {
+						senateSplit[i] = senateSplit[i].replace('<li class="dem-li-color">\s+<a href="/senate/race/\d\d\d\d">','').replace('</a>\s+</li>\s+','');
 					}
-										
+					
 					strHouseSolidR = "['" + houseSolidR.join("','") + "']" ;
 					strHouseLikelyR = "['" + houseLikelyR.join("','") + "']";
 					strHouseLeanR = "['" + houseLeanR.join("','") + "']";
@@ -220,13 +178,13 @@ racesDownload = function() {
 					});
 					
 					
-					strSenateSolidR = "['" + senateSolidR.join("','") + "']" ;
-					strSenateLikelyR = "['" + senateLikelyR.join("','") + "']";
-					strSenateLeanR = "['" + senateLeanR.join("','") + "']";
-					strSenateTossup = "['" + senateTossup.join("','") + "']";
-					strSenateLeanD = "['" + senateLeanD.join("','") + "']";
-					strSenateLikelyD = "['" + senateLikelyD.join("','") + "']";
-					strSenateSolidD = "['" + senateSolidD.join("','") + "']";
+					strSenateSolidR = "['" + senateSplit[7].join("','") + "," + senateSplit[14].join("','") + "']" ;
+					strSenateLikelyR = "['" + senateSplit[6].join("','") + "," + senateSplit[13].join("','") + "']";
+					strSenateLeanR = "['" + senateSplit[5].join("','") + "," + senateSplit[12].join("','") + "']";
+					strSenateTossup = "['" + senateSplit[4].join("','") + "," + senateSplit[11].join("','") + "']";
+					strSenateLeanD = "['" + senateSplit[3].join("','") + "," + senateSplit[10].join("','") + "']";
+					strSenateLikelyD = "['" + senateSplit[2].join("','") + "," + senateSplit[9].join("','") + "']";
+					strSenateSolidD = "['" + senateSplit[1].join("','") + "," + senateSplit[8].join("','") + "']";
 
 					fs.access("senate_ratings.js",fs.constants.W_OK,function(err) {
 						if(!err) {
