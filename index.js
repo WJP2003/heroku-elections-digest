@@ -42,6 +42,8 @@ races_download = function() {
 							str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
 							str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
 							
+							if(i == "00") { i = "AL" } // for at-largers
+							
 							if(str5 == "Solid Republican") {
 								houseSolidR.push(house_districts[j][0] + "-" + i);
 							} else if(str5 == "Likely Republican") {
@@ -59,7 +61,6 @@ races_download = function() {
 							} else if(str5 == "Solid Democratic") {
 								houseSolidD.push(house_districts[j][0] + "-" + i);
 							}
-							if(house_districts[j][1] == 0) { break; } // for at-large districts, e.g. MT-AL
 						}
 					}
 				
