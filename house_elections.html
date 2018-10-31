@@ -1,11 +1,7 @@
-<html>
-	<head>
+<body style="visibility: hidden;" onload="includeHTML();">
 	<div id="header" style="font-family:Verdana; font-size:50pt; font-weight: bold;">
 		House of Representatives Elections
 	</div>
-</head>
-	
-<body style="visibility: hidden;" onload="includeHTML();">
 	<table class="power_graph" id="power_graph_house" style="visibility:hidden;font-family:Verdana;font-size:25pt;border-spacing:3px;border-collapse:separate;">
 		<tr>
 			<td class="Solid Rep"><span class="power_graph_solid_rep" id="power_graph_solid_rep_house" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
@@ -29,4 +25,3 @@
 	<import href="/house_of_reps.svg" onload="runColoration();document.getElementsByTagName('body')[0].style='';document.getElementById('power_graph_house').style.visibility='visible'"></import>
 	<div style="font-weight:bold;font-size:14pt;">Cook Political Report, automatically updated. <a href="https://www.cookpolitical.com/ratings/house-race-ratings">https://www.cookpolitical.com/ratings/house-race-ratings</a></div>
 </body>
-</html>
