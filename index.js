@@ -140,19 +140,19 @@ racesDownload = function() {
 						}
 					}
 									
-					senateSplit = data4.split('<ul class="ratings-detail-page-table-7-column-ul">');
-					for(i = 1;i < senateSplit.length-1;i++) {
-						senateSplit[i] = senateSplit[i].replace('\n','').replace(/<[\/]?a.*?>/,'').split(/<\/a>\n<\/li>\n<li class="[^"]+">\n<a href="[^"]+">/);
+					for(j = 0;j < house_districts.length;j++) {
+						//console.log("parsing senate");
+						for(i = 1;i <= 2;i++) {
+							str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
+							str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">',str2.length));
+							
+							/*
+							STUFF HERE
+							
+							*/
+						}
 					}
 					
-					strHouseSolidR = "['" + houseSolidR.join("','") + "']" ;
-					strHouseLikelyR = "['" + houseLikelyR.join("','") + "']";
-					strHouseLeanR = "['" + houseLeanR.join("','") + "']";
-					strHouseTossup = "['" + houseTossup.join("','") + "']";
-					strHouseLeanD = "['" + houseLeanD.join("','") + "']";
-					strHouseLikelyD = "['" + houseLikelyD.join("','") + "']";
-					strHouseSolidD = "['" + houseSolidD.join("','") + "']";
-	
 					fs.access("house_districts.js",fs.constants.W_OK,function(err) {
 						if(!err) {
 							console.log("writing house to file");
@@ -176,10 +176,6 @@ racesDownload = function() {
 							console.log("Could not open pvi file: " + err);
 						}
 					});
-					
-					for(i = 1;i < senateSplit.length;i++) {
-						console.log("\n\n"+"senateSplit["+i+"]: "+senateSplit[i]);
-					}
 					
 					strSenateSolidR = "['" + senateSplit[7].join("','") + "," + senateSplit[14].join("','") + "']" ;
 					strSenateLikelyR = "['" + senateSplit[6].join("','") + "," + senateSplit[13].join("','") + "']";
