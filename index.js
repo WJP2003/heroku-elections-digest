@@ -159,31 +159,32 @@ racesDownload = function() {
 							} else {
 								str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
 							}
-							console.log(str2);
-							str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
-							str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.length);
-							str5 = '';
-							if(str4.split('<ul class="ratings-detail-page-table-7-column-ul">').length-1 >= 2) {
-								str5 = str4.slice(str4.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str4.lastIndexOf('</p>'));
-							} else {
-								str5 = str4.slice(0,str4.indexOf('</p>'));
-							}
-							str6 = str5.slice(str5.lastIndexOf("\">")+2,str5.length);
-														
-							if(str6 == "SOLID R") {
-								senateSolidR.push(house_districts[j][0] + "-" + i);
-							} else if(str6 == "LIKELY R") {
-								senateLikelyR.push(house_districts[j][0] + "-" + i);
-							} else if(str6 == "LEAN R") {
-								senateLeanR.push(house_districts[j][0] + "-" + i);
-							} else if(str6 == "TOSS UP") {
-								senateTossup.push(house_districts[j][0] + "-" + i);
-							} else if(str6 == "LEAN D") {
-								senateLeanD.push(house_districts[j][0] + "-" + i);
-							} else if(str6 == "LIKELY D") {
-								senateLikelyD.push(house_districts[j][0] + "-" + i);
-							} else if(str6 == "SOLID D") {
-								senateSolidD.push(house_districts[j][0] + "-" + i);
+							if(str2) {
+								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
+								str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.length);
+								str5 = '';
+								if(str4.split('<ul class="ratings-detail-page-table-7-column-ul">').length-1 >= 2) {
+									str5 = str4.slice(str4.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str4.lastIndexOf('</p>'));
+								} else {
+									str5 = str4.slice(0,str4.indexOf('</p>'));
+								}
+								str6 = str5.slice(str5.lastIndexOf("\">")+2,str5.length);
+
+								if(str6 == "SOLID R") {
+									senateSolidR.push(house_districts[j][0] + "-" + i);
+								} else if(str6 == "LIKELY R") {
+									senateLikelyR.push(house_districts[j][0] + "-" + i);
+								} else if(str6 == "LEAN R") {
+									senateLeanR.push(house_districts[j][0] + "-" + i);
+								} else if(str6 == "TOSS UP") {
+									senateTossup.push(house_districts[j][0] + "-" + i);
+								} else if(str6 == "LEAN D") {
+									senateLeanD.push(house_districts[j][0] + "-" + i);
+								} else if(str6 == "LIKELY D") {
+									senateLikelyD.push(house_districts[j][0] + "-" + i);
+								} else if(str6 == "SOLID D") {
+									senateSolidD.push(house_districts[j][0] + "-" + i);
+								}
 							}
 						}
 					}
