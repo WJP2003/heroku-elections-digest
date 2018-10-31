@@ -11,31 +11,31 @@ setHover = function(t) {
 		document.getElementById("hover_box").style.visibility = "visible";
 		document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
 		tb = document.getElementById("hover_box_text_rating");
-		if(solidR.includes(event.srcElement.id)) {
+		if(houseSolidR.includes(event.srcElement.id)) {
 			tb.innerHTML = "Solid Rep.";
 			tb.setAttribute("class","Solid Rep");
 		} else {
-			if(likelyR.includes(event.srcElement.id)) {
+			if(houseLikelyR.includes(event.srcElement.id)) {
 				tb.innerHTML = "Likely Rep.";
 				tb.setAttribute("class","Likely Rep");
 			} else {
-				if(leanR.includes(event.srcElement.id)) {
+				if(houseLeanR.includes(event.srcElement.id)) {
 					tb.innerHTML = "Lean Rep.";
 					tb.setAttribute("class","Lean Rep");
 				} else {
-					if(tossup.includes(event.srcElement.id)) {
+					if(houseTossup.includes(event.srcElement.id)) {
 						tb.innerHTML = "Tossup";
 						tb.setAttribute("class","Tossup");
 					} else {
-						if(leanD.includes(event.srcElement.id)) {
+						if(houseLeanD.includes(event.srcElement.id)) {
 							tb.innerHTML = "Lean Dem.";
 							tb.setAttribute("class","Lean Dem");
 						} else {
-							if(likelyD.includes(event.srcElement.id)) {
+							if(houseLikelyD.includes(event.srcElement.id)) {
 								tb.innerHTML = "Likely Dem.";
 								tb.setAttribute("class","Likely Dem");
 							} else {
-								if(solidD.includes(event.srcElement.id)) {
+								if(houseSolidD.includes(event.srcElement.id)) {
 									tb.innerHTML = "Solid Dem.";
 									tb.setAttribute("class","Solid Dem");
 								}
@@ -59,42 +59,42 @@ runColoration = function() {
 			allPaths[i].style = "";
 		}
 	}
-	for(i = 0;i < solidR.length;i++) {
-		console.log("Set as Solid R: " + solidR[i]);
+	for(i = 0;i < houseSolidR.length;i++) {
+		console.log("Set as Solid R: " + houseSolidR[i]);
 		document.getElementById(solidR[i]).setAttribute("class","Solid Rep");
 	}
-	for(i = 0;i < likelyR.length;i++) {
-		console.log("Set as Likely R: " + likelyR[i]);
+	for(i = 0;i < houseLikelyR.length;i++) {
+		console.log("Set as Likely R: " + houseLikelyR[i]);
 		document.getElementById(likelyR[i]).setAttribute("class","Likely Rep");
 	}
-	for(i = 0;i < leanR.length;i++) {
-		console.log("Set as Lean R: " + leanR[i]);
+	for(i = 0;i < houseLeanR.length;i++) {
+		console.log("Set as Lean R: " + houseLeanR[i]);
 		document.getElementById(leanR[i]).setAttribute("class","Lean Rep");
 	}
-	for(i = 0;i < tossup.length;i++) {
-		console.log("Set as Tossup: " + tossup[i]);
+	for(i = 0;i < houseTossup.length;i++) {
+		console.log("Set as Tossup: " + houseTossup[i]);
 		document.getElementById(tossup[i]).setAttribute("class","Tossup");
 	}
-	for(i = 0;i < leanD.length;i++) {
-		console.log("Set as Lean D: " + leanD[i]);
+	for(i = 0;i < houseLeanD.length;i++) {
+		console.log("Set as Lean D: " + houseLeanD[i]);
 		document.getElementById(leanD[i]).setAttribute("class","Lean Dem");
 	}
-	for(i = 0;i < likelyD.length;i++) {
-		console.log("Set as Likely D: " + likelyD[i]);
+	for(i = 0;i < houseLikelyD.length;i++) {
+		console.log("Set as Likely D: " + houseLikelyD[i]);
 		document.getElementById(likelyD[i]).setAttribute("class","Likely Dem");
 	}
-	for(i = 0;i < solidD.length;i++) {
-		console.log("Set as Solid D: " + solidD[i]);
+	for(i = 0;i < houseSolidD.length;i++) {
+		console.log("Set as Solid D: " + houseSolidD[i]);
 		document.getElementById(solidD[i]).setAttribute("class","Solid Dem");
 	}
 	
-	document.getElementById("power_graph_solid_rep_house").innerHTML  = solidR.length;
-	document.getElementById("power_graph_likely_rep_house").innerHTML = likelyR.length;
-	document.getElementById("power_graph_lean_rep_house").innerHTML   = leanR.length;
-	document.getElementById("power_graph_tossup_house").innerHTML = tossup.length;
-	document.getElementById("power_graph_lean_dem_house").innerHTML   = leanD.length;
-	document.getElementById("power_graph_likely_dem_house").innerHTML = likelyD.length;
-	document.getElementById("power_graph_solid_dem_house").innerHTML  = solidD.length;
+	document.getElementById("power_graph_solid_rep_house").innerHTML  = houseSolidR.length;
+	document.getElementById("power_graph_likely_rep_house").innerHTML = houseLikelyR.length;
+	document.getElementById("power_graph_lean_rep_house").innerHTML   = houseLeanR.length;
+	document.getElementById("power_graph_tossup_house").innerHTML     = houseTossup.length;
+	document.getElementById("power_graph_lean_dem_house").innerHTML   = houseLeanD.length;
+	document.getElementById("power_graph_likely_dem_house").innerHTML = houseLikelyD.length;
+	document.getElementById("power_graph_solid_dem_house").innerHTML  = houseSolidD.length;
 }
 
 includeHTML = function() {
