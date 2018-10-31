@@ -142,7 +142,7 @@ racesDownload = function() {
 									
 					senateSplit = data4.split('<ul class="ratings-detail-page-table-7-column-ul">');
 					for(i = 1;i < senateSplit.length-1;i++) {
-						senateSplit[i] = senateSplit[i].split(/<li class="\w\w\w-li-color">/);
+						senateSplit[i] = senateSplit[i].split(/<li class="\w\w\w-li-color">\w+<a href="\/senate\/race\/\d\d\d\d">/);
 					}
 					
 					strHouseSolidR = "['" + houseSolidR.join("','") + "']" ;
