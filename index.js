@@ -145,11 +145,13 @@ racesDownload = function() {
 						for(i = 1;i <= 2;i++) {
 							str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
 							str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">',str2.length));
-							
-							/*
-							STUFF HERE
-							
-							*/
+							str4 = ''
+							if(str3.split('<ul class="ratings-detail-page-table-7-column-ul">') == 1) {
+								str4 = str.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str.indexOf('</p>'));
+							} else {
+								str4 = str.slice(str3.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str.lastIndexOf('</p>'));
+							}
+							console.log(str4);
 						}
 					}
 					
