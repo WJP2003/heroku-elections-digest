@@ -25,13 +25,13 @@ races_download = function() {
 				
 				resp2.on('end',function() {
 								
-					solidR = [];
-					likelyR = [];
-					leanR = [];
-					tossup = [];
-					leanD = [];
-					likelyD = [];
-					solidD = [];
+					houseSolidR = [];
+					houseLikelyR = [];
+					houseLeanR = [];
+					houseTossup = [];
+					houseLeanD = [];
+					houseLikelyD = [];
+					houseSolidD = [];
 								
 					for(j = 0;j < house_districts.length;j++) {
 						for(i = 1;i <= house_districts[j][1] || house_districts[j][1] == 0;i++) {
@@ -63,6 +63,14 @@ races_download = function() {
 						}
 					}
 				
+					senateSolidR = [];
+					senateLikelyR = [];
+					senateLeanR = [];
+					senateTossup = [];
+					senateLeanD = [];
+					senateLikelyD = [];
+					senateSolidD = [];
+					
 					for(j = 0;j < house_districts.length;j++) {
 						for(i = 1;i <= 2;i++) {
 							str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
@@ -94,32 +102,30 @@ races_download = function() {
 						}
 					}
 					
-					strSolidR = "['" + solidR.join("','") + "']" ;
-					strLikelyR = "['" + likelyR.join("','") + "']";
-					strLeanR = "['" + leanR.join("','") + "']";
-					strTossup = "['" + tossup.join("','") + "']";
-					strLeanD = "['" + leanD.join("','") + "']";
-					strLikelyD = "['" + likelyD.join("','") + "']";
-					strSolidD = "['" + solidD.join("','") + "']";
+					strHouseSolidR = "['" + houseSolidR.join("','") + "']" ;
+					strHouseLikelyR = "['" + houseLikelyR.join("','") + "']";
+					strHouseLeanR = "['" + houseLeanR.join("','") + "']";
+					strHouseTossup = "['" + houseTossup.join("','") + "']";
+					strHouseLeanD = "['" + houseLeanD.join("','") + "']";
+					strHouseLikelyD = "['" + houseLikelyD.join("','") + "']";
+					strHouseSolidD = "['" + houseSolidD.join("','") + "']";
 	
 					fs.access("house_districts.js",fs.constants.W_OK,function(err) {
 						if(!err) {
 							fs.writeFile("house_districts.js",
-								     "//<script> \n" +
-								     "(function() { \n" +
-								     "solidR = " + strSolidR + ",\n" +
-								     "likelyR = " + strLikelyR + ",\n" +
-							 	    "leanR = " + strLeanR + ",\n" +
-								     "tossup = " + strTossup + ",\n" +
-								     "leanD = " + strLeanD + ",\n" +
-								     "likelyD = " + strLikelyD + ",\n" +
-								     "solidD = " + strSolidD + "\n" +
-								     "})(); \n" +
-								     "//</script> \n",
-								     function(errrr) {
-								if(errrr) {
-									console.log("Error writing to pvi file: " + errrr);
-								}
+									"(function() { \n" +
+									"houseSolidR = " + strHouseSolidR + ",\n" +
+									"houseLikelyR = " + strHouseLikelyR + ",\n" +
+									"houseLeanR = " + strHouseLeanR + ",\n" +
+									"houseTossup = " + strHouseTossup + ",\n" +
+									"houseLeanD = " + strHouseLeanD + ",\n" +
+									"houseLikelyD = " + strHouseLikelyD + ",\n" +
+									"houseSolidD = " + strHouseSolidD + "\n" +
+									"})(); \n",
+									function(errrr) {
+										if(errrr) {
+											console.log("Error writing to pvi file: " + errrr);
+										}
 							});
 						} else {
 							console.log("Could not open pvi file: " + err);
