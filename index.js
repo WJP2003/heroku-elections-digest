@@ -167,6 +167,9 @@ racesDownload = function() {
 							}
 							str6 = str5.slice(str5.lastIndexOf("\">")+2,str5.length);
 							
+							console.log('str3: ' + str3);
+							console.log('str6: ' + str6);
+							
 							if(str6 == "SOLID R") {
 								senateSolidR.push(house_districts[j][0] + "-" + i);
 							} else if(str6 == "LIKELY R") {
