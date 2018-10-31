@@ -85,19 +85,19 @@ races_download = function() {
 							str6 = str5.slice(str5.lastIndexOf("\">")+2,str5.length);
 							
 							if(str6 == "SOLID R") {
-								houseSolidR.push(house_districts[j][0] + "-" + i);
+								senateSolidR.push(house_districts[j][0] + "-" + i);
 							} else if(str6 == "LIKELY R") {
-								houseLikelyR.push(house_districts[j][0] + "-" + i);
+								senateLikelyR.push(house_districts[j][0] + "-" + i);
 							} else if(str6 == "LEAN R") {
-								houseLeanR.push(house_districts[j][0] + "-" + i);
+								senateLeanR.push(house_districts[j][0] + "-" + i);
 							} else if(str6 == "TOSS UP") {
-								houseTossup.push(house_districts[j][0] + "-" + i);
+								senateTossup.push(house_districts[j][0] + "-" + i);
 							} else if(str6 == "LEAN D") {
-								houseLeanD.push(house_districts[j][0] + "-" + i);
+								senateLeanD.push(house_districts[j][0] + "-" + i);
 							} else if(str6 == "LIKELY D") {
-								houseLikelyD.push(house_districts[j][0] + "-" + i);
+								senateLikelyD.push(house_districts[j][0] + "-" + i);
 							} else if(str6 == "SOLID D") {
-								houseSolidD.push(house_districts[j][0] + "-" + i);
+								senateSolidD.push(house_districts[j][0] + "-" + i);
 							}
 						}
 					}
