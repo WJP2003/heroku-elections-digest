@@ -51,7 +51,7 @@ setHover = function(t) {
 	}
 }
 
-runHouseOfReps = function() {
+runColoration = function() {
 	allPaths = document.getElementsByTagName("path");
 	for(i = 0;i < allPaths.length;i++) {
 		if(allPaths[i].id != "Dividing_line" && allPaths[i].id != "State_Lines") {
