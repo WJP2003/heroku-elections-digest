@@ -73,7 +73,7 @@ http.createServer(function (req, res) {
 		});
 	}
 }).listen(port);
-
+ /*
 racesDownload = function() {
 	console.log("races_download()");
 	https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
@@ -210,3 +210,4 @@ racesDownload = function() {
 racesDownload();
 setInterval(racesDownload,300000);
 
+*/
