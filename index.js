@@ -63,7 +63,7 @@ races_download = function() {
 						}
 					}
 				
-					for(j = 0;j < states.length;j++) {
+					for(j = 0;j < house_districts.length;j++) {
 						for(i = 1;i <= 2;i++) {
 							str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
 							str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
