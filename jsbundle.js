@@ -54,7 +54,7 @@ setHover = function(t) {
 runColoration = function() {
 	allPaths = document.getElementsByTagName("path");
 	for(i = 0;i < allPaths.length;i++) {
-		if(allPaths[i].id != "Dividing_line" && allPaths[i].id != "State_Lines") {
+		if(allPaths[i].id != "Dividing_line" && allPaths[i].id != "State_Lines" && allPaths[i].id != "frames") {
 			setHover(allPaths[i]);
 			allPaths[i].style = "";
 		}
