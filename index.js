@@ -181,9 +181,11 @@ racesDownload = function() {
 								} else if(str6 == "SOLID D") {
 									senateSolidD.push(house_districts[j][0] + "-" + i);
 								}
+								console.log(str6);
 							} else {
 								console.log("no");
 							}
+							console.log("\n");
 						}
 					}
 										
