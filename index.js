@@ -151,9 +151,10 @@ racesDownload = function() {
 					for(j = 0;j < house_districts.length;j++) {
 						str2 = '';
 						for(i = 1;i <= 2;i++) {
-							console.log(">" + house_districts[j][0] + "-" + (i-1));
+							console.log(">" + house_districts[j][0] + "-" + i);
 							str2 = data4.split(">" + house_districts[j][0] + "-")[i-1];
 							if(str2 != undefined) {
+								console.log("yes");
 								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">'),str2.length);
 								str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.length);
 
@@ -180,6 +181,8 @@ racesDownload = function() {
 								} else if(str6 == "SOLID D") {
 									senateSolidD.push(house_districts[j][0] + "-" + i);
 								}
+							} else {
+								console.log("no");
 							}
 						}
 					}
