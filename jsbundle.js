@@ -1,12 +1,14 @@
 window.onmousemove = function(e) {
 	x = e.clientX,
 	y = e.clientY;
-	elem = document.getElementById("hover_box")
+	elem = window.parent.window.parent.document.getElementById("hover_box")
 	elem.style.top = (y + 20) + 'px';
 	elem.style.left = (x + 20) + 'px';
 }
 
-setHover = function(t) {
+setHover = function() {
+	t = document.getElementsByTagName('object')[0].contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[0];
+	tt = document.getElementsByTagName('object')[0].contentDocument.getElementById('senateSVG').contentDocument.getElementsByTagName('svg')[0];
 	t.onmouseenter = function() {
 		document.getElementById("hover_box").style.visibility = "visible";
 		document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
@@ -34,9 +36,11 @@ setHover = function(t) {
 			tb.setAttribute("class","Solid Dem");
 		}
 	}
+	tt.onmousesenter = t.onmouseenter;
 	t.onmouseleave = function() {
 		document.getElementById("hover_box").style.visibility = "hidden";
 	}
+	tt.onmousesleave = t.onmouseleave;
 }
 
 runColoration = function() {	
@@ -49,8 +53,8 @@ runColoration = function() {
 	}
 	
 	if(houseSolidR != undefined) {
-		houseDoc = document.getElementById("houseSVG")[0].contentDocument;
-		senateDoc = document.getElementById("senateSVG")[0].contentDocument;
+		houseSVGDoc = window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("houseSVG")[0].contentDocument;
+		senateSVGDoc = window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("senateSVG")[0].contentDocument;
 
 		for(i = 0;i < houseSolidR.length;i++) {
 			console.log("Set as Solid R: " + houseSolidR[i]);
@@ -137,24 +141,24 @@ runColoration = function() {
 			}
 		}
 
-		document.getElementById("power_graph_solid_rep_house").innerHTML  = houseSolidR.length;
-		document.getElementById("power_graph_likely_rep_house").innerHTML = houseLikelyR.length;
-		document.getElementById("power_graph_lean_rep_house").innerHTML   = houseLeanR.length;
-		document.getElementById("power_graph_tossup_house").innerHTML     = houseTossup.length;
-		document.getElementById("power_graph_lean_dem_house").innerHTML   = houseLeanD.length;
-		document.getElementById("power_graph_likely_dem_house").innerHTML = houseLikelyD.length;
-		document.getElementById("power_graph_solid_dem_house").innerHTML  = houseSolidD.length;
+		window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("power_graph_solid_rep_house").innerHTML  = houseSolidR.length;
+		window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("power_graph_likely_rep_house").innerHTML = houseLikelyR.length;
+		window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("power_graph_lean_rep_house").innerHTML   = houseLeanR.length;
+		window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("power_graph_tossup_house").innerHTML     = houseTossup.length;
+		window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("power_graph_lean_dem_house").innerHTML   = houseLeanD.length;
+		window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("power_graph_likely_dem_house").innerHTML = houseLikelyD.length;
+		window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("power_graph_solid_dem_house").innerHTML  = houseSolidD.length;
 
-		document.getElementById("power_graph_solid_rep_senate").innerHTML  = senateSolidR.length;
-		document.getElementById("power_graph_likely_rep_senate").innerHTML = senateLikelyR.length;
-		document.getElementById("power_graph_lean_rep_senate").innerHTML   = senateLeanR.length;
-		document.getElementById("power_graph_tossup_senate").innerHTML     = senateTossup.length;
-		document.getElementById("power_graph_lean_dem_senate").innerHTML   = senateLeanD.length;
-		document.getElementById("power_graph_likely_dem_senate").innerHTML = senateLikelyD.length;
-		document.getElementById("power_graph_solid_dem_senate").innerHTML  = senateSolidD.length;
+		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_solid_rep_senate").innerHTML  = senateSolidR.length;
+		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_likely_rep_senate").innerHTML = senateLikelyR.length;
+		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_lean_rep_senate").innerHTML   = senateLeanR.length;
+		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_tossup_senate").innerHTML     = senateTossup.length;
+		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_lean_dem_senate").innerHTML   = senateLeanD.length;
+		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_likely_dem_senate").innerHTML = senateLikelyD.length;
+		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_solid_dem_senate").innerHTML  = senateSolidD.length;
 		
-		getElementById("houseSVG")[0].contentDocument = houseDoc;
-		getElementById("senateSVG")[0].contentDocument = senateDoc;
+		window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("houseSVG")[0].contentDocument = houseSVGDoc;
+		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("senateSVG")[0].contentDocument = senateSVGDoc;
 	} else {
 		setTimeout(runColoration,1000);
 	}
