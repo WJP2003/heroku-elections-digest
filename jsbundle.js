@@ -125,6 +125,6 @@ setHoverColorHouse = function() {
 	*/
 }
 
-window.onload(function() {
+window.onload = function() {
 	setHoverColorHouse();
-});
+}
