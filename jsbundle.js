@@ -1,7 +1,7 @@
 window.onmousemove = function(e) {
 	x = e.clientX,
 	y = e.clientY;
-	elem = window.parent.window.parent.document.getElementById("hover_box")
+	elem = window.parent.window.parent.document.getElementById("hover_box");
 	elem.style.top = (y + 20) + 'px';
 	elem.style.left = (x + 20) + 'px';
 }
