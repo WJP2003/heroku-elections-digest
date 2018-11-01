@@ -204,7 +204,7 @@ racesDownload = function() {
 									"houseTossup = " + strHouseTossup + ",\n" +
 									"houseLeanD = " + strHouseLeanD + ",\n" +
 									"houseLikelyD = " + strHouseLikelyD + ",\n" +
-									"houseSolidD = " + strHouseSolidD + "\n" +
+									"houseSolidD = " + strHouseSolidD + "\n",
 									function(errrr) {
 										data3 = '';
 										if(errrr) {
