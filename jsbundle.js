@@ -1,4 +1,4 @@
-window.onmousemove = function(e) {
+window.parent.window.parent.window.document.house_elections.contentDocument.houseSVG.contentDocument.onmousemove = function(e) {
 	x = e.clientX,
 	y = e.clientY;
 	elem = window.parent.window.parent.document.getElementById("hover_box");
