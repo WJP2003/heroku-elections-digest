@@ -7,8 +7,8 @@ window.onmousemove = function(e) {
 }
 
 setHover = function() {
-	t = window.parent.window.parent.document.getElementsByTagName('object')[0].contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[0];
-	tt = window.parent.window.parent.document.getElementsByTagName('object')[0].contentDocument.getElementById('senateSVG').contentDocument.getElementsByTagName('svg')[0];
+	t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[0];
+	tt = window.parent.window.parent.document.getElementsByTagName('object').senate_elections.contentDocument.getElementById('senateSVG').contentDocument.getElementsByTagName('svg')[0];
 	t.onmouseenter = function() {
 		document.getElementById("hover_box").style.visibility = "visible";
 		document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
