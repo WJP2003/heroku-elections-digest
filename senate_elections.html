@@ -1,34 +1,43 @@
-<body>
-	<div id="header" style="font-family:Verdana; font-size:50pt; font-weight: bold;">
-		Senate Elections
-	</div>
-	<table class="power_graph" id="power_graph_senate" style="visibility:hidden;font-family:Verdana;font-size:25pt;border-spacing:3px;border-collapse:separate;">
-		<tr>
-			<td class="Solid Rep"><span class="power_graph_solid_rep" id="power_graph_solid_rep_senate" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td class="Solid Dem"><span class="power_graph_solid_dem" id="power_graph_solid_dem_senate" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</td>
-		</tr><tr>
-			<td class="Likely Rep"><span class="power_graph_likely_rep" id="power_graph_likely_rep_senate" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td class="Tossup"><span class="power_graph_tossup" id="power_graph_tossup_house" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td class="Likely Dem"><span class="power_graph_likely_dem" id="power_graph_likely_dem_senate" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</td>
-		</tr><tr>
-			<td class="Lean Rep"><span class="power_graph_lean_rep" id="power_graph_lean_rep_senate" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td class="Lean Dem"><span class="power_graph_lean_dem" id="power_graph_lean_dem_senate" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
-		<tr>
-			<td class="Rep NotUp"><span class="power_graph_rep_not_up" id="power_graph_rep_not_up_senate" style="font-weight: bold;">0</span>&nbsp;Rep. Not Up</td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td><span style="color:#FFFFFF">Filler</span></td>
-			<td class="Dem NotUp"><span class="power_graph_dem_not_up" id="power_graph_dem_not_up_senate" style="font-weight: bold;">0</span>&nbsp;Dem. Not Up</td>
-		</tr>
-	</table>
-	<object id="senateSVG" type="image/svg+xml" data="/governors.svg" onload="runColoration();"></object>
-	<div style="font-weight:bold;font-size:14pt;">Cook Political Report, automatically updated. <a href="https://www.cookpolitical.com/ratings/senate-race-ratings">https://www.cookpolitical.com/ratings/senate-race-ratings</a></div>
-</body>
+<html>
+	<head>
+		<script src="house_districts.js"></script>
+		<script src="senate_ratings.js"></script>
+		<script async src="jsbundle.js"></script>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	</head>
+	
+	<body>
+		<div id="header" style="font-family:Verdana; font-size:50pt; font-weight: bold;">
+			Senate Elections
+		</div>
+		<table class="power_graph" id="power_graph_senate" style="visibility:hidden;font-family:Verdana;font-size:25pt;border-spacing:3px;border-collapse:separate;">
+			<tr>
+				<td class="Solid Rep"><span class="power_graph_solid_rep" id="power_graph_solid_rep_senate" style="font-weight: bold;">0</span>&nbsp;Solid Rep.</td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td class="Solid Dem"><span class="power_graph_solid_dem" id="power_graph_solid_dem_senate" style="font-weight: bold;">0</span>&nbsp;Solid Dem.</td>
+			</tr><tr>
+				<td class="Likely Rep"><span class="power_graph_likely_rep" id="power_graph_likely_rep_senate" style="font-weight: bold;">0</span>&nbsp;Likely Rep.</td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td class="Tossup"><span class="power_graph_tossup" id="power_graph_tossup_house" style="font-weight: bold;">0</span>&nbsp;Tossup</td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td class="Likely Dem"><span class="power_graph_likely_dem" id="power_graph_likely_dem_senate" style="font-weight: bold;">0</span>&nbsp;Likely Dem.</td>
+			</tr><tr>
+				<td class="Lean Rep"><span class="power_graph_lean_rep" id="power_graph_lean_rep_senate" style="font-weight: bold;">0</span>&nbsp;Lean Rep.</td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td class="Lean Dem"><span class="power_graph_lean_dem" id="power_graph_lean_dem_senate" style="font-weight: bold;">0</span>&nbsp;Lean Dem.</td>
+			<tr>
+				<td class="Rep NotUp"><span class="power_graph_rep_not_up" id="power_graph_rep_not_up_senate" style="font-weight: bold;">0</span>&nbsp;Rep. Not Up</td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td><span style="color:#FFFFFF">Filler</span></td>
+				<td class="Dem NotUp"><span class="power_graph_dem_not_up" id="power_graph_dem_not_up_senate" style="font-weight: bold;">0</span>&nbsp;Dem. Not Up</td>
+			</tr>
+		</table>
+		<object id="senateSVG" type="image/svg+xml" data="/governors.svg" onload="runColoration();"></object>
+		<div style="font-weight:bold;font-size:14pt;">Cook Political Report, automatically updated. <a href="https://www.cookpolitical.com/ratings/senate-race-ratings">https://www.cookpolitical.com/ratings/senate-race-ratings</a></div>
+	</body>
+</html>
