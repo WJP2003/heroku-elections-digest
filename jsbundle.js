@@ -27,7 +27,6 @@ setHoverColorHouse = function() {
 			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
 			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseLikelyR[i];
-			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Likely Rep.";
 			tb.setAttribute("class","Likely Rep");
 			t.setAttribute("class","Likely Rep");
@@ -42,7 +41,6 @@ setHoverColorHouse = function() {
 			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
 			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseLeanR[i];
-			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Lean Rep.";
 			tb.setAttribute("class","Lean Rep");
 			t.setAttribute("class","Lean Rep");
@@ -57,7 +55,6 @@ setHoverColorHouse = function() {
 			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
 			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseTossup[i];
-			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Tossup";
 			tb.setAttribute("class","Tossup");
 			t.setAttribute("class","Tossup");
@@ -72,7 +69,6 @@ setHoverColorHouse = function() {
 			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
 			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseLeanD[i];
-			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Lean Dem.";
 			tb.setAttribute("class","Lean Dem");
 			t.setAttribute("class","Lean Dem");
@@ -87,7 +83,6 @@ setHoverColorHouse = function() {
 			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
 			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseLikelyD[i];
-			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Likely Dem.";
 			tb.setAttribute("class","Likely Dem");
 			t.setAttribute("class","Lean Dem");
@@ -102,7 +97,6 @@ setHoverColorHouse = function() {
 			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
 			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseSolidD[i];
-			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Solid Dem.";
 			tb.setAttribute("class","Solid Dem");
 			t.setAttribute("class","Lean Dem");
