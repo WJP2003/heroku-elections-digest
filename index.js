@@ -198,13 +198,13 @@ racesDownload = function() {
 						if(!err) {
 							console.log("writing house to file");
 							fs.writeFile("house_districts.js",
-									"houseSolidR = " + strHouseSolidR + ",\n" +
-									"houseLikelyR = " + strHouseLikelyR + ",\n" +
-									"houseLeanR = " + strHouseLeanR + ",\n" +
-									"houseTossup = " + strHouseTossup + ",\n" +
-									"houseLeanD = " + strHouseLeanD + ",\n" +
-									"houseLikelyD = " + strHouseLikelyD + ",\n" +
-									"houseSolidD = " + strHouseSolidD + "\n",
+									"houseSolidR = " + strHouseSolidR + ";\n" +
+									"houseLikelyR = " + strHouseLikelyR + ";\n" +
+									"houseLeanR = " + strHouseLeanR + ";\n" +
+									"houseTossup = " + strHouseTossup + ";\n" +
+									"houseLeanD = " + strHouseLeanD + ";\n" +
+									"houseLikelyD = " + strHouseLikelyD + ";\n" +
+									"houseSolidD = " + strHouseSolidD + ";\n",
 									function(errrr) {
 										data3 = '';
 										if(errrr) {
@@ -228,13 +228,13 @@ racesDownload = function() {
 						if(!err) {
 							console.log("writing senate to file");
 							fs.writeFile("senate_ratings.js",
-									"senateSolidR = " + strSenateSolidR + ",\n" +
-									"senateLikelyR = " + strSenateLikelyR + ",\n" +
-									"senateLeanR = " + strSenateLeanR + ",\n" +
-									"senateTossup = " + strSenateTossup + ",\n" +
-									"senateLeanD = " + strSenateLeanD + ",\n" +
-									"senateLikelyD = " + strSenateLikelyD + ",\n" +
-									"senateSolidD = " + strSenateSolidD + "\n",
+									"senateSolidR = " + strSenateSolidR + ";\n" +
+									"senateLikelyR = " + strSenateLikelyR + ";\n" +
+									"senateLeanR = " + strSenateLeanR + ";\n" +
+									"senateTossup = " + strSenateTossup + ";\n" +
+									"senateLeanD = " + strSenateLeanD + ";\n" +
+									"senateLikelyD = " + strSenateLikelyD + ";\n" +
+									"senateSolidD = " + strSenateSolidD + ";\n",
 									function(errrr) {
 										data4 = '';
 										if(errrr) {
