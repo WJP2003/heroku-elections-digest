@@ -228,15 +228,13 @@ racesDownload = function() {
 						if(!err) {
 							console.log("writing senate to file");
 							fs.writeFile("senate_ratings.js",
-									"(function() { \n" +
 									"senateSolidR = " + strSenateSolidR + ",\n" +
 									"senateLikelyR = " + strSenateLikelyR + ",\n" +
 									"senateLeanR = " + strSenateLeanR + ",\n" +
 									"senateTossup = " + strSenateTossup + ",\n" +
 									"senateLeanD = " + strSenateLeanD + ",\n" +
 									"senateLikelyD = " + strSenateLikelyD + ",\n" +
-									"senateSolidD = " + strSenateSolidD + "\n" +
-									"})(); \n",
+									"senateSolidD = " + strSenateSolidD + "\n",
 									function(errrr) {
 										data4 = '';
 										if(errrr) {
