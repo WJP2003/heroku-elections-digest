@@ -198,7 +198,6 @@ racesDownload = function() {
 						if(!err) {
 							console.log("writing house to file");
 							fs.writeFile("house_districts.js",
-									"(function() { \n" +
 									"houseSolidR = " + strHouseSolidR + ",\n" +
 									"houseLikelyR = " + strHouseLikelyR + ",\n" +
 									"houseLeanR = " + strHouseLeanR + ",\n" +
@@ -206,7 +205,6 @@ racesDownload = function() {
 									"houseLeanD = " + strHouseLeanD + ",\n" +
 									"houseLikelyD = " + strHouseLikelyD + ",\n" +
 									"houseSolidD = " + strHouseSolidD + "\n" +
-									"})(); \n",
 									function(errrr) {
 										data3 = '';
 										if(errrr) {
