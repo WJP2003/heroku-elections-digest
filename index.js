@@ -160,13 +160,13 @@ racesDownload = function() {
 								}
 								str3 = str2.slice(str2.lastIndexOf('<div class="ratings-detail-page-table-7-column">',str2.length));
 								str4 = ''
-								console.log("length: " + str3.split('<ul class="ratings-detail-page-table-7-column-ul">').length);
 								if(str3.split('<ul class="ratings-detail-page-table-7-column-ul">').length == 2) {
 									str4 = str3.slice(str3.indexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.indexOf('</p>'));
 								} else {
 									str4 = str3.slice(str3.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.lastIndexOf('</p>'));
 								} 
 								str5 = str4.replace('<p class="ratings-detail-page-table-7-column-cell-title">','');
+								console.log(house_districts[j][0] + "-" + i + " - " + str5);
 							} else {
 								console.log(house_districts[j][0] + "-" + i + " - N/A");
 							}
