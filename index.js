@@ -28,7 +28,9 @@ http.createServer(function (req, res) {
 						if(!err2) {
 							console.log("!err2");
 							if(req.url.slice(req.url.lastIndexOf('.')+1,req.url.length) == "js") {
-								res.writeHead(200, {'Content-Type': ('text/javascript')});
+								res.writeHead(200, {'Content-Type': ('application/javascript')});
+							} else if(req.url.slice(req.url.lastIndexOf('.')+1,req.url.length) == "svg") {
+								res.writeHead(200, {'Content-Type': ('image/svg+xml')});
 							} else {
 								res.writeHead(200, {'Content-Type': ('text/' + req.url.slice(req.url.lastIndexOf('.')+1,req.url.length))});
 							}
