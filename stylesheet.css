@@ -84,6 +84,24 @@ tspan.Tossup {
 	opacity: 0.8;
 }
 
+path#Dividing_line {
+	fill:none;
+	stroke:#808080;
+	stroke-width:5;
+}
+
+path#State_Lines {
+	fill:none;
+	stroke:#000000;
+	stroke-width:0.666667;
+}
+
+path#frames {
+	fill:none;
+	stroke:/*#A9A9A9*/#808080;
+	stroke-width:/*2*/5;
+}
+
 path {
 	font-size: 34.375px;
 	font-style: normal;
