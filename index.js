@@ -78,7 +78,6 @@ http.createServer(function (req, res) {
 racesDownload = function() {
 	console.log("races_download()");
 	https.get('https://www.cookpolitical.com/ratings/house-race-ratings', function(resp) {
-		//console.log("house ratings downloading");
 		data3 = '';
 	
 		resp.on('data',function(chunk) {
@@ -86,19 +85,14 @@ racesDownload = function() {
 		});
 		
 		resp.on('end',function() {
-			//console.log("house ratings downloaded");
-			
 			https.get('https://www.cookpolitical.com/ratings/senate-race-ratings', function(resp2) {
-				//console.log("senate ratings downloading");
 				data4 = '';
 				
 				resp2.on('data',function(chunk) {
 					data4 += chunk;
 				});
 				
-				resp2.on('end',function() {
-					//console.log("senate ratings downloaded");
-								
+				resp2.on('end',function() {	
 					houseSolidR = [];
 					houseLikelyR = [];
 					houseLeanR = [];
@@ -108,18 +102,18 @@ racesDownload = function() {
 					houseSolidD = [];
 								
 					for(j = 0;j < house_districts.length;j++) {
-						//console.log("parsing house");
 						for(i = 1;i <= house_districts[j][1];i++) {
 							ii = i
 							
 							if(i < 10) { ii = "0" + i }
-							if(house_districts[j][1] == 1) { ii = "AL" } 
+							if(house_districts[j][1] == 1) { ii = "00" } 
 							
 							str2 = data3.slice(0,data3.lastIndexOf(house_districts[j][0] + "-" + ii));
 							str3 = str2.slice(0,str2.lastIndexOf("</p>"));
 							str4 = str3.slice(str3.lastIndexOf("solid-seats-modal-in-title"),str3.length);
 							str5 = str4.slice(str4.lastIndexOf(">")+1,str4.length);
-														
+							if(ii == "00") { ii = "AL" }
+							
 							if(str5 == "Solid Republican") {
 								houseSolidR.push(house_districts[j][0] + "-" + ii);
 							} else if(str5 == "Likely Republican") {
