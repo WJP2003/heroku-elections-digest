@@ -27,7 +27,11 @@ http.createServer(function (req, res) {
 						console.log("fs.readFile");
 						if(!err2) {
 							console.log("!err2");
-							res.writeHead(200, {'Content-Type': ('text/' + req.url.slice(req.url.lastIndexOf('.')+1,req.url.length))});
+							if(req.url.slice(req.url.lastIndexOf('.')+1,req.url.length) == "js") {
+								res.writeHead(200, {'Content-Type': ('text/javascript')});
+							} else {
+								res.writeHead(200, {'Content-Type': ('text/' + req.url.slice(req.url.lastIndexOf('.')+1,req.url.length))});
+							}
 							res.write(data,function() {
 								res.end();
 							});
