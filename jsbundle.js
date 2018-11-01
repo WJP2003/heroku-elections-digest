@@ -6,41 +6,38 @@ window.onmousemove = function(e) {
 	elem.style.left = (x + 20) + 'px';
 }
 
-setHover = function() {
+setHoverHouse = function(element) {
 	t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[0];
-	tt = window.parent.window.parent.document.getElementsByTagName('object').senate_elections.contentDocument.getElementById('senateSVG').contentDocument.getElementsByTagName('svg')[0];
 	t.onmouseenter = function() {
 		window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
 		window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
 		tb = document.getElementById("hover_box_text_rating");
-		if(houseSolidR.includes(event.srcElement.id)) {
+		if(houseSolidR.includes(element)) {
 			tb.innerHTML = "Solid Rep.";
 			tb.setAttribute("class","Solid Rep");
-		} else if(houseLikelyR.includes(event.srcElement.id)) {
+		} else if(houseLikelyR.includes(element)) {
 			tb.innerHTML = "Likely Rep.";
 			tb.setAttribute("class","Likely Rep");
-		} else if(houseLeanR.includes(event.srcElement.id)) {
+		} else if(houseLeanR.includes(element)) {
 			tb.innerHTML = "Lean Rep.";
 			tb.setAttribute("class","Lean Rep");
-		} else if(houseTossup.includes(event.srcElement.id)) {
+		} else if(houseTossup.includes(element)) {
 			tb.innerHTML = "Tossup";
 			tb.setAttribute("class","Tossup");
-		} else if(houseLeanD.includes(event.srcElement.id)) {
+		} else if(houseLeanD.includes(element)) {
 			tb.innerHTML = "Lean Dem.";
 			tb.setAttribute("class","Lean Dem");
-		} else if(houseLikelyD.includes(event.srcElement.id)) {
+		} else if(houseLikelyD.includes(element)) {
 			tb.innerHTML = "Likely Dem.";
 			tb.setAttribute("class","Likely Dem");
-		} else if(houseSolidD.includes(event.srcElement.id)) {
+		} else if(houseSolidD.includes(element)) {
 			tb.innerHTML = "Solid Dem.";
 			tb.setAttribute("class","Solid Dem");
 		}
 	}
-	tt.onmousesenter = t.onmouseenter;
 	t.onmouseleave = function() {
 		window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 	}
-	tt.onmousesleave = t.onmouseleave;
 }
 
 runColoration = function() {	
@@ -167,6 +164,4 @@ runColoration = function() {
 window.parent.window.parent.window.addEventListener('load', function() {
 	setHover();
 	runColoration();
-	window.parent.window.parent.alert("OK");
-	window.alert("Good");
 });
