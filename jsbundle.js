@@ -6,37 +6,97 @@ window.onmousemove = function(e) {
 	elem.style.left = (x + 20) + 'px';
 }
 
-setHoverHouse = function(element) {
-	t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[0];
-	t.onmouseenter = function() {
-		window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-		window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
-		tb = document.getElementById("hover_box_text_rating");
-		if(houseSolidR.includes(element)) {
+setHoverHouse = function() {
+	for(i = 0;i < houseSolidR.length;i++) {
+		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[houseSolidR[i]];
+		t.onmouseenter = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseSolidR[i];
+			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Solid Rep.";
 			tb.setAttribute("class","Solid Rep");
-		} else if(houseLikelyR.includes(element)) {
+		}
+		t.onmouseleave = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
+		}
+	}
+	for(i = 0;i < houseLikelyR.length;i++) {
+		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[houseLikelyR[i]];
+		t.onmouseenter = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseLikelyR[i];
+			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Likely Rep.";
 			tb.setAttribute("class","Likely Rep");
-		} else if(houseLeanR.includes(element)) {
+		}
+		t.onmouseleave = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
+		}
+	}
+	for(i = 0;i < houseLeanR.length;i++) {
+		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[houseLeanR[i]];
+		t.onmouseenter = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseLeanR[i];
+			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Lean Rep.";
 			tb.setAttribute("class","Lean Rep");
-		} else if(houseTossup.includes(element)) {
+		}
+		t.onmouseleave = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
+		}
+	}
+	for(i = 0;i < houseTossup.length;i++) {
+		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[houseTossup[i]];
+		t.onmouseenter = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseTossup[i];
+			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Tossup";
 			tb.setAttribute("class","Tossup");
-		} else if(houseLeanD.includes(element)) {
+		}
+		t.onmouseleave = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
+		}
+	}
+	for(i = 0;i < houseLeanD.length;i++) {
+		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[houseLeanD[i]];
+		t.onmouseenter = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseLeanD[i];
+			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Lean Dem.";
 			tb.setAttribute("class","Lean Dem");
-		} else if(houseLikelyD.includes(element)) {
+		}
+		t.onmouseleave = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
+		}
+	}
+	for(i = 0;i < houseLikelyD.length;i++) {
+		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[houseLikelyD[i]];
+		t.onmouseenter = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseLikelyD[i];
+			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Likely Dem.";
 			tb.setAttribute("class","Likely Dem");
-		} else if(houseSolidD.includes(element)) {
+		}
+		t.onmouseleave = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
+		}
+	}
+	for(i = 0;i < houseSolidD.length;i++) {
+		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[houseSolidD[i]];
+		t.onmouseenter = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseSolidD[i];
+			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Solid Dem.";
 			tb.setAttribute("class","Solid Dem");
 		}
-	}
-	t.onmouseleave = function() {
-		window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
+		t.onmouseleave = function() {
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
+		}
 	}
 }
 
