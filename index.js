@@ -166,7 +166,22 @@ racesDownload = function() {
 									str4 = str3.slice(str3.lastIndexOf('<p class="ratings-detail-page-table-7-column-cell-title">'),str3.lastIndexOf('</p>'));
 								} 
 								str5 = str4.replace('<p class="ratings-detail-page-table-7-column-cell-title">','');
-								console.log(house_districts[j][0] + "-" + i + " - " + str5);
+								
+								if(str5 == "SOLID R") {
+									senateSolidR.push(house_districts[j][0] + "-" + i);
+								} else if(str5 == "LIKELY R") {
+									senateLikelyR.push(house_districts[j][0] + "-" + i);
+								} else if(str5 == "LEAN R") {
+									senateLeanR.push(house_districts[j][0] + "-" + i);
+								} else if(str5 == "TOSS UP") {
+									senateTossup.push(house_districts[j][0] + "-" + i);
+								} else if(str5 == "LEAN D") {
+									senateLeanD.push(house_districts[j][0] + "-" + i);
+								} else if(str5 == "LIKELY D") {
+									senateLikelyD.push(house_districts[j][0] + "-" + i);
+								} else if(str5 == "SOLID D") {
+									senateSolidD.push(house_districts[j][0] + "-" + i);
+								}
 							} else {
 								console.log(house_districts[j][0] + "-" + i + " - N/A");
 							}
