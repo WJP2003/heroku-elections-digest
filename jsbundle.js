@@ -6,7 +6,7 @@ window.onmousemove = function(e) {
 	elem.style.left = (x + 20) + 'px';
 }
 
-setHover = function(t) {
+/*setHover =*/ (function(t) {
 	t.onmouseenter = function() {
 		document.getElementById("hover_box").style.visibility = "visible";
 		document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
@@ -37,9 +37,9 @@ setHover = function(t) {
 	t.onmouseleave = function() {
 		document.getElementById("hover_box").style.visibility = "hidden";
 	}
-}
+})()
 
-runColoration = function() {	
+/*runColoration =*/ (function() {	
 	allPaths = document.getElementsByTagName("path");
 	for(i = 0;i < allPaths.length;i++) {
 		if(allPaths[i].id != "Dividing_line" && allPaths[i].id != "State_Lines" && allPaths[i].id != "frames") {
@@ -158,4 +158,4 @@ runColoration = function() {
 	} else {
 		setTimeout(runColoration,1000);
 	}
-}
+})();
