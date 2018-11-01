@@ -49,8 +49,8 @@ runColoration = function() {
 	}
 	
 	if(houseSolidR != undefined) {
-		houseDoc = document.getElementById("houseSVG")[0].innerHTML;
-		senateDoc = document.getElementById("senateSVG")[0].innerHTML;
+		houseDoc = document.getElementById("houseSVG")[0].contentDocument;
+		senateDoc = document.getElementById("senateSVG")[0].contentDocument;
 
 		for(i = 0;i < houseSolidR.length;i++) {
 			console.log("Set as Solid R: " + houseSolidR[i]);
@@ -153,12 +153,14 @@ runColoration = function() {
 		document.getElementById("power_graph_likely_dem_senate").innerHTML = senateLikelyD.length;
 		document.getElementById("power_graph_solid_dem_senate").innerHTML  = senateSolidD.length;
 		
-		getElementById("houseSVG")[0].innerHTML = houseDoc;
-		getElementById("senateSVG")[0].innerHTML = senateDoc;
+		getElementById("houseSVG")[0].contentDocument = houseDoc;
+		getElementById("senateSVG")[0].contentDocument = senateDoc;
 	} else {
 		setTimeout(runColoration,1000);
 	}
 }
 
-setHover();
-runColoration();
+window.onload = function() {
+	setHover();
+	runColoration();
+}
