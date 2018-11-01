@@ -7,12 +7,12 @@ window.onmousemove = function(e) {
 }
 
 setHoverColorHouse = function() {
+	tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
 	for(i = 0;i < houseSolidR.length;i++) {
 		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseSolidR[i]];
 		t.onmouseenter = function() {
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
 			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseSolidR[i];
-			tb = document.getElementById("hover_box_text_rating");
 			tb.innerHTML = "Solid Rep.";
 			tb.setAttribute("class","Solid Rep");
 			t.setAttribute("class","Solid Rep");
