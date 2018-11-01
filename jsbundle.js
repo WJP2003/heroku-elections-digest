@@ -39,7 +39,7 @@ setHover = function(t) {
 	}
 }
 
-runColoration = function() {
+runColoration = function() {	
 	allPaths = document.getElementsByTagName("path");
 	for(i = 0;i < allPaths.length;i++) {
 		if(allPaths[i].id != "Dividing_line" && allPaths[i].id != "State_Lines" && allPaths[i].id != "frames") {
@@ -49,94 +49,91 @@ runColoration = function() {
 	}
 	
 	if(houseSolidR != undefined) {
+		houseDoc = getElementById("houseSVG")[0].innerHTML;
+		senateDoc = getElementById("senateSVG")[0].innerHTML;
+
 		for(i = 0;i < houseSolidR.length;i++) {
 			console.log("Set as Solid R: " + houseSolidR[i]);
-			if(document.getElementById(houseSolidR[i]) != undefined) {
-				document.getElementById(houseSolidR[i]).setAttribute("class","Solid Rep");
+			if(houseDoc.getElementById(houseSolidR[i]) != undefined) {
+				houseDoc.getElementById(houseSolidR[i]).setAttribute("class","Solid Rep");
 			}
 		}
 		for(i = 0;i < senateSolidR.length;i++) {
 			console.log("Set as Solid R: " + senateSolidR[i]);
-			if(document.getElementById(senateSolidR[i]) != undefined) {
-				document.getElementById(senateSolidR[i]).setAttribute("class","Solid Rep");
+			if(senateDoc.getElementById(senateSolidR[i]) != undefined) {
+				senateDoc.getElementById(senateSolidR[i]).setAttribute("class","Solid Rep");
 			}
 		}
-
 		for(i = 0;i < houseLikelyR.length;i++) {
 			console.log("Set as Likely R: " + houseLikelyR[i]);
-			if(document.getElementById(houseLikelyR[i]) != undefined) {
-				document.getElementById(houseLikelyR[i]).setAttribute("class","Likely Rep");
+			if(houseDoc.getElementById(houseLikelyR[i]) != undefined) {
+				houseDoc.getElementById(houseLikelyR[i]).setAttribute("class","Likely Rep");
 			}
 		}
 		for(i = 0;i < senateLikelyR.length;i++) {
 			console.log("Set as Likely R: " + senateLikelyR[i]);
-			if(document.getElementById(senateLikelyR[i]) != undefined) {
-				document.getElementById(senateLikelyR[i]).setAttribute("class","Likely Rep");
+			if(senateDoc.getElementById(senateLikelyR[i]) != undefined) {
+				senateDoc.getElementById(senateLikelyR[i]).setAttribute("class","Likely Rep");
 			}
 		}
-
 		for(i = 0;i < houseLeanR.length;i++) {
 			console.log("Set as Lean R: " + houseLeanR[i]);
-			if(document.getElementById(houseLeanR[i]) != undefined) {
-				document.getElementById(houseLeanR[i]).setAttribute("class","Lean Rep");
+			if(houseDoc.getElementById(houseLeanR[i]) != undefined) {
+				houseDoc.getElementById(houseLeanR[i]).setAttribute("class","Lean Rep");
 			}
 		}
 		for(i = 0;i < senateLeanR.length;i++) {
 			console.log("Set as Lean R: " + senateLeanR[i]);
-			if(document.getElementById(senateLeanR[i]) != undefined) {
-				document.getElementById(senateLeanR[i]).setAttribute("class","Lean Rep");
+			if(senateDoc.getElementById(senateLeanR[i]) != undefined) {
+				senateDoc.getElementById(senateLeanR[i]).setAttribute("class","Lean Rep");
 			}
 		}
-
 		for(i = 0;i < houseTossup.length;i++) {
 			console.log("Set as Tossup: " + houseTossup[i]);
-			if(document.getElementById(houseTossup[i]) != undefined) { 
-				document.getElementById(houseTossup[i]).setAttribute("class","Tossup");
+			if(houseDoc.getElementById(houseTossup[i]) != undefined) { 
+				houseDoc.getElementById(houseTossup[i]).setAttribute("class","Tossup");
 			}
 		}
 		for(i = 0;i < senateTossup.length;i++) {
 			console.log("Set as Tossup: " + senateTossup[i]);
-			if(document.getElementById(senateTossup[i]) != undefined) {
-				document.getElementById(senateTossup[i]).setAttribute("class","Tossup");
+			if(senateDoc.getElementById(senateTossup[i]) != undefined) {
+				senateDoc.getElementById(senateTossup[i]).setAttribute("class","Tossup");
 			}
 		}
-
 		for(i = 0;i < houseLeanD.length;i++) {
 			console.log("Set as Lean D: " + houseLeanD[i]);
-			if(document.getElementById(houseLeanD[i]) != undefined) {
-				document.getElementById(houseLeanD[i]).setAttribute("class","Lean Dem");
+			if(houseDoc.getElementById(houseLeanD[i]) != undefined) {
+				houseDoc.getElementById(houseLeanD[i]).setAttribute("class","Lean Dem");
 			}
 		}
 		for(i = 0;i < senateLeanD.length;i++) {
 			console.log("Set as Lean D: " + senateLeanD[i]);
-			if(document.getElementById(senateLeanD[i]) != undefined) {
-				document.getElementById(senateLeanD[i]).setAttribute("class","Lean Dem");
+			if(senateDoc.getElementById(senateLeanD[i]) != undefined) {
+				senateDoc.getElementById(senateLeanD[i]).setAttribute("class","Lean Dem");
 			}
 		}
-
 		for(i = 0;i < houseLikelyD.length;i++) {
 			console.log("Set as Likely D: " + houseLikelyD[i]);
-			if(document.getElementById(houseLikelyD[i]) != undefined) {
-				document.getElementById(houseLikelyD[i]).setAttribute("class","Likely Dem");
+			if(houseDoc.getElementById(houseLikelyD[i]) != undefined) {
+				houseDoc.getElementById(houseLikelyD[i]).setAttribute("class","Likely Dem");
 			}
 		}
 		for(i = 0;i < senateLikelyD.length;i++) {
 			console.log("Set as Likely D: " + senateLikelyD[i]);
-			if(document.getElementById(senateLikelyD[i]) != undefined) {
-				document.getElementById(senateLikelyD[i]).setAttribute("class","Likely Dem");
+			if(senateDoc.getElementById(senateLikelyD[i]) != undefined) {
+				senateDoc.getElementById(senateLikelyD[i]).setAttribute("class","Likely Dem");
 			}
 		}
-
 		for(i = 0;i < houseSolidD.length;i++) {
 			console.log("Set as Solid D: " + houseSolidD[i]);
-			if(document.getElementById(houseSolidD[i]) != undefined) {
-				document.getElementById(houseSolidD[i]).setAttribute("class","Solid Dem");
+			if(houseDoc.getElementById(houseSolidD[i]) != undefined) {
+				houseDoc.getElementById(houseSolidD[i]).setAttribute("class","Solid Dem");
 			}
 		}
 		for(i = 0;i < senateSolidD.length;i++) {
 			console.log("Set as Solid D: " + senateSolidD[i]);
-			if(document.getElementById(senateSolidD[i]) != undefined) {
-				document.getElementById(senateSolidD[i]).setAttribute("class","Solid Dem");
+			if(senateDoc.getElementById(senateSolidD[i]) != undefined) {
+				senateDoc.getElementById(senateSolidD[i]).setAttribute("class","Solid Dem");
 			}
 		}
 
@@ -155,6 +152,9 @@ runColoration = function() {
 		document.getElementById("power_graph_lean_dem_senate").innerHTML   = senateLeanD.length;
 		document.getElementById("power_graph_likely_dem_senate").innerHTML = senateLikelyD.length;
 		document.getElementById("power_graph_solid_dem_senate").innerHTML  = senateSolidD.length;
+		
+		getElementById("houseSVG")[0].innerHTML = houseDoc;
+		getElementById("senateSVG")[0].innerHTML = senateDoc;
 	} else {
 		setTimeout(runColoration,1000);
 	}
