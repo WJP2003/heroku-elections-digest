@@ -9,14 +9,14 @@ window.onmousemove = function(e) {
 setHoverColorHouse = function() {
 	for(i = 0;i < houseSolidR.length;i++) {
 		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseSolidR[i]];
-		t.onmouseenter = function() {
-			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
-			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = t.id;
-			tb.innerHTML = "Solid Rep.";
-			tb.setAttribute("class","Solid Rep");
-			t.setAttribute("class","Solid Rep");
-		}
+		eval('t.onmouseenter = function() { \
+			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating"); \
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible"; \
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
+			tb.innerHTML = "Solid Rep."; \
+			tb.setAttribute("class","Solid Rep"); \
+			t.setAttribute("class","Solid Rep"); \
+		}')
 		t.onmouseleave = function() {
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 		}
@@ -37,70 +37,70 @@ setHoverColorHouse = function() {
 	}
 	for(i = 0;i < houseLeanR.length;i++) {
 		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseLeanR[i]];
-		t.onmouseenter = function() {
-			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
-			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = t.id;
-			tb.innerHTML = "Lean Rep.";
-			tb.setAttribute("class","Lean Rep");
-			t.setAttribute("class","Lean Rep");
-		}
+		eval('t.onmouseenter = function() { \
+			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating"); \
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible"; \
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
+			tb.innerHTML = "Lean Rep."; \
+			tb.setAttribute("class","Lean Rep"); \
+			t.setAttribute("class","Lean Rep"); \
+		}')
 		t.onmouseleave = function() {
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 		}
 	}
 	for(i = 0;i < houseTossup.length;i++) {
 		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseTossup[i]];
-		t.onmouseenter = function() {
-			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
-			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = t.id;
-			tb.innerHTML = "Tossup";
-			tb.setAttribute("class","Tossup");
-			t.setAttribute("class","Tossup");
-		}
+		eval('t.onmouseenter = function() { \
+			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating"); \
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible"; \
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
+			tb.innerHTML = "Tossup"; \
+			tb.setAttribute("class","Tossup"); \
+			t.setAttribute("class","Tossup"); \
+		}')
 		t.onmouseleave = function() {
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 		}
 	}
 	for(i = 0;i < houseLeanD.length;i++) {
 		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseLeanD[i]];
-		t.onmouseenter = function() {
-			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
-			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = t.id;
-			tb.innerHTML = "Lean Dem.";
-			tb.setAttribute("class","Lean Dem");
-			t.setAttribute("class","Lean Dem");
-		}
+		eval('t.onmouseenter = function() { \
+			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating"); \
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible"; \
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
+			tb.innerHTML = "Lean Dem."; \
+			tb.setAttribute("class","Lean Dem"); \
+			t.setAttribute("class","Lean Dem"); \
+		}')
 		t.onmouseleave = function() {
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 		}
 	}
 	for(i = 0;i < houseLikelyD.length;i++) {
 		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseLikelyD[i]];
-		t.onmouseenter = function() {
-			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
-			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = t.id;
-			tb.innerHTML = "Likely Dem.";
-			tb.setAttribute("class","Likely Dem");
-			t.setAttribute("class","Lean Dem");
-		}
+		eval('t.onmouseenter = function() { \
+			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating"); \
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible"; \
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
+			tb.innerHTML = "Likely Dem."; \
+			tb.setAttribute("class","Likely Dem"); \
+			t.setAttribute("class","Likely Dem"); \
+		}')
 		t.onmouseleave = function() {
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 		}
 	}
 	for(i = 0;i < houseSolidD.length;i++) {
 		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseSolidD[i]];
-		t.onmouseenter = function() {
-			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
-			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = t.id;
-			tb.innerHTML = "Solid Dem.";
-			tb.setAttribute("class","Solid Dem");
-			t.setAttribute("class","Lean Dem");
-		}
+		eval('t.onmouseenter = function() { \
+			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating"); \
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible"; \
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
+			tb.innerHTML = "Solid Dem."; \
+			tb.setAttribute("class","Solid Dem"); \
+			t.setAttribute("class","Solid Dem"); \
+		}')
 		t.onmouseleave = function() {
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 		}
