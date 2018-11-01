@@ -23,14 +23,14 @@ setHoverColorHouse = function() {
 	}
 	for(i = 0;i < houseLikelyR.length;i++) {
 		t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseLikelyR[i]];
-		t.onmouseenter = function() {
-			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
-			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = t.id;
-			tb.innerHTML = "Likely Rep.";
-			tb.setAttribute("class","Likely Rep");
-			t.setAttribute("class","Likely Rep");
-		}
+		eval('t.onmouseenter = function() { \
+			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating"); \
+			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible"; \
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = " + t.id + "; \
+			tb.innerHTML = "Likely Rep."; \
+			tb.setAttribute("class","Likely Rep"); \
+			t.setAttribute("class","Likely Rep"); \
+		}')
 		t.onmouseleave = function() {
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 		}
