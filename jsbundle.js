@@ -222,6 +222,6 @@ runColoration = function() {
 }
 
 window.parent.window.parent.window.addEventListener('load', function() {
-	setHover();
+	setHoverHouse();
 	runColoration();
 });
