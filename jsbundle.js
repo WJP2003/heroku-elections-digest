@@ -167,4 +167,6 @@ runColoration = function() {
 window.parent.window.parent.window.addEventListener('load', function() {
 	setHover();
 	runColoration();
-}
+	window.parent.window.parent.alert("OK");
+	window.alert("Good");
+});
