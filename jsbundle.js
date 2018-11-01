@@ -49,8 +49,8 @@ runColoration = function() {
 	}
 	
 	if(houseSolidR != undefined) {
-		houseDoc = getElementById("houseSVG")[0].innerHTML;
-		senateDoc = getElementById("senateSVG")[0].innerHTML;
+		houseDoc = document.getElementById("houseSVG")[0].innerHTML;
+		senateDoc = document.getElementById("senateSVG")[0].innerHTML;
 
 		for(i = 0;i < houseSolidR.length;i++) {
 			console.log("Set as Solid R: " + houseSolidR[i]);
