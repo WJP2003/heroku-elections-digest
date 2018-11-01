@@ -151,7 +151,7 @@ racesDownload = function() {
 					for(j = 0;j < house_districts.length;j++) {
 						//console.log("parsing senate");
 						for(i = 1;i <= 2;i++) {
-							if(data4.lastIndexOf(">" + house_districts[j][0] + "-") != -1) {
+							if(data4.lastIndexOf(">" + house_districts[j][0] + "-") != -1 && !(i == 2 && (data4.lastIndexOf(">" + house_districts[j][0] + "-") == data4.indexOf(">" + house_districts[j][0] + "-")))) {
 								str2 = ''
 								if(i == 1) {
 									str2 = data4.slice(0,data4.lastIndexOf(">" + house_districts[j][0] + "-"));
