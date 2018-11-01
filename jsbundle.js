@@ -164,7 +164,7 @@ runColoration = function() {
 	}
 }
 
-window.onload = function() {
+window.parent.window.parent.window.addEventListener('load', function() {
 	setHover();
 	runColoration();
 }
