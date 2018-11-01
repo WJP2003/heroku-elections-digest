@@ -2,8 +2,8 @@ window.parent.window.parent.window.document.house_elections.contentDocument.hous
 	x = e.clientX;
 	y = e.clientY;
 	elem = window.parent.window.parent.document.getElementById("hover_box");
-	elem.style.top = (y + 20) + 'px';
-	elem.style.left = (x + 20) + 'px';
+	elem.style.top = (y + 125) + 'px';
+	elem.style.left = (x - 125) + 'px';
 }
 
 setHoverColorHouse = function() {
