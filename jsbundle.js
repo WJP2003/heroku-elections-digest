@@ -12,8 +12,7 @@ setHoverColorHouse = function() {
 		t.onmouseenter = function() {
 			tb = window.parent.window.parent.document.getElementById("hover_box_text_rating");
 			window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
-			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = houseSolidR[i];
-			console.log(houseSolidR[i]);
+			window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = t.id;
 			tb.innerHTML = "Solid Rep.";
 			tb.setAttribute("class","Solid Rep");
 			t.setAttribute("class","Solid Rep");
