@@ -1,5 +1,5 @@
 window.parent.window.parent.window.document.house_elections.contentDocument.houseSVG.contentDocument.onmousemove = function(e) {
-	x = e.clientX,
+	x = e.clientX;
 	y = e.clientY;
 	elem = window.parent.window.parent.document.getElementById("hover_box");
 	elem.style.top = (y + 20) + 'px';
