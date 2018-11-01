@@ -10,8 +10,8 @@ setHover = function() {
 	t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('svg')[0];
 	tt = window.parent.window.parent.document.getElementsByTagName('object').senate_elections.contentDocument.getElementById('senateSVG').contentDocument.getElementsByTagName('svg')[0];
 	t.onmouseenter = function() {
-		document.getElementById("hover_box").style.visibility = "visible";
-		document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
+		window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible";
+		window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = event.srcElement.id;
 		tb = document.getElementById("hover_box_text_rating");
 		if(houseSolidR.includes(event.srcElement.id)) {
 			tb.innerHTML = "Solid Rep.";
@@ -38,7 +38,7 @@ setHover = function() {
 	}
 	tt.onmousesenter = t.onmouseenter;
 	t.onmouseleave = function() {
-		document.getElementById("hover_box").style.visibility = "hidden";
+		window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
 	}
 	tt.onmousesleave = t.onmouseleave;
 }
