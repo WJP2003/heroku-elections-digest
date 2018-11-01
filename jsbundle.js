@@ -124,8 +124,8 @@ setHoverColorHouse = function() {
 	window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_solid_dem_senate").innerHTML  = senateSolidD.length;
 	*/
 	
-	window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("houseSVG")[0].contentDocument = houseSVGDoc;
-	//window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("senateSVG")[0].contentDocument = senateSVGDoc;
+	window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("houseSVG")[0].contentDocument = houseDoc;
+	//window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("senateSVG")[0].contentDocument = senateDoc;
 }
 
 window.parent.window.parent.window.addEventListener('load', function() {
