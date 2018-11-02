@@ -22,7 +22,7 @@ setHoverColorHouse = function() {
 				window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
 				tb.innerHTML = "Solid Rep."; \
 				tb.setAttribute("class","Solid Rep"); \
-				bbox = window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("houseSVG").contentDocument.getElementById("' + t.id + '"); \
+				bbox = window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("houseSVG").contentDocument.getElementById("' + t.id + '").getBBox(); \
 				window.parent.window.parent.document.getElementById("hover_box").style.top = bbox.left + bbox.width / 2; \
 				window.parent.window.parent.document.getElementById("hover_box").style.left = bbox.top + bbox.height / 2; \
 			}')
