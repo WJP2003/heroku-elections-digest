@@ -1,4 +1,4 @@
-function setTooltip() {
+/*function setTooltip() {
 	try {
 		window.parent.window.parent.window.document.house_elections.contentDocument.houseSVG.contentDocument.onmousemove = function(e) {
 			x = e.clientX;
@@ -10,7 +10,7 @@ function setTooltip() {
 	} catch(err) {
 		setTimeout(setTooltip,1000);
 	}
-}
+}*/
 
 setHoverColorHouse = function() {
 	if(typeof houseSolidR != "undefined") {
@@ -22,6 +22,9 @@ setHoverColorHouse = function() {
 				window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
 				tb.innerHTML = "Solid Rep."; \
 				tb.setAttribute("class","Solid Rep"); \
+				const bbox = el.getBoundingClientRect(); \
+				window.parent.window.parent.document.getElementById("hover_box").style.top = bbox.left + bbox.width / 2; \
+				window.parent.window.parent.document.getElementById("hover_box").style.left = bbox.top + bbox.height / 2; \
 			}')
 			t.onmouseleave = function() {
 				window.parent.window.parent.document.getElementById("hover_box").style.visibility = "hidden";
