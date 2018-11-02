@@ -139,6 +139,6 @@ setHoverColorHouse = function() {
 }
 
 window.onload = function() {
-	setTooltip();
+	//setTooltip();
 	setHoverColorHouse();
 }
