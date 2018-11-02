@@ -19,10 +19,10 @@ setHoverColorHouse = function() {
 			eval('t.onmouseenter = function() { \
 				tb = window.parent.window.parent.document.getElementById("hover_box_text_rating"); \
 				window.parent.window.parent.document.getElementById("hover_box").style.visibility = "visible"; \
-				window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + t.id + '"; \
+				window.parent.window.parent.document.getElementById("hover_box_text_district").innerHTML = "' + houseSolidR[i] + '"; \
 				tb.innerHTML = "Solid Rep."; \
 				tb.setAttribute("class","Solid Rep"); \
-				bbox = window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("houseSVG").contentDocument.getElementById("' + t.id + '").getBBox(); \
+				bbox = window.parent.window.parent.document.getElementById("house_elections").contentDocument.getElementById("houseSVG").contentDocument.getElementById("' + houseSolidR[i] + '").getBBox(); \
 				window.parent.window.parent.document.getElementById("hover_box").style.top = bbox.left + bbox.width / 2; \
 				window.parent.window.parent.document.getElementById("hover_box").style.left = bbox.top + bbox.height / 2; \
 			}')
