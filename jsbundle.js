@@ -13,7 +13,7 @@
 }*/
 
 setHoverColorHouse = function() {
-	if(typeof houseSolidR != "undefined") {
+	try {
 		for(i = 0;i < houseSolidR.length;i++) {
 			t = window.parent.window.parent.document.getElementsByTagName('object').house_elections.contentDocument.getElementById('houseSVG').contentDocument.getElementsByTagName('path')[houseSolidR[i]];
 			eval('t.onmouseenter = function() { \
@@ -130,7 +130,7 @@ setHoverColorHouse = function() {
 		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_likely_dem_senate").innerHTML = senateLikelyD.length;
 		window.parent.window.parent.document.getElementById("senate_elections").contentDocument.getElementById("power_graph_solid_dem_senate").innerHTML  = senateSolidD.length;
 		*/
-	} else {
+	} catch(err) {
 		setTimeout(setHoverColorHouse,1000);
 	}
 }
