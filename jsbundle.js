@@ -4,8 +4,8 @@ function setTooltip() {
 			x = e.clientX;
 			y = e.clientY;
 			elem = window.parent.window.parent.document.getElementById("hover_box");
-			elem.style.top = (y + 125) + 'px';
-			elem.style.left = (x - 125) + 'px';
+			elem.style.top = (y + 100) + 'px';
+			elem.style.left = (x + 30) + 'px';
 		}
 	} catch(err) {
 		setTimeout(setTooltip,1000);
