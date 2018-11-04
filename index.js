@@ -167,20 +167,25 @@ racesDownload = function() {
 								} 
 								str5 = str4.replace('<p class="ratings-detail-page-table-7-column-cell-title">','');
 								
+								ii = "";
+								if(i == 2) {
+									ii = "-S";
+								}
+								
 								if(str5 == "SOLID R") {
-									senateSolidR.push(house_districts[j][0] + "-" + i);
+									senateSolidR.push(house_districts[j][0] + ii);
 								} else if(str5 == "LIKELY R") {
-									senateLikelyR.push(house_districts[j][0] + "-" + i);
+									senateLikelyR.push(house_districts[j][0] + ii);
 								} else if(str5 == "LEAN R") {
-									senateLeanR.push(house_districts[j][0] + "-" + i);
+									senateLeanR.push(house_districts[j][0] + ii);
 								} else if(str5 == "TOSS UP") {
-									senateTossup.push(house_districts[j][0] + "-" + i);
+									senateTossup.push(house_districts[j][0] + ii);
 								} else if(str5 == "LEAN D") {
-									senateLeanD.push(house_districts[j][0] + "-" + i);
+									senateLeanD.push(house_districts[j][0] + ii);
 								} else if(str5 == "LIKELY D") {
-									senateLikelyD.push(house_districts[j][0] + "-" + i);
+									senateLikelyD.push(house_districts[j][0] + ii);
 								} else if(str5 == "SOLID D") {
-									senateSolidD.push(house_districts[j][0] + "-" + i);
+									senateSolidD.push(house_districts[j][0] + ii);
 								}
 							}
 						}
